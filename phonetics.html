@@ -6,28 +6,41 @@
   <title>Phase 1: 美式 44 发音原子周期表</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* 周期表专属网格样式 */
+    /* 紧凑版周期表网格 */
     .phonetic-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-      gap: 12px;
-      margin-top: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
     }
     .sound-card {
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: 10px;
-      padding: 12px 8px;
+      padding: 10px 6px;
       text-align: center;
       transition: all 0.2s;
       position: relative;
+      cursor: pointer;
+      user-select: none;
     }
-    .sound-card:hover {
+    .sound-card:hover, .sound-card:active {
       border-color: var(--accent-green);
-      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.08);
+      background-color: #f0fdf4;
+      transform: translateY(-2px);
+    }
+    .audio-icon {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      font-size: 0.75rem;
+      opacity: 0.4;
+    }
+    .sound-card:hover .audio-icon {
+      opacity: 1;
     }
     .symbol {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: var(--accent-green);
       font-family: var(--font-main);
@@ -35,28 +48,22 @@
     .example {
       font-size: 0.85rem;
       color: var(--text-primary);
-      margin-top: 4px;
-      font-weight: 500;
+      margin-top: 2px;
+      font-weight: 600;
     }
     .desc {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--text-secondary);
       margin-top: 2px;
-    }
-    .section-title {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 12px;
     }
     .pair-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
       background: #f8faf9;
-      padding: 10px;
+      padding: 8px;
       border-radius: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -73,99 +80,100 @@
     </div>
 
     <!-- 标题头 -->
-    <header style="margin-bottom: 24px;">
+    <header style="margin-bottom: 20px;">
       <h1 style="font-size: 1.6rem; margin-bottom: 6px;">🔊 美式 44 发音原子周期表</h1>
-      <p style="color: var(--text-secondary); font-size: 0.95rem;">
-        发音的物理本质：<b>气流通过声道时受到的阻碍方式</b>。
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">
+        💡 <b>点击任意卡片即可发音</b>。声音本质是气流受阻的方式。
       </p>
     </header>
 
-    <!-- 说明卡片 -->
-    <div class="card" style="background: #eef4f1; border: none;">
-      <p style="font-size: 0.88rem; color: var(--text-primary);">
-        💡 <b>周期表阅读指南</b>：<br>
-        1. <b>元音 (20个)</b>：气流畅通无阻，仅依靠舌头位置与唇形调音。<br>
-        2. <b>辅音 (24个)</b>：气流受到牙齿、舌头或唇部的阻碍。成对出现的是<b>清音/浊音</b>（口型完全相同，仅声带震动差异）。
-      </p>
-    </div>
-
     <!-- ==================== 一、 元音区 ==================== -->
     <section class="card">
-      <div class="section-title">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
         <h2>🔴 Ⅰ. 元音原子 (Vowels - 20)</h2>
         <span class="badge">气流无阻碍</span>
       </div>
 
-      <h3 style="font-size: 1rem; color: var(--text-secondary); margin: 16px 0 8px 0;">1. 单元音 (Monophthongs - 12)</h3>
+      <h3 style="font-size: 0.95rem; color: var(--text-secondary); margin: 12px 0 8px 0;">1. 单元音 (12)</h3>
       <div class="phonetic-grid">
         
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('see')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/iː/</div>
           <div class="example">s<b>ee</b></div>
           <div class="desc">长衣音 · 嘴角拉开</div>
           <span class="popover-content">👄 口型：嘴角向两侧拉紧，像微笑。舌尖抵下齿。</span>
         </div>
 
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('sit')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/ɪ/</div>
           <div class="example">s<b>i</b>t</div>
           <div class="desc">短衣音 · 放松快速</div>
           <span class="popover-content">👄 口型：比 /iː/ 肌肉放松，发音短促，介于“衣”和“耶”之间。</span>
         </div>
 
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('bed')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/e/</div>
           <div class="example">b<b>e</b>d</div>
           <div class="desc">小开口 · 窄门音</div>
           <span class="popover-content">👄 口型：张开约一指宽，舌尖抵下齿，放松发音。</span>
         </div>
 
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('cat')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/æ/</div>
           <div class="example">c<b>a</b>t</div>
-          <div class="desc">大开口 · 夸张梅花音</div>
+          <div class="desc">大开口 · 梅花音</div>
           <span class="popover-content">
             👄 口型：张大嘴（约两指宽），嘴角向两侧拉。<br>
             🌐 <b>英美对比</b>：美式发音较扁更响亮；英式在某些词（如 dance）中会发成 /ɑː/。
           </span>
         </div>
 
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('father')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/ɑː/</div>
           <div class="example">f<b>a</b>ther</div>
           <div class="desc">压舌音 · 医生检查音</div>
           <span class="popover-content">👄 口型：嘴巴自然张大，舌头平放压低，发出的“啊”。</span>
         </div>
 
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('door')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/ɔː/</div>
           <div class="example">d<b>oo</b>r</div>
           <div class="desc">圆唇长音</div>
           <span class="popover-content">👄 口型：双唇收圆并向前突，发音长而浑厚。</span>
         </div>
 
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('book')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/ʊ/</div>
           <div class="example">b<b>oo</b>k</div>
           <div class="desc">短乌音 · 自然放松</div>
           <span class="popover-content">👄 口型：双唇微圆，不需要过度突出，短促发音。</span>
         </div>
 
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('too')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/uː/</div>
           <div class="example">t<b>oo</b></div>
           <div class="desc">长乌音 · 吹笛嘴型</div>
           <span class="popover-content">👄 口型：双唇收极小极圆，向前突出，发音持续。</span>
         </div>
 
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('cup')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/ʌ/</div>
           <div class="example">c<b>u</b>p</div>
           <div class="desc">砍头音 · 快速短促</div>
           <span class="popover-content">👄 口型：嘴半开，舌头自然平放，从喉咙快速发“阿”声。</span>
         </div>
 
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('bird')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/ɜːr/</div>
           <div class="example">b<b>ir</b>d</div>
           <div class="desc">重读卷舌音 (GA)</div>
@@ -175,14 +183,16 @@
           </span>
         </div>
 
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('about')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/ə/</div>
           <div class="example"><b>a</b>bout</div>
           <div class="desc">中央弱读音 (Schwa)</div>
           <span class="popover-content">💡 <b>最核心音标</b>：英语中最常见的非重读元音，肌肉完全放松。</span>
         </div>
 
-        <div class="sound-card has-popover">
+        <div class="sound-card has-popover" onclick="speak('water')">
+          <span class="audio-icon">🔊</span>
           <div class="symbol">/ər/</div>
           <div class="example">wat<b>er</b></div>
           <div class="desc">弱读卷舌音 (GA)</div>
@@ -191,125 +201,112 @@
 
       </div>
 
-      <h3 style="font-size: 1rem; color: var(--text-secondary); margin: 24px 0 8px 0;">2. 双元音 (Diphthongs - 8)</h3>
+      <h3 style="font-size: 0.95rem; color: var(--text-secondary); margin: 20px 0 8px 0;">2. 双元音 (8)</h3>
       <div class="phonetic-grid">
-        <div class="sound-card"><div class="symbol">/eɪ/</div><div class="example">d<b>ay</b></div></div>
-        <div class="sound-card"><div class="symbol">/aɪ/</div><div class="example">m<b>y</b></div></div>
-        <div class="sound-card"><div class="symbol">/ɔɪ/</div><div class="example">b<b>oy</b></div></div>
-        <div class="sound-card"><div class="symbol">/oʊ/</div><div class="example">g<b>o</b></div></div>
-        <div class="sound-card"><div class="symbol">/aʊ/</div><div class="example">n<b>ow</b></div></div>
-        <div class="sound-card"><div class="symbol">/ɪr/</div><div class="example">n<b>ear</b></div></div>
-        <div class="sound-card"><div class="symbol">/er/</div><div class="example">h<b>air</b></div></div>
-        <div class="sound-card"><div class="symbol">/ʊr/</div><div class="example">p<b>oor</b></div></div>
+        <div class="sound-card" onclick="speak('day')"><span class="audio-icon">🔊</span><div class="symbol">/eɪ/</div><div class="example">d<b>ay</b></div></div>
+        <div class="sound-card" onclick="speak('my')"><span class="audio-icon">🔊</span><div class="symbol">/aɪ/</div><div class="example">m<b>y</b></div></div>
+        <div class="sound-card" onclick="speak('boy')"><span class="audio-icon">🔊</span><div class="symbol">/ɔɪ/</div><div class="example">b<b>oy</b></div></div>
+        <div class="sound-card" onclick="speak('go')"><span class="audio-icon">🔊</span><div class="symbol">/oʊ/</div><div class="example">g<b>o</b></div></div>
+        <div class="sound-card" onclick="speak('now')"><span class="audio-icon">🔊</span><div class="symbol">/aʊ/</div><div class="example">n<b>ow</b></div></div>
+        <div class="sound-card" onclick="speak('near')"><span class="audio-icon">🔊</span><div class="symbol">/ɪr/</div><div class="example">n<b>ear</b></div></div>
+        <div class="sound-card" onclick="speak('hair')"><span class="audio-icon">🔊</span><div class="symbol">/er/</div><div class="example">h<b>air</b></div></div>
+        <div class="sound-card" onclick="speak('poor')"><span class="audio-icon">🔊</span><div class="symbol">/ʊr/</div><div class="example">p<b>oor</b></div></div>
       </div>
     </section>
 
     <!-- ==================== 二、 辅音区 ==================== -->
     <section class="card">
-      <div class="section-title">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
         <h2>🔵 Ⅱ. 辅音原子 (Consonants - 24)</h2>
         <span class="badge">气流受到阻碍</span>
       </div>
 
-      <h3 style="font-size: 1rem; color: var(--text-secondary); margin: 16px 0 8px 0;">1. 清浊对立组 (8 组成对，口型相同)</h3>
-      <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 12px;">左侧为清辅音（声带不震动），右侧为浊辅音（声带震动）：</p>
+      <h3 style="font-size: 0.95rem; color: var(--text-secondary); margin: 12px 0 8px 0;">1. 清浊对立组 (8 组成对，口型相同)</h3>
+      <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 10px;">左清（声带不震动） | 右浊（声带震动）：</p>
 
-      <!-- 对立组 1 -->
       <div class="pair-container">
-        <div class="sound-card has-popover">
-          <div class="symbol">/p/</div>
-          <div class="example"><b>p</b>en</div>
-          <div class="desc">爆破清音</div>
+        <div class="sound-card has-popover" onclick="speak('pen')">
+          <span class="audio-icon">🔊</span>
+          <div class="symbol">/p/</div><div class="example"><b>p</b>en</div>
           <span class="popover-content">👄 双唇紧闭突然张开，仅喷出气流。</span>
         </div>
-        <div class="sound-card has-popover">
-          <div class="symbol">/b/</div>
-          <div class="example"><b>b</b>ag</div>
-          <div class="desc">爆破浊音</div>
+        <div class="sound-card has-popover" onclick="speak('bag')">
+          <span class="audio-icon">🔊</span>
+          <div class="symbol">/b/</div><div class="example"><b>b</b>ag</div>
           <span class="popover-content">👄 口型同 /p/，同时声带发出震动。</span>
         </div>
       </div>
 
-      <!-- 对立组 2 -->
       <div class="pair-container">
-        <div class="sound-card has-popover">
-          <div class="symbol">/t/</div>
-          <div class="example"><b>t</b>ea</div>
-          <div class="desc">齿龈爆破清音</div>
+        <div class="sound-card has-popover" onclick="speak('tea')">
+          <span class="audio-icon">🔊</span>
+          <div class="symbol">/t/</div><div class="example"><b>t</b>ea</div>
           <span class="popover-content">👄 舌尖抵上齿龈，突然释放气流。</span>
         </div>
-        <div class="sound-card has-popover">
-          <div class="symbol">/d/</div>
-          <div class="example"><b>d</b>og</div>
-          <div class="desc">齿龈爆破浊音</div>
+        <div class="sound-card has-popover" onclick="speak('dog')">
+          <span class="audio-icon">🔊</span>
+          <div class="symbol">/d/</div><div class="example"><b>d</b>og</div>
           <span class="popover-content">👄 口型同 /t/，同时声带震动。</span>
         </div>
       </div>
 
-      <!-- 对立组 3 -->
       <div class="pair-container">
-        <div class="sound-card has-popover">
-          <div class="symbol">/k/</div>
-          <div class="example"><b>k</b>ey</div>
-          <div class="desc">软腭爆破清音</div>
+        <div class="sound-card has-popover" onclick="speak('key')">
+          <span class="audio-icon">🔊</span>
+          <div class="symbol">/k/</div><div class="example"><b>k</b>ey</div>
           <span class="popover-content">👄 舌根抬起抵住软腭，冲出气流。</span>
         </div>
-        <div class="sound-card has-popover">
-          <div class="symbol">/ɡ/</div>
-          <div class="example"><b>g</b>et</div>
-          <div class="desc">软腭爆破浊音</div>
+        <div class="sound-card has-popover" onclick="speak('get')">
+          <span class="audio-icon">🔊</span>
+          <div class="symbol">/ɡ/</div><div class="example"><b>g</b>et</div>
           <span class="popover-content">👄 口型同 /k/，声带振动。</span>
         </div>
       </div>
 
-      <!-- 对立组 4 (咬舌音) -->
       <div class="pair-container">
-        <div class="sound-card has-popover">
-          <div class="symbol">/θ/</div>
-          <div class="example"><b>th</b>ink</div>
-          <div class="desc">咬舌清摩擦音</div>
+        <div class="sound-card has-popover" onclick="speak('think')">
+          <span class="audio-icon">🔊</span>
+          <div class="symbol">/θ/</div><div class="example"><b>th</b>ink</div>
           <span class="popover-content">👄 舌尖微伸出上下齿之间，吹气。</span>
         </div>
-        <div class="sound-card has-popover">
-          <div class="symbol">/ð/</div>
-          <div class="example"><b>th</b>is</div>
-          <div class="desc">咬舌浊摩擦音</div>
+        <div class="sound-card has-popover" onclick="speak('this')">
+          <span class="audio-icon">🔊</span>
+          <div class="symbol">/ð/</div><div class="example"><b>th</b>is</div>
           <span class="popover-content">👄 舌尖微伸出上下齿之间，发声震动。</span>
         </div>
       </div>
 
-      <!-- 对立组 5-8 补充 -->
       <div class="pair-container">
-        <div class="sound-card"><div class="symbol">/f/</div><div class="example"><b>f</b>ish</div></div>
-        <div class="sound-card"><div class="symbol">/v/</div><div class="example"><b>v</b>an</div></div>
+        <div class="sound-card" onclick="speak('fish')"><span class="audio-icon">🔊</span><div class="symbol">/f/</div><div class="example"><b>f</b>ish</div></div>
+        <div class="sound-card" onclick="speak('van')"><span class="audio-icon">🔊</span><div class="symbol">/v/</div><div class="example"><b>v</b>an</div></div>
       </div>
       <div class="pair-container">
-        <div class="sound-card"><div class="symbol">/s/</div><div class="example"><b>s</b>un</div></div>
-        <div class="sound-card"><div class="symbol">/z/</div><div class="example"><b>z</b>oo</div></div>
+        <div class="sound-card" onclick="speak('sun')"><span class="audio-icon">🔊</span><div class="symbol">/s/</div><div class="example"><b>s</b>un</div></div>
+        <div class="sound-card" onclick="speak('zoo')"><span class="audio-icon">🔊</span><div class="symbol">/z/</div><div class="example"><b>z</b>oo</div></div>
       </div>
       <div class="pair-container">
-        <div class="sound-card"><div class="symbol">/ʃ/</div><div class="example"><b>sh</b>ip</div></div>
-        <div class="sound-card"><div class="symbol">/ʒ/</div><div class="example">vi<b>si</b>on</div></div>
+        <div class="sound-card" onclick="speak('ship')"><span class="audio-icon">🔊</span><div class="symbol">/ʃ/</div><div class="example"><b>sh</b>ip</div></div>
+        <div class="sound-card" onclick="speak('vision')"><span class="audio-icon">🔊</span><div class="symbol">/ʒ/</div><div class="example">vi<b>si</b>on</div></div>
       </div>
       <div class="pair-container">
-        <div class="sound-card"><div class="symbol">/tʃ/</div><div class="example"><b>ch</b>ip</div></div>
-        <div class="sound-card"><div class="symbol">/dʒ/</div><div class="example"><b>j</b>ob</div></div>
+        <div class="sound-card" onclick="speak('chip')"><span class="audio-icon">🔊</span><div class="symbol">/tʃ/</div><div class="example"><b>ch</b>ip</div></div>
+        <div class="sound-card" onclick="speak('job')"><span class="audio-icon">🔊</span><div class="symbol">/dʒ/</div><div class="example"><b>j</b>ob</div></div>
       </div>
 
-      <h3 style="font-size: 1rem; color: var(--text-secondary); margin: 24px 0 8px 0;">2. 独立辅音 (鼻音 / 近音 / 似拼音)</h3>
+      <h3 style="font-size: 0.95rem; color: var(--text-secondary); margin: 20px 0 8px 0;">2. 独立辅音</h3>
       <div class="phonetic-grid">
-        <div class="sound-card"><div class="symbol">/m/</div><div class="example"><b>m</b>an</div><div class="desc">双唇鼻音</div></div>
-        <div class="sound-card"><div class="symbol">/n/</div><div class="example"><b>n</b>o</div><div class="desc">齿龈鼻音</div></div>
-        <div class="sound-card"><div class="symbol">/ŋ/</div><div class="example">si<b>ng</b></div><div class="desc">舌根鼻音</div></div>
-        <div class="sound-card"><div class="symbol">/l/</div><div class="example"><b>l</b>eg</div><div class="desc">边音</div></div>
-        <div class="sound-card"><div class="symbol">/r/</div><div class="example"><b>r</b>ed</div><div class="desc">美式卷舌音</div></div>
-        <div class="sound-card"><div class="symbol">/w/</div><div class="example"><b>w</b>et</div><div class="desc">半元音</div></div>
-        <div class="sound-card"><div class="symbol">/j/</div><div class="example"><b>y</b>es</div><div class="desc">半元音</div></div>
-        <div class="sound-card"><div class="symbol">/h/</div><div class="example"><b>h</b>at</div><div class="desc">声门清音</div></div>
+        <div class="sound-card" onclick="speak('man')"><span class="audio-icon">🔊</span><div class="symbol">/m/</div><div class="example"><b>m</b>an</div></div>
+        <div class="sound-card" onclick="speak('no')"><span class="audio-icon">🔊</span><div class="symbol">/n/</div><div class="example"><b>n</b>o</div></div>
+        <div class="sound-card" onclick="speak('sing')"><span class="audio-icon">🔊</span><div class="symbol">/ŋ/</div><div class="example">si<b>ng</b></div></div>
+        <div class="sound-card" onclick="speak('leg')"><span class="audio-icon">🔊</span><div class="symbol">/l/</div><div class="example"><b>l</b>eg</div></div>
+        <div class="sound-card" onclick="speak('red')"><span class="audio-icon">🔊</span><div class="symbol">/r/</div><div class="example"><b>r</b>ed</div></div>
+        <div class="sound-card" onclick="speak('wet')"><span class="audio-icon">🔊</span><div class="symbol">/w/</div><div class="example"><b>w</b>et</div></div>
+        <div class="sound-card" onclick="speak('yes')"><span class="audio-icon">🔊</span><div class="symbol">/j/</div><div class="example"><b>y</b>es</div></div>
+        <div class="sound-card" onclick="speak('hat')"><span class="audio-icon">🔊</span><div class="symbol">/h/</div><div class="example"><b>h</b>at</div></div>
       </div>
     </section>
 
-    <!-- 底部打卡自查区域 -->
+    <!-- 底部打卡自查区域 (正确闭合 section 修复 Bug) -->
     <section class="card" style="text-align: center;">
       <h3>🎯 Phase 1 自查进度</h3>
       <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
@@ -320,15 +317,29 @@
         <label><input type="checkbox" class="task-checkbox"> 16 个成对辅音</label>
         <label><input type="checkbox" class="task-checkbox"> 8 个独立辅音</label>
       </div>
-    </div
+    </section>
 
-    <!-- 底部跳转 -->
+    <!-- 底部跳转链接 -->
     <div style="text-align: center; padding: 20px 0;">
-      <a href="index.html" class="btn-primary">返回总章全景图</a>
+      <a href="rules.html" class="btn-primary" style="padding: 14px 28px; font-size: 1rem;">
+        🚀 下一步：拼写映射与连读法则 →
+      </a>
     </div>
 
   </div>
 
+  <!-- 引入发音点读引擎 -->
+  <script>
+    function speak(word) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // 停止当前正在播放的声音
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US'; // 强制使用美式发音
+        utterance.rate = 0.9;     // 语速微调慢一点，听得更清晰
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+  </script>
   <script src="global.js"></script>
 </body>
 </html>
