@@ -1,0 +1,120 @@
+/* ==========================================
+   1. 字体引入 (Google Fonts & 开源 CDN)
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css');
+
+/* ==========================================
+   2. 全局变量（护眼绿调色板）
+   ========================================== */
+:root {
+  --bg-eyecare: #f2f5f3;      /* 柔和护眼绿背景 */
+  --bg-card: #ffffff;         /* 纯白卡片背景 */
+  --bg-popover: #fcfbf7;      /* 复古羊皮纸微黄（历史卡片专用） */
+  
+  --text-primary: #1c2826;    /* 深墨绿灰主字（绝对不上纯黑，极度护眼） */
+  --text-secondary: #5a6e67;  /* 次要文字/解释文案 */
+  
+  --accent-green: #059669;    /* 品牌高亮绿 */
+  --border-color: #e2e8e5;    /* 极浅分割线 */
+  
+  --font-main: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'LXGW WenKai', Georgia, serif; /* 📜 历史卡片专属字体 */
+}
+
+/* ==========================================
+   3. 基础布局
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-eyecare);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* ==========================================
+   4. 通用卡片与 UI 组件
+   ========================================== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: #eef4f1;
+  color: var(--text-secondary);
+}
+
+/* 按钮样式 */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent-green);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* ==========================================
+   5. 📜 历史与 🌐 口音弹出卡片 (Popovers)
+   ========================================== */
+.has-popover {
+  cursor: pointer;
+  border-bottom: 1.5px dashed var(--accent-green);
+  position: relative;
+  display: inline-block;
+}
+
+.popover-content {
+  display: none;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  background-color: var(--bg-popover);
+  border: 1px solid #e5dfd3;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: #4a3e3d;
+  z-index: 100;
+}
+
+/* 悬停或点击激活弹出框 */
+.has-popover:hover .popover-content,
+.has-popover.active .popover-content {
+  display: block;
+}
