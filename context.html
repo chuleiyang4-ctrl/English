@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 3: 语境与高频场域沉浸</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .context-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    /* 语境域比较表 */
+    .domain-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.88rem;
+    }
+    .domain-table th, .domain-table td {
+      border: 1px solid #e2e8e5;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .domain-table th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .word-key {
+      font-family: monospace;
+      font-weight: bold;
+      color: var(--accent-green);
+      background: #f0fdf4;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .scenario-box {
+      background: #f8faf9;
+      border-left: 4px solid var(--accent-green);
+      padding: 14px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 12px;
+    }
+
+    .nav-footer-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 0 30px 0;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      padding: 12px 20px;
+      background: #e2e8e5;
+      color: var(--text-primary);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #d1dad5;
+    }
+    .btn-primary {
+      padding: 12px 20px;
+      background: var(--accent-green);
+      color: #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 顶栏导航 -->
+    <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+      <a href="vocab.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">
+        ← 返回词汇网络与算法
+      </a>
+      <span class="badge">Phase 3 / Step 2</span>
+    </div>
+
+    <!-- 标题头 -->
+    <header style="margin-bottom: 20px;">
+      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">🎯 语境映射与高频场域</h1>
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">
+        💡 <b>域驱动开发 (DDD) 视角</b>：脱离语境记词义是无效的，同一个 Key 在不同领域（Domain）下重载为不同含义。
+      </p>
+    </header>
+
+    <!-- 一、词义域重载映射 -->
+    <section class="context-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">🔄 一、多域（Domain）词义重载对比</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        观察高频核心词在不同场景域（Context Domain）下的含义重载：
+      </p>
+
+      <table class="domain-table">
+        <thead>
+          <tr>
+            <th>核心词 (Key)</th>
+            <th>通用日常域</th>
+            <th>科技 / 编程域</th>
+            <th>商业 / 金融域</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="word-key">execute</span></td>
+            <td>执行、履行</td>
+            <td>运行程序 / 代码块</td>
+            <td>签署合同、生效</td>
+          </tr>
+          <tr>
+            <td><span class="word-key">terminal</span></td>
+            <td>航站楼 / 终点站</td>
+            <td>命令行控制台</td>
+            <td>晚期的 (如末期财务)</td>
+          </tr>
+          <tr>
+            <td><span class="word-key">pool</span></td>
+            <td>游泳池</td>
+            <td>线程池 / 资源池</td>
+            <td>资金池 / 联营机构</td>
+          </tr>
+          <tr>
+            <td><span class="word-key">deploy</span></td>
+            <td>调动、部署 (军队)</td>
+            <td>发布上线 / 部署代码</td>
+            <td>配置资源 / 资金到位</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 二、真实场景语境沉浸策略 -->
+    <section class="context-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">🚀 二、高效内化语境的“三维沉浸法”</h2>
+      
+      <div class="scenario-box">
+        <b>1. 原文优先，拒绝二手翻译</b>
+        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">
+          翻译往往丢失了原文的物理语气和精确语义。直接阅读英文技术文档、原版书籍或专业访谈，建立无缝直觉。
+        </p>
+      </div>
+
+      <div class="scenario-box">
+        <b>2. 动态场景组词（Chunking）</b>
+        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">
+          不要背单个单词，记高频搭配块（Collocations），例如：<span class="code-tag">deploy an app</span>、<span class="code-tag">fetch data</span>、<span class="code-tag">resolve conflict</span>。
+        </p>
+      </div>
+
+      <div class="scenario-box">
+        <b>3. AI 交互即实时练习场</b>
+        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">
+          将 AI 助手作为全天候的英文对话伙伴，在实际解决产品、代码和设计问题中输出英文。
+        </p>
+      </div>
+    </section>
+
+    <!-- Phase 3 终点自查 -->
+    <section class="context-card" style="text-align: center;">
+      <h3>🎯 Phase 3 全局通关自查</h3>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
+        确认你已完成 Phase 3 词汇与语境的内化训练：
+      </p>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 0.9rem;">
+        <label><input type="checkbox" class="task-checkbox"> 理解同一单词在不同 Domain 下的含义重载</label>
+        <label><input type="checkbox" class="task-checkbox"> 建立以“语境搭配块 (Chunk)”而非单个词表达的习惯</label>
+        <label><input type="checkbox" class="task-checkbox"> 习惯直接阅读原汁原味的英文文本与技术文档</label>
+      </div>
+    </section>
+
+    <!-- 底部三按钮导航 -->
+    <div class="nav-footer-btns">
+      <a href="vocab.html" class="btn-secondary">← 上一步：词汇网络与算法</a>
+      <a href="index.html" class="btn-secondary">返回总章全景图</a>
+      <a href="speaking.html" class="btn-primary">下一步：Phase 4 听力与口语输出 →</a>
+    </div>
+
+  </div>
+
+  <script src="global.js"></script>
+</body>
+</html>
