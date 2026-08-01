@@ -6,29 +6,60 @@
   <title>Phase 1: 拼写映射与连读变音法则</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .rule-box {
-      border-left: 3px solid var(--accent-green);
-      padding-left: 14px;
-      margin: 16px 0;
+    .rule-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
     }
-    .formula {
-      font-family: monospace;
-      background: #eef4f1;
-      padding: 4px 8px;
-      border-radius: 4px;
-      color: #046c4e;
-      font-weight: 600;
-    }
-    .example-flow {
+    .rule-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-top: 6px;
-      font-size: 0.95rem;
+    }
+    .rule-item {
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .code-tag {
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9rem;
     }
     .arrow {
       color: var(--accent-green);
       font-weight: bold;
+      margin: 0 4px;
+    }
+    .nav-footer-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      padding: 24px 0 30px 0;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      padding: 12px 20px;
+      background: #e2e8e5;
+      color: var(--text-primary);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #d1dad5;
     }
   </style>
 </head>
@@ -39,130 +70,97 @@
     <!-- 顶栏导航 -->
     <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
       <a href="phonetics.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">
-        ← 返回 44 音标周期表
+        ← 返回音标周期表
       </a>
       <span class="badge">Phase 1 / Step 2</span>
     </div>
 
     <!-- 标题头 -->
-    <header style="margin-bottom: 24px;">
-      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">⚙️ 拼写映射与连读变音法则</h1>
-      <p style="color: var(--text-secondary); font-size: 0.95rem;">
+    <header style="margin-bottom: 20px;">
+      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">🧩 拼写映射与连读变音法则</h1>
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">
         单词不是拼出来的，声音是连续流动的。掌握推导公式，脱离死记硬背。
       </p>
     </header>
 
-    <!-- ==================== 板块一：自然拼读核心公式 ==================== -->
-    <section class="card">
-      <h2>🧩 一、 字母到音标的映射公式 (Phonics)</h2>
-      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 6px;">
-        英语字母只有 26 个，却要表达 44 个声音。核心靠“音节结构”与“组合代号”：
+    <!-- 一、字母到音标的映射公式 -->
+    <section class="rule-card">
+      <div class="rule-title">🧩 一、字母到音标的映射公式 (Phonics)</div>
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 14px;">
+        英语只有 26 个字母，却要表达 44 个声音。核心逻辑是“音节结构”与“组合代号”：
       </p>
 
-      <div class="rule-box">
-        <h3>1. 元音字母的物理状态 (以 a 为例)</h3>
-        <p style="font-size: 0.88rem; margin-top: 4px;">
-          • <b>闭音节（被辅音关住）</b> $\rightarrow$ 短音：<span class="formula">cat /æ/</span><br>
-          • <b>开音节（末尾有不发音 e）</b> $\rightarrow$ 字母本音：<span class="formula">make /eɪ/</span>
-          <span class="has-popover">📜 为什么 e 不发音？
-            <span class="popover-content">📜 历史上这个末尾 e 原本是要发音的，后来发音脱落，但它的存在成为了前面元音发长音的“视觉标记”。</span>
-          </span>
-        </p>
+      <div class="rule-item">
+        <b>1. 元音字母的物理状态（以 a 为例）</b>
+        <ul>
+          <li>闭音节（辅音结尾） <span class="arrow">→</span> 短音：<span class="code-tag">cat /æ/</span></li>
+          <li>开音节（末尾有不发音 e） <span class="arrow">→</span> 字母本音：<span class="code-tag">make /meɪ/</span> （💡 为什么 e 不发音？因为它把能量借给了前面的元音）</li>
+        </ul>
       </div>
 
-      <div class="rule-box">
-        <h3>2. 常见辅音组合“代号”</h3>
-        <ul style="margin-left: 18px; font-size: 0.88rem; line-height: 1.8;">
-          <li><code>sh</code> $\rightarrow$ <span class="formula">/ʃ/</span> (fish, ship)</li>
-          <li><code>ch</code> $\rightarrow$ <span class="formula">/tʃ/</span> (check, rich)</li>
-          <li><code>th</code> $\rightarrow$ <span class="formula">/θ/ 或 /ð/</span> (think, this)</li>
-          <li><code>tion</code> $\rightarrow$ <span class="formula">/ʃən/</span> (action, station)</li>
+      <div class="rule-item">
+        <b>2. 常见辅音组合“代号”</b>
+        <ul>
+          <li><span class="code-tag">sh</span> <span class="arrow">→</span> <span class="code-tag">/ʃ/</span> (fish, ship)</li>
+          <li><span class="code-tag">ch</span> <span class="arrow">→</span> <span class="code-tag">/tʃ/</span> (check, rich)</li>
+          <li><span class="code-tag">th</span> <span class="arrow">→</span> <span class="code-tag">/θ/</span> 或 <span class="code-tag">/ð/</span> (think, this)</li>
+          <li><span class="code-tag">tion</span> <span class="arrow">→</span> <span class="code-tag">/ʃən/</span> (action, station)</li>
         </ul>
       </div>
     </section>
 
-    <!-- ==================== 板块二：连读与变音四大物理定律 ==================== -->
-    <section class="card">
-      <h2>🌊 二、 母语者连读四大物理定律</h2>
-      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 6px;">
+    <!-- 二、母语者连读四大物理定律 -->
+    <section class="rule-card">
+      <div class="rule-title">🌊 二、母语者连读四大物理定律</div>
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 14px;">
         为什么听不懂老外说话？因为发音器官为了省力，在高速说话时会产生“流体力学变化”：
       </p>
 
-      <!-- 法则 1 -->
-      <div class="rule-box">
-        <h3>1. 辅音 + 元音：滑行无缝连读</h3>
-        <p style="font-size: 0.85rem; color: var(--text-secondary);">前一个词末尾是辅音，后一个词开头是元音，自动打包为一个音节。</p>
-        <div class="example-flow">
-          <span>Check it out</span>
-          <span class="arrow">→</span>
-          <span class="formula">Check-i-tout /tʃekɪtaʊt/</span>
-        </div>
+      <div class="rule-item">
+        <b>1. 辅音 + 元音：滑行无缝连读</b><br>
+        前一个词末尾是辅音，后一个词开头是元音，自动打包为一个音节。<br>
+        <span class="code-tag">Check it out</span> <span class="arrow">→</span> <span class="code-tag">Check-i-tout /tʃekɪtaʊt/</span>
       </div>
 
-      <!-- 法则 2 -->
-      <div class="rule-box">
-        <h3>2. 闪音 T (Flap T)：美音的核心灵魂</h3>
-        <p style="font-size: 0.85rem; color: var(--text-secondary);">
-          当 /t/ 或 /d/ 处于两个元音之间且非重读时，舌尖快速轻弹齿龈，发音接近轻微的 /d/ 或弹音。
-        </p>
-        <div class="example-flow">
-          <span>water</span>
-          <span class="arrow">→</span>
-          <span class="formula">"wah-der" /wɑːdər/</span>
-        </div>
-        <div class="example-flow">
-          <span>get it</span>
-          <span class="arrow">→</span>
-          <span class="formula">"ged-it"</span>
-        </div>
+      <div class="rule-item">
+        <b>2. 闪音 T (Flap T)：美音的核心心灵鸡汤</b><br>
+        当 /t/ 或 /d/ 处于两个元音之间且非重读时，舌尖快速轻弹齿龈，发音接近轻微的 /d/ 或弹音。<br>
+        <span class="code-tag">water</span> <span class="arrow">→</span> <span class="code-tag">"wah-der" /wɑːtər/</span><br>
+        <span class="code-tag">get it</span> <span class="arrow">→</span> <span class="code-tag">"ged-it"</span>
       </div>
 
-      <!-- 法则 3 -->
-      <div class="rule-box">
-        <h3>3. H 击穿与弱化 (H-Dropping)</h3>
-        <p style="font-size: 0.85rem; color: var(--text-secondary);">
-          代词（he, him, her, his）中的 /h/ 音在快速语流中常被吞掉，前一个词直接与剩余元音连读。
-        </p>
-        <div class="example-flow">
-          <span>Tell him</span>
-          <span class="arrow">→</span>
-          <span class="formula">Tell-im /telɪm/</span>
-        </div>
+      <div class="rule-item">
+        <b>3. H 击穿与弱化 (H-Dropping)</b><br>
+        代词（he, him, her, his）中的 /h/ 音在快速流动的语流中常被击穿消亡，前一个词直接与剩余元音连读。<br>
+        <span class="code-tag">Tell him</span> <span class="arrow">→</span> <span class="code-tag">Tell-im /telɪm/</span>
       </div>
 
-      <!-- 法则 4 -->
-      <div class="rule-box">
-        <h3>4. 中央弱读律 (Schwa 塌陷)</h3>
-        <p style="font-size: 0.85rem; color: var(--text-secondary);">
-          语法功能词（for, to, and, at, of）在非重读时，元音统一塌陷为中央弱读音 <span class="formula">/ə/</span>。
-        </p>
-        <div class="example-flow">
-          <span>cup of tea</span>
-          <span class="arrow">→</span>
-          <span class="formula">cup-a-tea /kʌp ə tiː/</span>
-        </div>
+      <div class="rule-item">
+        <b>4. 中央弱读律 (Schwa 塌陷)</b><br>
+        语法功能词（for, to, and, at, of）在非重读时，元音统一塌陷为中央弱读音 <span class="code-tag">/ə/</span>。<br>
+        <span class="code-tag">cup of tea</span> <span class="arrow">→</span> <span class="code-tag">cup-a-tea /kʌp ə ti/</span>
       </div>
     </section>
 
-    <!-- 底部打卡自查区域 -->
-    <section class="card" style="text-align: center;">
+    <!-- Phase 1 终点自查 -->
+    <section class="rule-card" style="text-align: center;">
       <h3>🎯 Phase 1 终点自查</h3>
       <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
-        完成以下三项，代表你已彻底通关“声音系统”：
+        完成以下三项，代表你已经打通了“声音系统”：
       </p>
-      <div style="display: flex; flex-direction: column; align-items: flex-start; max-width: 300px; margin: 0 auto; gap: 10px; font-size: 0.9rem;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 0.9rem;">
         <label><input type="checkbox" class="task-checkbox"> 理解 44 个发音原子的物理口型</label>
         <label><input type="checkbox" class="task-checkbox"> 掌握开/闭音节的元音变化</label>
         <label><input type="checkbox" class="task-checkbox"> 能辨识 Flap T 与 H 击穿现象</label>
       </div>
     </section>
 
-    <!-- 底部跳转链接 -->
-    <div style="text-align: center; padding: 20px 0; display: flex; justify-content: center; gap: 12px;">
-      <a href="phonetics.html" style="padding: 12px 20px; background: #e2e8e5; color: var(--text-primary); border-radius: 8px; text-decoration: none; font-weight: 600;">
+    <!-- 底部导航 -->
+    <div class="nav-footer-btns">
+      <a href="phonetics.html" class="btn-secondary">
         ← 上一步：音标周期表
       </a>
-      <a href="index.html" class="btn-primary">
+      <a href="index.html" class="btn-primary" style="padding: 12px 24px;">
         返回总章全景图
       </a>
     </div>
