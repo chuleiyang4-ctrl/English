@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 4: 实时听说与肌肉记忆</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .speaking-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .pipeline-box {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 16px 20px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+    .tag-audio { color: #38bdf8; font-weight: bold; }
+    .tag-muscle { color: #4ade80; font-weight: bold; }
+    .tag-delay { color: #fbbf24; font-weight: bold; }
+
+    .step-card {
+      background: #f8faf9;
+      border: 1px solid #e2e8e5;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .step-title {
+      font-weight: 700;
+      color: var(--accent-green);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .nav-footer-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 0 30px 0;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      padding: 12px 20px;
+      background: #e2e8e5;
+      color: var(--text-primary);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #d1dad5;
+    }
+    .btn-primary {
+      padding: 12px 20px;
+      background: var(--accent-green);
+      color: #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 顶栏导航 -->
+    <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+      <a href="context.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">
+        ← 返回语境与高频场域
+      </a>
+      <span class="badge">Phase 4 / Step 1</span>
+    </div>
+
+    <!-- 标题头 -->
+    <header style="margin-bottom: 20px;">
+      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">🎙️ 实时听说与发音肌肉记忆</h1>
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">
+        💡 <b>流式处理 (Streaming) 视角</b>：绕过“脑内中译中”中间件，建立从耳朵音频输入到发音肌肉输出的无缝反射弧。
+      </p>
+    </header>
+
+    <!-- 一、影子跟读算法 (Shadowing Algorithm) -->
+    <section class="speaking-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">⚡ 一、影子跟读算法 (Shadowing Algorithm)</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        影子跟读要求在听到原音频 <b>0.5 秒后</b>，像影子一样同频复读原声的语音语调：
+      </p>
+
+      <div class="pipeline-box">
+        [音频输入 Input] ➔ <span class="tag-audio"> Audio Stream (声音流)</span><br>
+        &nbsp;&nbsp;└── <span class="tag-delay"> Delay: 0.5s (延迟缓冲)</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── [口腔输出 Output] ➔ <span class="tag-muscle"> Muscle Resonance (声带/发音肌肉共振)</span><br>
+        <br>
+        <span style="color: #94a3b8; font-size: 0.8rem;">
+          // 核心机制：强迫大脑放弃文本解码过程，完全依赖 Phase 1 的声学连读与重音物理记忆。
+        </span>
+      </div>
+    </section>
+
+    <!-- 二、三步训练流 -->
+    <section class="speaking-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">🛠️ 二、三步听说沉浸管线 (Pipeline)</h2>
+
+      <div class="step-card">
+        <div class="step-title">Pass 1: 声学波形盲听 (Pure Acoustic Input)</div>
+        <p style="font-size: 0.82rem; color: var(--text-secondary);">
+          不看文本，纯粹用耳朵捕捉语句里的<b>重音降调、弱读与连读接缝</b>。标注出音频在何处产生卡顿或停顿。
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-title">Pass 2: 0.5 秒延迟影子跟读 (Shadowing)</div>
+        <p style="font-size: 0.82rem; color: var(--text-secondary);">
+          播放原声，按住 0.5 秒延迟开口，模仿原声的语音语调与节奏。无需停下来思考语义，保持发音肌肉连贯性。
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-title">Pass 3: AI 语音对练实战 (Real-time AI Roleplay)</div>
+        <p style="font-size: 0.82rem; color: var(--text-secondary);">
+          开启 AI 实时语音交互模式（如 ChatGPT/Gemini Voice），设定具体场景（如 Code Review、访谈对话），进行低延迟实战对练。
+        </p>
+      </div>
+    </section>
+
+    <!-- Phase 4 Step 1 终点自查 -->
+    <section class="speaking-card" style="text-align: center;">
+      <h3>🎯 Step 1 实时听说自查</h3>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
+        确认你已建立声学肌肉记忆的训练方法：
+      </p>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 0.9rem;">
+        <label><input type="checkbox" class="task-checkbox"> 能够进行 0.5 秒延迟的影子跟读 (Shadowing)</label>
+        <label><input type="checkbox" class="task-checkbox"> 摆脱逐字文本翻译，直接用声学直觉对音频做出反应</label>
+      </div>
+    </section>
+
+    <!-- 底部三按钮导航 -->
+    <div class="nav-footer-btns">
+      <a href="context.html" class="btn-secondary">← 上一步：语境与高频场域</a>
+      <a href="index.html" class="btn-secondary">返回总章全景图</a>
+      <a href="writing.html" class="btn-primary">下一步：Phase 4 Step 2 自动化写作与 AI 协同 →</a>
+    </div>
+
+  </div>
+
+  <script src="global.js"></script>
+</body>
+</html>
