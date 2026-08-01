@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 2: 句子结构与语法物理学</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .struct-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .lego-block {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+      align-items: center;
+    }
+    .lego-item {
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .lego-subject { background: #fee2e2; color: #991b1b; } /* 红色: 主语 */
+    .lego-verb    { background: #dbeafe; color: #1e40af; } /* 蓝色: 谓语/核心动作 */
+    .lego-object  { background: #dcfce7; color: #166534; } /* 绿色: 宾语/受体 */
+    .lego-complement { background: #fef3c7; color: #92400e; } /* 黄色: 补语/状态 */
+    .lego-modifier { background: #f3e8ff; color: #6b21a8; } /* 紫色: 修饰/后置延展 */
+
+    /* 时态矩阵网格 */
+    .tense-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+    @media (max-width: 600px) {
+      .tense-grid { grid-template-columns: 1fr; }
+    }
+    .tense-box {
+      background: #f8faf9;
+      border: 1px solid #e2e8e5;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+    .tense-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+    .tense-formula {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent-green);
+      margin-bottom: 4px;
+    }
+
+    .nav-footer-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      padding: 24px 0 30px 0;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      padding: 12px 20px;
+      background: #e2e8e5;
+      color: var(--text-primary);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: #d1dad5; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 顶栏导航 -->
+    <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">
+        ← 返回总章全景图
+      </a>
+      <span class="badge">Phase 2 / Step 1</span>
+    </div>
+
+    <!-- 标题头 -->
+    <header style="margin-bottom: 20px;">
+      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">🏗️ 句子结构与语法物理学</h1>
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">
+        用搭建乐高（Lego）的心智模型理解英语：主干为骨，修饰为肉，向后无限延展。
+      </p>
+    </header>
+
+    <!-- 一、 5 大乐高骨架 -->
+    <section class="struct-card">
+      <h2>🧱 一、 英语的 5 大乐高核心骨架</h2>
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 16px;">
+        无论长难句多么复杂，撕掉修饰成分后，都必定归属于以下 5 种基础物理骨架：
+      </p>
+
+      <!-- 1. 主 + 谓 -->
+      <div style="margin-bottom: 16px;">
+        <div style="font-weight: 600; font-size: 0.95rem;">1. 自激运动型 (主 + 谓)</div>
+        <div class="lego-block">
+          <span class="lego-item lego-subject">Subject (主语)</span>
+          <span class="lego-item lego-verb">Intransitive Verb (不及物动词)</span>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-secondary);">例句：<span style="color: #000; font-weight: 600;">The sun rises.</span>（太阳升起。动作不需要传递给第三方）</div>
+      </div>
+
+      <hr style="border: 0; border-top: 1px dashed #e2e8e5; margin: 12px 0;">
+
+      <!-- 2. 主 + 谓 + 宾 -->
+      <div style="margin-bottom: 16px;">
+        <div style="font-weight: 600; font-size: 0.95rem;">2. 能量传递型 (主 + 谓 + 宾)</div>
+        <div class="lego-block">
+          <span class="lego-item lego-subject">Subject (主语)</span>
+          <span class="lego-item lego-verb">Transitive Verb (及物动词)</span>
+          <span class="lego-item lego-object">Object (宾语)</span>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-secondary);">例句：<span style="color: #000; font-weight: 600;">AI changes the world.</span>（AI 改变世界。能量从主语传递给宾语）</div>
+      </div>
+
+      <hr style="border: 0; border-top: 1px dashed #e2e8e5; margin: 12px 0;">
+
+      <!-- 3. 主 + 系 + 表 -->
+      <div style="margin-bottom: 16px;">
+        <div style="font-weight: 600; font-size: 0.95rem;">3. 状态镜像型 (主 + 系 + 表)</div>
+        <div class="lego-block">
+          <span class="lego-item lego-subject">Subject (主语)</span>
+          <span class="lego-item lego-verb">Link Verb (系动词/等号)</span>
+          <span class="lego-item lego-complement">Complement (表语/状态)</span>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-secondary);">例句：<span style="color: #000; font-weight: 600;">Code is poetry.</span>（代码即诗篇。系动词相当于数学中的“=”）</div>
+      </div>
+
+      <hr style="border: 0; border-top: 1px dashed #e2e8e5; margin: 12px 0;">
+
+      <!-- 4. 双宾与宾补 -->
+      <div>
+        <div style="font-weight: 600; font-size: 0.95rem;">4. 双重传递与状态赋予 (双宾 / 宾补)</div>
+        <div class="lego-block">
+          <span class="lego-item lego-subject">Subject</span>
+          <span class="lego-item lego-verb">Verb</span>
+          <span class="lego-item lego-object">Indirect Object</span>
+          <span class="lego-item lego-object">Direct Object</span>
+        </div>
+        <div class="lego-block">
+          <span class="lego-item lego-subject">Subject</span>
+          <span class="lego-item lego-verb">Verb</span>
+          <span class="lego-item lego-object">Object</span>
+          <span class="lego-item lego-complement">Object Complement</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 二、 为什么英文长句会向后延展？ -->
+    <section class="struct-card">
+      <h2>🌌 二、 句子的“向后延展”向心力法则</h2>
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 14px;">
+        💡 <b>中文 vs 英文的核心差异</b>：中文习惯把所有定语修饰语塞在名词前面（前置修饰）；而英文秉持<b>“核心信息在前，补充细节在后”</b>的物理原则。
+      </p>
+
+      <div style="background: #f8faf9; padding: 14px; border-radius: 8px; margin-bottom: 12px;">
+        <div style="font-weight: 700; color: var(--accent-green); margin-bottom: 6px;">中文思维（前置堆叠）：</div>
+        <div style="font-size: 0.9rem;">一个 [昨天在图书馆里读完那本厚书的] <b>女孩</b> 在喝咖啡。</div>
+      </div>
+
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 14px; border-radius: 8px;">
+        <div style="font-weight: 700; color: var(--accent-green); margin-bottom: 6px;">英文物理思维（先抛核心，后置延展）：</div>
+        <div class="lego-block">
+          <span class="lego-item lego-subject">The girl</span>
+          <span class="lego-item lego-verb">is drinking</span>
+          <span class="lego-item lego-object">coffee</span>
+          <span class="lego-item lego-modifier">[who read the thick book in the library yesterday]</span>
+        </div>
+        <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 6px;">
+          后置定语从句、介词短语、分词短语，均以“挂钩方式”依次挂挂在被修饰名词的后方。
+        </div>
+      </div>
+    </section>
+
+    <!-- 三、 动词时态二维时空矩阵 -->
+    <section class="struct-card">
+      <h2>⏱️ 三、 动词时态 3×4 二维时空矩阵</h2>
+      <p style="color: var(--text-secondary); font-size: 0.85rem;">
+        时态 = <b>时间（Past / Present / Future）</b> × <b>状态（Simple / Continuous / Perfect / Perfect Continuous）</b>：
+      </p>
+
+      <div class="tense-grid">
+        <div class="tense-box">
+          <div class="tense-title">一般现在时 (Present)</div>
+          <div class="tense-formula">V / V-s</div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary);">规律/常态事实</div>
+        </div>
+        <div class="tense-box">
+          <div class="tense-title">现在进行时 (Continuous)</div>
+          <div class="tense-formula">am/is/are + V-ing</div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary);">此时此刻正在发生</div>
+        </div>
+        <div class="tense-box">
+          <div class="tense-title">现在完成时 (Perfect)</div>
+          <div class="tense-formula">have/has + V-ed</div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary);">过去的动作对现在的影响</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phase 2 自查 -->
+    <section class="struct-card" style="text-align: center;">
+      <h3>🎯 Phase 2 自查进度</h3>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
+        勾选你已建立认知模型的语法物理概念：
+      </p>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 0.9rem;">
+        <label><input type="checkbox" class="task-checkbox"> 能用乐高思维拆解 5 大基础句型</label>
+        <label><input type="checkbox" class="task-checkbox"> 理解英文长句为什么会向后挂载延展</label>
+        <label><input type="checkbox" class="task-checkbox"> 掌握“时间×状态”的 12 时态二维坐标</label>
+      </div>
+    </section>
+
+    <!-- 底部导航 -->
+    <div class="nav-footer-btns">
+      <a href="rules.html" class="btn-secondary">
+        ← 上一步：Phase 1 变音法则
+      </a>
+      <a href="index.html" class="btn-primary" style="padding: 12px 24px;">
+        返回总章全景图
+      </a>
+    </div>
+
+  </div>
+
+  <script src="global.js"></script>
+</body>
+</html>
