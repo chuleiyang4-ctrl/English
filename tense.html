@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 2: 时态与语态的二维坐标系</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tense-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    
+    /* 2D 坐标网格 */
+    .matrix-container {
+      overflow-x: auto;
+      margin-top: 14px;
+    }
+    .tense-matrix {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+    .tense-matrix th, .tense-matrix td {
+      border: 1px solid #e2e8e5;
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.85rem;
+    }
+    .tense-matrix th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .tense-matrix td.axis-y {
+      background: #f8faf9;
+      font-weight: 700;
+      color: var(--accent-green);
+      width: 120px;
+    }
+    .cell-title {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .cell-formula {
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: var(--accent-green);
+      background: #f0fdf4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .cell-example {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      line-height: 1.4;
+    }
+
+    .voice-box {
+      border-left: 4px solid #3b82f6;
+      background: #eff6ff;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 10px;
+    }
+
+    .nav-footer-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 0 30px 0;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      padding: 12px 20px;
+      background: #e2e8e5;
+      color: var(--text-primary);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #d1dad5;
+    }
+    .btn-primary {
+      padding: 12px 20px;
+      background: var(--accent-green);
+      color: #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 顶栏导航 -->
+    <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+      <a href="grammar.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">
+        ← 返回句法建筑学
+      </a>
+      <span class="badge">Phase 2 / Step 2</span>
+    </div>
+
+    <!-- 标题头 -->
+    <header style="margin-bottom: 20px;">
+      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">🌌 时态与语态的二维坐标系</h1>
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">
+        时态不是 16 个死板公式，而是 <b>时间轴 (X) × 视角状态 (Y)</b> 的空间定位。
+      </p>
+    </header>
+
+    <!-- 一、二维坐标系解构 -->
+    <section class="tense-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">📐 一、时态二维物理矩阵</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        把时间看作横轴 $X$，把观察者的视域状态看作纵轴 $Y$，坐标轴定位如下：
+      </p>
+
+      <div class="matrix-container">
+        <table class="tense-matrix">
+          <thead>
+            <tr>
+              <th>观察视角 \ 时间</th>
+              <th>过去 (Past)</th>
+              <th>现在 (Present)</th>
+              <th>将来 (Future)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 一般态 -->
+            <tr>
+              <td class="axis-y">1. 一般态<br><span style="font-weight:normal; font-size:0.75rem; color:#666;">(点状态/固有规律)</span></td>
+              <td>
+                <div class="cell-title">一般过去时</div>
+                <div class="cell-formula">V-ed</div>
+                <div class="cell-example">I built an app.<br>(过去发生的既成事实)</div>
+              </td>
+              <td>
+                <div class="cell-title">一般现在时</div>
+                <div class="cell-formula">V / V-s</div>
+                <div class="cell-example">I build apps.<br>(客观习惯/系统规律)</div>
+              </td>
+              <td>
+                <div class="cell-title">一般将来时</div>
+                <div class="cell-formula">will + V</div>
+                <div class="cell-example">I will build an app.<br>(未发生的事实预测)</div>
+              </td>
+            </tr>
+
+            <!-- 进行态 -->
+            <tr>
+              <td class="axis-y">2. 进行态<br><span style="font-weight:normal; font-size:0.75rem; color:#666;">(流体截帧/正在进行)</span></td>
+              <td>
+                <div class="cell-title">过去进行时</div>
+                <div class="cell-formula">was/were + V-ing</div>
+                <div class="cell-example">I was coding when you called.<br>(过去某时刻的动态画面)</div>
+              </td>
+              <td>
+                <div class="cell-title">现在进行时</div>
+                <div class="cell-formula">am/is/are + V-ing</div>
+                <div class="cell-example">I am coding now.<br>(此时此刻正在发生的流体)</div>
+              </td>
+              <td>
+                <div class="cell-title">将来进行时</div>
+                <div class="cell-formula">will be + V-ing</div>
+                <div class="cell-example">I will be coding tomorrow.<br>(预测未来某时刻正在做)</div>
+              </td>
+            </tr>
+
+            <!-- 完成态 -->
+            <tr>
+              <td class="axis-y">3. 完成态<br><span style="font-weight:normal; font-size:0.75rem; color:#666;">(跨时间连接/累积效应)</span></td>
+              <td>
+                <div class="cell-title">过去完成时</div>
+                <div class="cell-formula">had + V-pp</div>
+                <div class="cell-example">I had launched it before 2025.<br>(“过去的过去”已完成)</div>
+              </td>
+              <td>
+                <div class="cell-title">现在完成时</div>
+                <div class="cell-formula">have/has + V-pp</div>
+                <div class="cell-example">I have built three sites.<br>(过去的动作对现在造成了结果)</div>
+              </td>
+              <td>
+                <div class="cell-title">将来完成时</div>
+                <div class="cell-formula">will have + V-pp</div>
+                <div class="cell-example">I will have finished by June.<br>(到未来某个点时将已完成)</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 二、语态：能量方向的切换 -->
+    <section class="tense-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">🔄 二、语态 (Voice)：焦点与能量方向</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        主动语态与被动语态的本质，是<b>观察者视角与能量传递方向的切换</b>：
+      </p>
+
+      <div class="voice-box">
+        <b>1. 主动语态 (Active)</b>：焦点在“能量源头”（施动者）<br>
+        <span class="code-tag">The server processed the request.</span><br>
+        <small style="color: #4b5563;">（服务器释放能量 ➔ 作用于请求）</small>
+      </div>
+
+      <div class="voice-box" style="border-left-color: #8b5cf6; background: #f3e8ff;">
+        <b>2. 被动语态 (Passive)</b>：焦点在“受体对象”（受动者），公式：<span class="code-tag">be + V-pp</span><br>
+        <span class="code-tag">The request was processed by the server.</span><br>
+        <small style="color: #4b5563;">（请求接收能量 ➔ 施动者被移至背景或省略）</small>
+      </div>
+    </section>
+
+    <!-- Step 2 终点自查 -->
+    <section class="tense-card" style="text-align: center;">
+      <h3>🎯 Step 2 坐标系自查</h3>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
+        确认你已建立时间与视角的空间映射感：
+      </p>
+      <div style="display: flex; justify-content: center; gap: 20px; font-size: 0.9rem; flex-wrap: wrap;">
+        <label><input type="checkbox" class="task-checkbox"> 能用 X(时间) × Y(视角) 快速定位任意时态</label>
+        <label><input type="checkbox" class="task-checkbox"> 理解被动语态是焦点与能量方向的切换</label>
+      </div>
+    </section>
+
+    <!-- 底部三按钮导航 -->
+    <div class="nav-footer-btns">
+      <a href="grammar.html" class="btn-secondary">← 上一步：句法建筑学</a>
+      <a href="index.html" class="btn-secondary">返回总章全景图</a>
+      <a href="clauses.html" class="btn-primary">下一步：Phase 2 Step 3 从句与长难句 →</a>
+    </div>
+
+  </div>
+
+  <script src="global.js"></script>
+</body>
+</html>
