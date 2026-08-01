@@ -59,7 +59,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       padding: 24px 0 30px 0;
       flex-wrap: wrap;
     }
@@ -70,11 +70,24 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: background 0.2s;
     }
     .btn-secondary:hover {
       background: #d1dad5;
+    }
+    .btn-primary {
+      padding: 12px 20px;
+      background: var(--accent-green);
+      color: #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -84,8 +97,8 @@
     
     <!-- 顶栏导航 -->
     <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
-      <a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">
-        ← 返回总章全景图
+      <a href="rules.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">
+        ← 返回连读变音法则
       </a>
       <span class="badge">Phase 2 / Step 1</span>
     </div>
@@ -165,7 +178,7 @@
 
       <!-- 3. 主+系+表 -->
       <div style="margin-bottom: 16px;">
-        <h3 style="font-size: 1rem; color: var(--text-primary);">3. 主语 + 系动词 + 表语 (S + V + C) — 状态等号 ($A = B$)</h3>
+        <h3 style="font-size: 1rem; color: var(--text-primary);">3. 主语 + 系动词 + 表语 (S + V + C) — 状态等号 (A = B)</h3>
         <div class="schema-box">
           <span class="formula">Subject + Linking Verb + Complement</span>
           <p style="font-size: 0.85rem; margin-top: 4px; color: var(--text-primary);">
@@ -201,7 +214,7 @@
 
     </section>
 
-    <!-- 底部自查模块 -->
+    <!-- Step 1 终点自查 -->
     <section class="architecture-card" style="text-align: center;">
       <h3>🎯 Step 1 架构理解自查</h3>
       <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
@@ -213,14 +226,11 @@
       </div>
     </section>
 
-    <!-- 底部双按钮跳转区域 -->
+    <!-- 底部三按钮导航 -->
     <div class="nav-footer-btns">
-      <a href="rules.html" class="btn-secondary">
-        ← 上一步：发音与连读法则
-      </a>
-      <a href="index.html" class="btn-primary" style="padding: 12px 24px;">
-        返回总章全景图
-      </a>
+      <a href="rules.html" class="btn-secondary">← 上一步：连读法则</a>
+      <a href="index.html" class="btn-secondary">返回总章全景图</a>
+      <a href="tense.html" class="btn-primary">下一步：时态二维坐标系 →</a>
     </div>
 
   </div>
