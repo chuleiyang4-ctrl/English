@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 4: 自动化写作与 AI 协同</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .writing-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .code-block {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+    .code-keyword { color: #38bdf8; font-weight: bold; }
+    .code-string { color: #4ade80; }
+    .code-comment { color: #94a3b8; font-style: italic; }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .role-box {
+      background: #f8faf9;
+      border: 1px solid #e2e8e5;
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .pipeline-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      background: #f8faf9;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #e2e8e5;
+    }
+    .step-num {
+      background: var(--accent-green);
+      color: white;
+      font-weight: bold;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .nav-footer-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 0 30px 0;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      padding: 12px 20px;
+      background: #e2e8e5;
+      color: var(--text-primary);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #d1dad5;
+    }
+    .btn-primary {
+      padding: 12px 20px;
+      background: var(--accent-green);
+      color: #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 顶栏导航 -->
+    <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+      <a href="speaking.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">
+        ← 返回实时听说与肌肉记忆
+      </a>
+      <span class="badge">Phase 4 / Step 2 (Final)</span>
+    </div>
+
+    <!-- 标题头 -->
+    <header style="margin-bottom: 20px;">
+      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">✍️ 自动化写作与 AI 协同</h1>
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">
+        💡 <b>表达架构师视角</b>：人类定义逻辑骨架与核心意图，AI 充当高效率编译器完成润色与重构。
+      </p>
+    </header>
+
+    <!-- 一、人机分工矩阵 -->
+    <section class="writing-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">🤝 一、Human-in-the-Loop 协作分工</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        高效的 AI 协同不是全自动盲目生成，而是清晰明确的“架构师-编译器”协作：
+      </p>
+
+      <div class="role-grid">
+        <div class="role-box">
+          <div style="font-weight: 700; color: var(--accent-green); font-size: 0.95rem; margin-bottom: 6px;">
+            🧠 人类角色：表达架构师 (Architect)
+          </div>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); padding-left: 16px; margin: 0;">
+            <li>提供高密度的意图草稿 (Core Intent)</li>
+            <li>设定沟通场域与语气 (Context & Tone)</li>
+            <li>终审校验与事实把关 (Final Quality Control)</li>
+          </ul>
+        </div>
+
+        <div class="role-box">
+          <div style="font-weight: 700; color: #3b82f6; font-size: 0.95rem; margin-bottom: 6px;">
+            🤖 AI 角色：高级编译器 (Compiler)
+          </div>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); padding-left: 16px; margin: 0;">
+            <li>语法校验与地道度增强 (Grammar & Linter)</li>
+            <li>句式结构优雅重组 (Sentence Restructuring)</li>
+            <li>长短文风格多端转换 (Multi-format Adaptor)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 二、经典 AI 润色 Prompt 模板 -->
+    <section class="writing-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">📜 二、万能英文润色 Prompt 架构</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        使用带有约束条件的标准 Prompt 模板，让 AI 输出准确地道的地道英文：
+      </p>
+
+      <div class="code-block">
+        <span class="code-comment"># Role & Task</span><br>
+        Act as an expert native English editor. Polish the following draft for a <span class="code-keyword">[Tech Documentation / Pitch Email / GitHub PR]</span>.<br><br>
+        <span class="code-comment"># Constraints</span><br>
+        1. Keep the tone <span class="code-keyword">[professional yet concise]</span>.<br>
+        2. Preserve the original core logic.<br>
+        3. Highlight key changes and briefly explain why.<br><br>
+        <span class="code-comment"># Draft Input</span><br>
+        <span class="code-string">"[粘贴你的原始草稿，甚至是中英混杂的逻辑点]"</span>
+      </div>
+    </section>
+
+    <!-- 三、写作三步走流水线 -->
+    <section class="writing-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">🔄 三、高效写作 3 步管线</h2>
+
+      <div class="pipeline-step">
+        <div class="step-num">1</div>
+        <div>
+          <b>生成子弹笔记草稿 (Bullet-point Draft)</b>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+            不纠结语法和拼写，用简单词汇或子弹笔记迅速罗列要表达的核心逻辑。
+          </p>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-num">2</div>
+        <div>
+          <b>AI 结构重构与风格增强 (AI Compilation)</b>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+            投喂 Prompt，让 AI 提供 2-3 种不同语调（如 Formal, Casual, Concise）的版本。
+          </p>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-num">3</div>
+        <div>
+          <b>反向对比与吸收 (Diff Review)</b>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+            对比 AI 修改前后，观察它替换了哪些更地道的搭配块（Chunk），反哺回自己的语库。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 全站大圆满终点通关 -->
+    <section class="writing-card" style="text-align: center; background: #f0fdf4; border-color: var(--accent-green);">
+      <h3 style="color: var(--accent-green); font-size: 1.3rem;">🎉 恭喜！通关全站知识体系</h3>
+      <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
+        你已建立起从<b>声学原子 ➔ 句法架构 ➔ 词汇拓扑 ➔ 听说实战与 AI 协同</b>的全套工程化语言认知！
+      </p>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 0.9rem;">
+        <label><input type="checkbox" class="task-checkbox"> 掌握 Human-in-the-Loop 的 AI 协作写作管线</label>
+        <label><input type="checkbox" class="task-checkbox"> 能够编写结构化的英文润色与重构 Prompt</label>
+        <label><input type="checkbox" class="task-checkbox"> 具备了长期用现代技术自我迭代英文能力的核心心智</label>
+      </div>
+    </section>
+
+    <!-- 底部三按钮导航 -->
+    <div class="nav-footer-btns">
+      <a href="speaking.html" class="btn-secondary">← 上一步：实时听说与肌肉记忆</a>
+      <a href="index.html" class="btn-primary">🏆 完成全部学习，返回总章首页</a>
+    </div>
+
+  </div>
+
+  <script src="global.js"></script>
+</body>
+</html>
