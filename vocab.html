@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 3: 词汇网络与词根算法</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .vocab-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    /* 算法拆解表格 */
+    .algorithm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .algo-box {
+      background: #f8faf9;
+      border: 1px solid #e2e8e5;
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .algo-title {
+      font-weight: 700;
+      color: var(--accent-green);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    /* 网络拓扑节点图展示 */
+    .node-tree {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 18px;
+      border-radius: 10px;
+      font-family: monospace;
+      margin-top: 12px;
+    }
+    .root-node {
+      color: #38bdf8;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .leaf-node {
+      margin-left: 20px;
+      padding-left: 10px;
+      border-left: 2px solid #334155;
+      margin-top: 8px;
+    }
+    .tag-prefix { color: #f43f5e; font-weight: bold; }
+    .tag-root { color: #38bdf8; font-weight: bold; }
+    .tag-suffix { color: #fbbf24; font-weight: bold; }
+    .node-desc { color: #94a3b8; font-size: 0.82rem; margin-left: 6px; }
+
+    .nav-footer-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 0 30px 0;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      padding: 12px 20px;
+      background: #e2e8e5;
+      color: var(--text-primary);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #d1dad5;
+    }
+    .btn-primary {
+      padding: 12px 20px;
+      background: var(--accent-green);
+      color: #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 顶栏导航 -->
+    <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+      <a href="clauses.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">
+        ← 返回长难句解构
+      </a>
+      <span class="badge">Phase 3 / Step 1</span>
+    </div>
+
+    <!-- 标题头 -->
+    <header style="margin-bottom: 20px;">
+      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">🌐 词汇网络与词根算法</h1>
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">
+        💡 <b>告别孤立记忆</b>：词汇是网络拓扑图。1 个核心 API（词根）+ 动态参数（词缀）= 裂变整个词汇库。
+      </p>
+    </header>
+
+    <!-- 一、词根词缀算法体系 -->
+    <section class="vocab-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">⚙️ 一、词汇的三段式编译算法</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        单词的生成过程与软件编译类似，由三个核心模块组装而成：
+      </p>
+
+      <div class="algorithm-grid">
+        <div class="algo-box">
+          <div class="algo-title">1. 前缀 (Prefix)</div>
+          <p style="font-size: 0.82rem; color: var(--text-secondary);"><b>物理角色：方向/状态参数</b></p>
+          <p style="font-size: 0.82rem; margin-top: 6px;">控制动作发生的空间位置与逻辑状态。</p>
+          <ul style="font-size: 0.8rem; margin-top: 6px; padding-left: 16px;">
+            <li><span class="code-tag">con / com-</span> : 聚拢、共同</li>
+            <li><span class="code-tag">de-</span> : 向下、剥离、破坏</li>
+            <li><span class="code-tag">in / im-</span> : 向内、进入</li>
+            <li><span class="code-tag">ex-</span> : 向外、排出</li>
+          </ul>
+        </div>
+
+        <div class="algo-box">
+          <div class="algo-title">2. 词根 (Root)</div>
+          <p style="font-size: 0.82rem; color: var(--text-secondary);"><b>物理角色：核心 API / 基类</b></p>
+          <p style="font-size: 0.82rem; margin-top: 6px;">承载最根本的物理动作概念。</p>
+          <ul style="font-size: 0.8rem; margin-top: 6px; padding-left: 16px;">
+            <li><span class="code-tag">struct</span> : 建造、搭建</li>
+            <li><span class="code-tag">port</span> : 搬运、港口</li>
+            <li><span class="code-tag">vis / vid</span> : 观察、视界</li>
+            <li><span class="code-tag">spect</span> : 看、注视</li>
+          </ul>
+        </div>
+
+        <div class="algo-box">
+          <div class="algo-title">3. 后缀 (Suffix)</div>
+          <p style="font-size: 0.82rem; color: var(--text-secondary);"><b>物理角色：类型强转 (Type Cast)</b></p>
+          <p style="font-size: 0.82rem; margin-top: 6px;">不改变词义核心，只修改数据接口类型。</p>
+          <ul style="font-size: 0.8rem; margin-top: 6px; padding-left: 16px;">
+            <li><span class="code-tag">-tion / -sion</span> : 转为 [名词]</li>
+            <li><span class="code-tag">-ive / -ic</span> : 转为 [形容词]</li>
+            <li><span class="code-tag">-ize / -fy</span> : 转为 [动词]</li>
+            <li><span class="code-tag">-ly</span> : 转为 [副词]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 二、网络拓扑节点实战演示 -->
+    <section class="vocab-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">🌳 二、节点拓扑网络实战：以 <span style="color: var(--accent-green);">struct</span> (建造) 为例</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        观察同一个基础 API 如何通过传入不同参数，裂变成一个完整的词汇网络树：
+      </p>
+
+      <div class="node-tree">
+        <div class="root-node">BASE_ROOT: struct (物理含义：建造 / 搭建)</div>
+
+        <div class="leaf-node">
+          <span class="tag-prefix">con-</span> (共同) + <span class="tag-root">struct</span> (建造) ➔ <b>construct</b>
+          <span class="node-desc">[动词] 建设、构建</span>
+          <div style="margin-left: 16px; margin-top: 4px;">
+            └── <span class="tag-root">construct</span> + <span class="tag-suffix">-ion</span> ➔ <b>construction</b> <span class="node-desc">[名词] 建筑物、工程</span><br>
+            └── <span class="tag-root">construct</span> + <span class="tag-suffix">-ive</span> ➔ <b>constructive</b> <span class="node-desc">[形容词] 建设性的</span>
+          </div>
+        </div>
+
+        <div class="leaf-node">
+          <span class="tag-prefix">de-</span> (向下/破坏) + <span class="tag-root">struct</span> (建造) + <span class="tag-suffix">-ion</span> ➔ <b>destruction</b>
+          <span class="node-desc">[名词] 毁灭、破坏</span>
+          <div style="margin-left: 16px; margin-top: 4px;">
+            └── <span class="tag-prefix">de-</span> + <span class="tag-root">struct</span> + <span class="tag-suffix">-ive</span> ➔ <b>destructive</b> <span class="node-desc">[形容词] 毁灭性的</span>
+          </div>
+        </div>
+
+        <div class="leaf-node">
+          <span class="tag-prefix">infra-</span> (下层/基础) + <span class="tag-root">struct</span> (建造) + <span class="tag-suffix">-ure</span> ➔ <b>infrastructure</b>
+          <span class="node-desc">[名词] 基础设施、底层架构</span>
+        </div>
+
+        <div class="leaf-node">
+          <span class="tag-prefix">in-</span> (向内) + <span class="tag-root">struct</span> (建造) ➔ <b>instruct</b>
+          <span class="node-desc">[动词] 指导、灌输知识（在内部构建知识框架）</span>
+          <div style="margin-left: 16px; margin-top: 4px;">
+            └── <span class="tag-root">instruct</span> + <span class="tag-suffix">-or</span> ➔ <b>instructor</b> <span class="node-desc">[名词] 导师、教练</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phase 3 Step 1 终点自查 -->
+    <section class="vocab-card" style="text-align: center;">
+      <h3>🎯 Step 1 拓扑网络自查</h3>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
+        确认你已建立词汇的算法推导思维：
+      </p>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 0.9rem;">
+        <label><input type="checkbox" class="task-checkbox"> 能用前缀（参数）+ 词根（API）+ 后缀（类型强转）推导词义</label>
+        <label><input type="checkbox" class="task-checkbox"> 摆脱单词死记硬背，建立起“词汇网络节点”的心智</label>
+      </div>
+    </section>
+
+    <!-- 底部三按钮导航 -->
+    <div class="nav-footer-btns">
+      <a href="clauses.html" class="btn-secondary">← 上一步：长难句解构</a>
+      <a href="index.html" class="btn-secondary">返回总章全景图</a>
+      <a href="context.html" class="btn-primary">下一步：Phase 3 Step 2 语境与高频场域 →</a>
+    </div>
+
+  </div>
+
+  <script src="global.js"></script>
+</body>
+</html>
