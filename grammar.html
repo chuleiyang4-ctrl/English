@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 2: 句法建筑学与 5 大物理架构</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .architecture-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .pos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .pos-card {
+      background: #f8faf9;
+      border: 1px solid #e2e8e5;
+      border-radius: 8px;
+      padding: 14px;
+      transition: transform 0.2s;
+    }
+    .pos-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-green);
+    }
+    .pos-title {
+      font-weight: 700;
+      color: var(--accent-green);
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .pos-meta {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+    .schema-box {
+      border-left: 4px solid var(--accent-green);
+      background: #f0fdf4;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 10px 0;
+    }
+    .formula {
+      font-family: monospace;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #065f46;
+    }
+    .nav-footer-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      padding: 24px 0 30px 0;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      padding: 12px 20px;
+      background: #e2e8e5;
+      color: var(--text-primary);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #d1dad5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 顶栏导航 -->
+    <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">
+        ← 返回总章全景图
+      </a>
+      <span class="badge">Phase 2 / Step 1</span>
+    </div>
+
+    <!-- 标题头 -->
+    <header style="margin-bottom: 20px;">
+      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">🏛️ 句法建筑学与 5 大受力架构</h1>
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">
+        💡 <b>放弃死记语法规条</b>：把句子视为一座建筑物，词性是建材，句式是受力骨架。
+      </p>
+    </header>
+
+    <!-- 一、词性原子：建筑材料分类 -->
+    <section class="architecture-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">🧱 一、词性原子的工程物理角色</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        英语的 8 大词性不是凭空存在的，它们在句子中充当了明确的物理支撑角色：
+      </p>
+
+      <div class="pos-grid">
+        <div class="pos-card">
+          <div class="pos-title">名词 (Noun)</div>
+          <div class="pos-meta">🏗️ 物理角色：实体建材</div>
+          <p style="font-size: 0.82rem; color: var(--text-primary);">句子的主体或承重构件（主语/宾语）。如：apple, idea, System.</p>
+        </div>
+
+        <div class="pos-card">
+          <div class="pos-title">动词 (Verb)</div>
+          <div class="pos-meta">⚡ 物理角色：动力引擎</div>
+          <p style="font-size: 0.82rem; color: var(--text-primary);">驱动整个句子传递能量的核心。没有动词，句子就没有动力。如：run, create, is.</p>
+        </div>
+
+        <div class="pos-card">
+          <div class="pos-title">形容词 (Adj)</div>
+          <div class="pos-meta">🎨 物理角色：实体涂层</div>
+          <p style="font-size: 0.82rem; color: var(--text-primary);">依附于名词，改变实体的外表属性。如：blue, quantum, fast.</p>
+        </div>
+
+        <div class="pos-card">
+          <div class="pos-title">介词 (Prep)</div>
+          <div class="pos-meta">🔗 物理角色：榫卯连接件</div>
+          <p style="font-size: 0.82rem; color: var(--text-primary);">连接空间、时间与逻辑维度。如：in, on, under, through.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 二、5 大基本受力句型 -->
+    <section class="architecture-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">⚙️ 二、英语 5 大核心受力骨架</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">
+        无论多复杂的长难句，剥离饰面后，底层必定是以下 5 种结构之一：
+      </p>
+
+      <!-- 1. 主+谓 -->
+      <div style="margin-bottom: 16px;">
+        <h3 style="font-size: 1rem; color: var(--text-primary);">1. 主语 + 不及物动词 (S + V) — 自给自足型引擎</h3>
+        <div class="schema-box">
+          <span class="formula">Subject + Verb</span>
+          <p style="font-size: 0.85rem; margin-top: 4px; color: var(--text-primary);">
+            能量在主语内部消耗完毕，无需向外释放或作用于其他物体。<br>
+            例：<span class="code-tag">The sun shines.</span>（太阳发光）
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. 主+谓+宾 -->
+      <div style="margin-bottom: 16px;">
+        <h3 style="font-size: 1rem; color: var(--text-primary);">2. 主语 + 及物动词 + 宾语 (S + V + O) — 能量单向传递</h3>
+        <div class="schema-box">
+          <span class="formula">Subject + Verb + Object</span>
+          <p style="font-size: 0.85rem; margin-top: 4px; color: var(--text-primary);">
+            动词将能量从主语直接作用并传递给受体（宾语）。<br>
+            例：<span class="code-tag">Developers build platforms.</span>（开发者构建平台）
+          </p>
+        </div>
+      </div>
+
+      <!-- 3. 主+系+表 -->
+      <div style="margin-bottom: 16px;">
+        <h3 style="font-size: 1rem; color: var(--text-primary);">3. 主语 + 系动词 + 表语 (S + V + C) — 状态等号 ($A = B$)</h3>
+        <div class="schema-box">
+          <span class="formula">Subject + Linking Verb + Complement</span>
+          <p style="font-size: 0.85rem; margin-top: 4px; color: var(--text-primary);">
+            系动词不传递动作能量，仅仅扮演“等号”或者状态连接梁。<br>
+            例：<span class="code-tag">Knowledge is power.</span>（知识 = 力量）
+          </p>
+        </div>
+      </div>
+
+      <!-- 4. 主+谓+双宾 -->
+      <div style="margin-bottom: 16px;">
+        <h3 style="font-size: 1rem; color: var(--text-primary);">4. 主语 + 动词 + 间宾 + 直宾 (S + V + IO + DO) — 双重传递</h3>
+        <div class="schema-box">
+          <span class="formula">Subject + Verb + Indirect Object + Direct Object</span>
+          <p style="font-size: 0.85rem; margin-top: 4px; color: var(--text-primary);">
+            动作同时带有一个“接收者”和一个“转移物”。<br>
+            例：<span class="code-tag">AI gives us clarity.</span>（AI 给 我们 清晰感）
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. 主+谓+宾+补 -->
+      <div>
+        <h3 style="font-size: 1rem; color: var(--text-primary);">5. 主语 + 动词 + 宾语 + 宾补 (S + V + O + OC) — 状态追加平衡</h3>
+        <div class="schema-box">
+          <span class="formula">Subject + Verb + Object + Complement</span>
+          <p style="font-size: 0.85rem; margin-top: 4px; color: var(--text-primary);">
+            仅有宾语不足以使结构平衡，需要追加补语来描述宾语的状态或结果。<br>
+            例：<span class="code-tag">Code makes systems efficient.</span>（代码使系统变得高效）
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 底部自查模块 -->
+    <section class="architecture-card" style="text-align: center;">
+      <h3>🎯 Step 1 架构理解自查</h3>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
+        理解核心受力逻辑，脱离离散死记：
+      </p>
+      <div style="display: flex; justify-content: center; gap: 20px; font-size: 0.9rem; flex-wrap: wrap;">
+        <label><input type="checkbox" class="task-checkbox"> 理解 4 类核心词性的工程角色</label>
+        <label><input type="checkbox" class="task-checkbox"> 掌握 5 大句型结构的受力与能量传递</label>
+      </div>
+    </section>
+
+    <!-- 底部双按钮跳转区域 -->
+    <div class="nav-footer-btns">
+      <a href="rules.html" class="btn-secondary">
+        ← 上一步：发音与连读法则
+      </a>
+      <a href="index.html" class="btn-primary" style="padding: 12px 24px;">
+        返回总章全景图
+      </a>
+    </div>
+
+  </div>
+
+  <script src="global.js"></script>
+</body>
+</html>
