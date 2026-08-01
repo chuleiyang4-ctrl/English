@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 2: 长难句解构与从句嵌套</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .clause-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    
+    .code-block {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+    .code-keyword { color: #38bdf8; font-weight: bold; }
+    .code-main { color: #4ade80; }
+    .code-sub { color: #fbbf24; }
+    .code-comment { color: #94a3b8; font-style: italic; }
+
+    .pipeline-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      background: #f8faf9;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #e2e8e5;
+    }
+    .step-num {
+      background: var(--accent-green);
+      color: white;
+      font-weight: bold;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .nav-footer-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 0 30px 0;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      padding: 12px 20px;
+      background: #e2e8e5;
+      color: var(--text-primary);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #d1dad5;
+    }
+    .btn-primary {
+      padding: 12px 20px;
+      background: var(--accent-green);
+      color: #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 顶栏导航 -->
+    <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+      <a href="tense.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;">
+        ← 返回时态二维坐标系
+      </a>
+      <span class="badge">Phase 2 / Step 3</span>
+    </div>
+
+    <!-- 标题头 -->
+    <header style="margin-bottom: 20px;">
+      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">🌳 长难句解构与从句嵌套</h1>
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">
+        💡 <b>模块化编程视角</b>：主句是 <span class="code-tag">main()</span> 主函数，从句是调用的子程序。
+      </p>
+    </header>
+
+    <!-- 一、三大类从句的子程序解构 -->
+    <section class="clause-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">🧩 一、三大类从句的模块化拆解</h2>
+
+      <!-- 1. 名词性从句 -->
+      <div style="margin-bottom: 18px;">
+        <h3 style="font-size: 1rem; color: var(--text-primary);">1. 名词性从句 (Noun Clause) — 传递数据包/数据变量</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">
+          用一整句话充当主句的“主语”或“宾语”，充当数据输入的占位符。
+        </p>
+        <div class="code-block">
+          <span class="code-comment">// 逻辑：I know [数据包]</span><br>
+          <span class="code-main">I know</span> <span class="code-keyword">that</span> <span class="code-sub">AI will revolutionize language learning</span>.<br>
+          <span class="code-comment">// 拆解：[AI将颠覆语言学习] 这整句话作为数据，当作 know 的宾语。</span>
+        </div>
+      </div>
+
+      <!-- 2. 定语从句 -->
+      <div style="margin-bottom: 18px;">
+        <h3 style="font-size: 1rem; color: var(--text-primary);">2. 定语从句 (Attributive Clause) — 挂载属性装饰器 (Decorator)</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">
+          紧跟在某个名词（先行词）后面，专门为该名词提供扩展说明属性。
+        </p>
+        <div class="code-block">
+          <span class="code-comment">// 逻辑：The platform [扩展属性] is live.</span><br>
+          <span class="code-main">The platform</span> <span class="code-keyword">which</span> <span class="code-sub">we built yesterday</span> <span class="code-main">is live</span>.<br>
+          <span class="code-comment">// 拆解：which 引出子程序，修饰 platform。“我们昨天构建的”那个平台上线了。</span>
+        </div>
+      </div>
+
+      <!-- 3. 状语从句 -->
+      <div>
+        <h3 style="font-size: 1rem; color: var(--text-primary);">3. 状语从句 (Adverbial Clause) — 运行环境/条件分支控制</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">
+          控制主句动作发生的条件、时间、原因（相当于 if / when / because 逻辑判断）。
+        </p>
+        <div class="code-block">
+          <span class="code-comment">// 逻辑：if (条件成立) { 执行主程序 }</span><br>
+          <span class="code-keyword">If</span> <span class="code-sub">you master the atomic rules</span>, <span class="code-main">you can read any sentence</span>.<br>
+          <span class="code-comment">// 拆解：If 控制前置条件，成立后触发主句结果。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 二、长难句“剖析手术刀”流程 -->
+    <section class="clause-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">🔪 二、长难句拆解 3 步手术刀</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">
+        面对 30 字以上的超长句子，按照以下算法规程逐步“剥离”：
+      </p>
+
+      <div class="pipeline-step">
+        <div class="step-num">1</div>
+        <div>
+          <b>寻找 main() 主句谓语动词</b>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+            忽略所有由 <span class="code-tag">that / which / who / when / because</span> 引出的从句部分，找到整句话最核心的动作。
+          </p>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-num">2</div>
+        <div>
+          <b>划定子程序边界（加括号）</b>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+            找到从句连接词，顺着往后划定括号，直到遇到下一个主句动词或标点符号截止。
+          </p>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-num">3</div>
+        <div>
+          <b>还原底层受力骨架（5 大基本句型）</b>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+            将所有从句替换为 <span class="code-tag">[Data]</span> 或忽略装饰，长难句立刻还原为简单清晰的 <span class="code-tag">S + V + O</span>。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phase 2 终点自查 -->
+    <section class="clause-card" style="text-align: center;">
+      <h3>🎯 Phase 2 终点自查</h3>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
+        恭喜！完成以下检查，代表你已经通关了“句法建筑学”全貌：
+      </p>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 0.9rem;">
+        <label><input type="checkbox" class="task-checkbox"> 能用编程函数视角区分三大类从句</label>
+        <label><input type="checkbox" class="task-checkbox"> 掌握长难句寻找主句 main() 动词的拆解算法</label>
+        <label><input type="checkbox" class="task-checkbox"> 建立起“句子是模块化搭建”而非死记硬背的心智</label>
+      </div>
+    </section>
+
+    <!-- 底部三按钮导航 -->
+    <div class="nav-footer-btns">
+      <a href="tense.html" class="btn-secondary">← 上一步：时态二维坐标系</a>
+      <a href="index.html" class="btn-secondary">返回总章全景图</a>
+      <a href="vocab.html" class="btn-primary">下一步：Phase 3 词汇网络与语境 →</a>
+    </div>
+
+  </div>
+
+  <script src="global.js"></script>
+</body>
+</html>
