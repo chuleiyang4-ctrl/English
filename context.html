@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phase 3: 语境与高频场域沉浸</title>
+  <title>Phase 3: 语境映射与场景双轨制</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .context-card {
@@ -13,6 +13,34 @@
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    /* 场景双轨卡片网格 */
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .track-box {
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #e2e8e5;
+      background: #f8faf9;
+    }
+    .track-box.track-a {
+      border-top: 4px solid var(--accent-green);
+    }
+    .track-box.track-b {
+      border-top: 4px solid #3b82f6;
+    }
+    .track-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     /* 语境域比较表 */
@@ -99,15 +127,55 @@
 
     <!-- 标题头 -->
     <header style="margin-bottom: 20px;">
-      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">🎯 语境映射与高频场域</h1>
+      <h1 style="font-size: 1.6rem; margin-bottom: 6px;">🎯 语境映射与场景双轨制</h1>
       <p style="color: var(--text-secondary); font-size: 0.9rem;">
-        💡 <b>域驱动开发 (DDD) 视角</b>：脱离语境记词义是无效的，同一个 Key 在不同领域（Domain）下重载为不同含义。
+        💡 <b>按需掌控视角</b>：你不需要掌握 100% 的规则。分清场景轨道，用 20% 的核心能力 + AI 工具链覆盖 80% 的实战需求。
       </p>
     </header>
 
-    <!-- 一、词义域重载映射 -->
+    <!-- 一、场景双轨机制：按需掌控 (Dual-Track Strategy) -->
     <section class="context-card">
-      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">🔄 一、多域（Domain）词义重载对比</h2>
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">🛤️ 一、场景双轨制：你的个人语言策略</h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        根据应用场景的不同，将你的语言精力分为两条轨道，彻底摆脱“必须全背会”的焦虑：
+      </p>
+
+      <div class="track-grid">
+        <!-- 轨 A -->
+        <div class="track-box track-a">
+          <div class="track-title" style="color: var(--accent-green);">
+            ⚡ 轨 A：技术 / 产品与 AI 协同轨
+          </div>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 10px;">
+            <b>场景</b>：看英文技术文档、写高效 Prompt、操作 GitHub/Vercel、做产品分析。
+          </p>
+          <ul style="font-size: 0.82rem; color: var(--text-primary); padding-left: 16px; margin: 0; line-height: 1.6;">
+            <li><b>核心目标</b>：追求高精度与结构化表达。</li>
+            <li><b>你需掌握 (80%)</b>：掌握主句 `main()` 寻找法、词根 API 推导、编写约束 Prompt。</li>
+            <li><b>交给 AI</b>：复杂的语法纠错、高级修辞润色、长文草稿填充。</li>
+          </ul>
+        </div>
+
+        <!-- 轨 B -->
+        <div class="track-box track-b">
+          <div class="track-title" style="color: #3b82f6;">
+            📖 轨 B：人文原著与深皮沉浸轨
+          </div>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 10px;">
+            <b>场景</b>：看经典名著原文、外刊报道、YouTube 深度访谈 (如马斯克/老高)。
+          </p>
+          <ul style="font-size: 0.82rem; color: var(--text-primary); padding-left: 16px; margin: 0; line-height: 1.6;">
+            <li><b>核心目标</b>：追求无缝沉浸与直觉捕捉。</li>
+            <li><b>你需掌握 (20%)</b>：0.5s 影子跟读的声学直觉、跳过“中译中”直接抓画面。</li>
+            <li><b>交给 AI</b>：遇到生僻名词/古典词汇，直接划词或让 AI 解读，<b>绝死背</b>。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 二、多域（Domain）词义重载对比 -->
+    <section class="context-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">🔄 二、多域（Domain）词义重载对比</h2>
       <p style="font-size: 0.85rem; color: var(--text-secondary);">
         观察高频核心词在不同场景域（Context Domain）下的含义重载：
       </p>
@@ -150,26 +218,26 @@
       </table>
     </section>
 
-    <!-- 二、真实场景语境沉浸策略 -->
+    <!-- 三、高效内化语境的“三维沉浸法” -->
     <section class="context-card">
-      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">🚀 二、高效内化语境的“三维沉浸法”</h2>
+      <h2 style="font-size: 1.2rem; margin-bottom: 8px;">🚀 三、双轨实战沉浸策略</h2>
       
       <div class="scenario-box">
-        <b>1. 原文优先，拒绝二手翻译</b>
+        <b>1. 原文优先，拒绝二手翻译（轨 B 核心）</b>
         <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">
-          翻译往往丢失了原文的物理语气和精确语义。直接阅读英文技术文档、原版书籍或专业访谈，建立无缝直觉。
+          翻译往往丢失了原文的物理语气和精确语义。直接阅读英文技术文档与原版名著，建立无缝直觉。
         </p>
       </div>
 
       <div class="scenario-box">
-        <b>2. 动态场景组词（Chunking）</b>
+        <b>2. 动态场景组词（Chunking 块记忆）</b>
         <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">
           不要背单个单词，记高频搭配块（Collocations），例如：<span class="code-tag">deploy an app</span>、<span class="code-tag">fetch data</span>、<span class="code-tag">resolve conflict</span>。
         </p>
       </div>
 
       <div class="scenario-box">
-        <b>3. AI 交互即实时练习场</b>
+        <b>3. AI 交互即实时练习场（轨 A 核心）</b>
         <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">
           将 AI 助手作为全天候的英文对话伙伴，在实际解决产品、代码和设计问题中输出英文。
         </p>
@@ -180,12 +248,12 @@
     <section class="context-card" style="text-align: center;">
       <h3>🎯 Phase 3 全局通关自查</h3>
       <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px 0 16px 0;">
-        确认你已完成 Phase 3 词汇与语境的内化训练：
+        确认你已建立场景双轨制与语境内化思维：
       </p>
       <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 0.9rem;">
+        <label><input type="checkbox" class="task-checkbox"> 明确轨 A (技术/AI 协同) 与 轨 B (原著/人文沉浸) 的区别</label>
         <label><input type="checkbox" class="task-checkbox"> 理解同一单词在不同 Domain 下的含义重载</label>
         <label><input type="checkbox" class="task-checkbox"> 建立以“语境搭配块 (Chunk)”而非单个词表达的习惯</label>
-        <label><input type="checkbox" class="task-checkbox"> 习惯直接阅读原汁原味的英文文本与技术文档</label>
       </div>
     </section>
 
@@ -193,7 +261,7 @@
     <div class="nav-footer-btns">
       <a href="vocab.html" class="btn-secondary">← 上一步：词汇网络与算法</a>
       <a href="index.html" class="btn-secondary">返回总章全景图</a>
-      <a href="speaking.html" class="btn-primary">下一步：Phase 4 听力与口语输出 →</a>
+      <a href="speaking.html" class="btn-primary">下一步：Phase 4 Step 1 实时听说与肌肉记忆 →</a>
     </div>
 
   </div>
