@@ -44,7 +44,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       padding: 24px 0 30px 0;
       flex-wrap: wrap;
     }
@@ -55,11 +55,24 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: background 0.2s;
     }
     .btn-secondary:hover {
       background: #d1dad5;
+    }
+    .btn-primary {
+      padding: 12px 20px;
+      background: var(--accent-green);
+      color: #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -155,14 +168,11 @@
       </div>
     </section>
 
-    <!-- 底部导航 -->
+    <!-- 底部三按钮导航 -->
     <div class="nav-footer-btns">
-      <a href="phonetics.html" class="btn-secondary">
-        ← 上一步：音标周期表
-      </a>
-      <a href="index.html" class="btn-primary" style="padding: 12px 24px;">
-        返回总章全景图
-      </a>
+      <a href="phonetics.html" class="btn-secondary">← 上一步：音标周期表</a>
+      <a href="index.html" class="btn-secondary">返回总章全景图</a>
+      <a href="grammar.html" class="btn-primary">下一步：Phase 2 句法建筑学 →</a>
     </div>
 
   </div>
