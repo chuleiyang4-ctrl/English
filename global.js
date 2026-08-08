@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bar.setAttribute("aria-label", "Learning tools");
     bar.innerHTML = `<div class="learning-toolbar-inner">
       <a class="english-brand" href="index.html" aria-label="English home"><span aria-hidden="true">E</span><strong>English</strong></a>
-      <button class="notebook-tool" type="button" aria-label="Open Notebook">Notebook</button>
+      <button class="notebook-tool" type="button" data-notebook-open aria-label="Open Notebook">Notebook</button>
       <button class="ai-tool" type="button" aria-label="Open English AI" aria-controls="english-ai-panel" aria-expanded="false">AI</button>
       <button class="profile-tool" type="button">Profile</button>
     </div>`;
