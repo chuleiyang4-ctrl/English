@@ -1,102 +1,37 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>总章：英语是一套可以看懂的系统</title>
-  <!-- 引入全局样式 -->
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="English courses on Lumina Atlas.">
+  <title>English Courses — Lumina Atlas</title>
+  <link rel="stylesheet" href="atlas-shell.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="notebook.css">
+  <link rel="stylesheet" href="math-ai.css">
+  <style>
+    :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 80% 0,rgba(87,217,238,.1),transparent 28rem),var(--bg);color:var(--text);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.english-main{width:min(1120px,calc(100% - 32px));margin:auto;padding:54px 0 90px}.eyebrow{margin:0 0 8px;color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.18em}.english-main h1{margin:0;font-size:clamp(34px,5vw,56px);letter-spacing:-.045em}.lead{margin:8px 0 28px;color:var(--muted);font-size:16px}.curriculum{display:grid;gap:12px}.course-card{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(14,23,41,.8);color:inherit;text-decoration:none}.course-card:hover{border-color:#3f7891}.course-number{display:grid;place-items:center;width:42px;height:42px;border:1px solid #36758b;border-radius:12px;color:var(--cyan);font-weight:800}.course-card strong{display:block;font-size:17px}.course-card small{color:var(--muted)}.status{color:var(--cyan);font-size:12px}.empty-search{color:var(--muted);padding:24px;text-align:center}.ai-panel{top:68px}.site-footer{width:min(1120px,calc(100% - 32px));margin:auto;padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}@media(max-width:600px){.english-main{padding-top:34px}.course-card{grid-template-columns:48px 1fr}.status{grid-column:2}}
+  </style>
 </head>
 <body>
-
-  <div class="container">
-    
-    <!-- 头部标语 -->
-    <header style="margin-bottom: 30px;">
-      <h1 style="font-size: 1.8rem; margin-bottom: 8px;">总章：英语是一套可以看懂的系统</h1>
-      <p style="color: var(--text-secondary); font-weight: 500;">
-        English is not a pile of lessons. It is a system you can see, understand, and use.
-      </p>
-    </header>
-
-    <!-- 顶栏按钮 -->
-    <div style="margin-bottom: 24px;">
-      <a href="phonetics.html" class="btn-primary">🚀 开始 Phase 1：声音地图</a>
-    </div>
-
-    <!-- 板块一 -->
-    <section class="card">
-      <h2>📜 一、 英语从哪里来？</h2>
-      <p style="margin-top: 8px; color: var(--text-secondary);">
-        英语属于西日耳曼语支，历史上大量吸收了法语与拉丁语词汇。这段历史留下了三个结果：
-      </p>
-      <ul style="margin: 12px 0 12px 20px;">
-        <li><b>一个意思，不同来源的词</b>：<code>ask</code> (日常) → <code>question</code> (正式) → <code>interrogate</code> (专业)</li>
-        <li><b>拼写与发音严重脱节</b>：发音跑到了现在，拼写还停在过去（如 
-          <span class="has-popover">knight
-            <span class="popover-content">📜 14 世纪的中世纪英语里 k 是发音的，后来发音省了，但印刷术把拼写给死死固定住了。</span>
-          </span>）。
-        </li>
-        <li><b>不规则变化，多为历史遗留</b>：<code>go</code> → <code>went</code>，这是历史借壳，不是逻辑讲不通。</li>
-      </ul>
-      <p style="font-size: 0.85rem; color: var(--text-secondary); background: #f8faf9; padding: 8px 12px; border-radius: 6px;">
-        💡 <b>例外封装</b>：遇到历史例外，页面会标注 📜 划线，点击或悬停即可弹窗说明。
-      </p>
+  <header class="atlas-topbar"><div class="atlas-topbar-inner">
+    <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
+    <form class="atlas-search" role="search"><input id="english-search" type="search" placeholder="Search courses" aria-label="Search English courses" autocomplete="off"></form>
+    <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
+    <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
+    <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
+  </div></header>
+  <aside id="english-ai-panel" class="ai-panel" aria-hidden="true"></aside>
+  <main class="english-main">
+    <p class="eyebrow">ENGLISH</p><h1>English Courses</h1><p class="lead">A clear path through sound, vocabulary, grammar, meaning, and communication.</p>
+    <section class="curriculum" aria-label="English curriculum">
+      <a class="course-card" data-search="english foundations overview system" href="#"><span class="course-number">01</span><span><strong>English Foundations</strong><small>The curriculum is being rebuilt in English.</small></span><span class="status">In development</span></a>
     </section>
-
-    <!-- 板块二 -->
-    <section class="card">
-      <h2>⚙️ 二、 英语怎么运行？（四大模型）</h2>
-      <ul style="margin: 12px 0 0 20px; line-height: 1.8;">
-        <li><b>🔊 声音是有限的对比单位</b>：以美式（GA）为主线，英式作为差异对比。</li>
-        <li><b>🧩 动词驱动句子</b>：每个独立分句通常需要一个核心谓语，负责表达动作、时间与语气。</li>
-        <li><b>📍 结构揭示角色</b>：位置给出线索，语境决定含义。同一个词放在不同位置，身份会变。</li>
-        <li><b>🎯 先核心，后附加</b>：永远先抓住“谁 + 做了什么”，再挂载修饰细节。</li>
-      </ul>
-    </section>
-
-    <!-- 板块三 -->
-    <section class="card">
-      <h2>🧭 三、 英语由什么组成？</h2>
-      <p><b>知识图谱</b>：🔊 声音 → 📖 词汇 → 🏗️ 句法 → 💭 语义 → 🗣️ 语境 → 📄 篇章</p>
-      <p style="margin-top: 6px;"><b>能力参照</b>：👂 听 · 🗨️ 说 · 👀 读 · ✍️ 写 · 🔄 互动</p>
-    </section>
-
-    <!-- 板块四 -->
-    <section class="card">
-      <h2>🪜 四、 本站的搭建结构</h2>
-      <p><b>Phase 1</b> 🔊 声音系统（44 个发音原子）</p>
-      <p><b>Phase 2</b> 🧩 基础句子系统（5 大句型框架）</p>
-      <p><b>Phase 3</b> 📖 高频词块与场景表达</p>
-      <p><b>Phase 4</b> 🎯 场景扩展与专项参考</p>
-    </section>
-
-    <!-- 板块五 -->
-    <section class="card">
-      <h2>🎨 五、 本站的设计与使用原则</h2>
-      <ul style="margin: 12px 0 0 20px; line-height: 1.8;">
-        <li><b>⚫⚪ 主干优先</b> —— 只讲 90% 通用的核心逻辑，拒绝冗余。</li>
-        <li><b>📜 例外封装</b> —— 历史例外收进小卡片，不干扰推导。</li>
-        <li><b>🌐 口音双轨</b> —— 默认美式（GA）为主线，英式差异封装进卡片，按需点开。</li>
-        <li><b>💡 母语脚手架</b> —— 解释支持母语参考，例句保持 100% 纯英文。</li>
-        <li><b>🏷️ 场景双轨制</b> —— 用途维度 <code>(日常/职场/学术)</code> 与 难度星级 <code>(●/●●/●●●)</code> 独立标注。</li>
-      </ul>
-      <hr style="border: none; border-top: 1px solid var(--border-color); margin: 16px 0;">
-      <p style="font-size: 0.85rem; color: var(--text-secondary);">
-        📌 <b>声明</b>：本站提供清晰的系统架构图谱与逻辑拆解，不提供强制性教学与结果承诺。语言的掌握取决于使用者自身的实践。
-      </p>
-    </section>
-
-    <!-- 底部导航 -->
-    <div style="text-align: center; padding: 20px 0;">
-      <a href="phonetics.html" class="btn-primary" style="padding: 14px 32px; font-size: 1.05rem;">
-        🚀 读懂全景图，进入 Phase 1 发音周期表
-      </a>
-    </div>
-
-  </div>
-
-  <!-- 引入全局逻辑 -->
+    <p class="empty-search" hidden>No matching course was found.</p>
+  </main>
+  <footer class="site-footer">© <span id="year"></span> Lumina Atlas</footer>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
   <script src="global.js"></script>
 </body>
 </html>
