@@ -1,6 +1,6 @@
-// 鍏ㄥ眬浜や簰鑴氭湰锛氬鐞嗗皬鍗＄墖浜や簰涓庤嚜鏌ュ閫夋璁板繂
+// 全局交互脚本：处理小卡片交互与自查复选框记忆
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. 澶勭悊绉诲姩绔偣鍑诲脊鍑哄皬鍗＄墖锛堝吋瀹规墜鏈鸿Е鎽革級
+  // 1. 处理移动端点击弹出小卡片（兼容手机触摸）
   const popovers = document.querySelectorAll('.has-popover');
   popovers.forEach(el => {
     el.addEventListener('click', (e) => {
@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     popovers.forEach(el => el.classList.remove('active'));
   });
 
-  // 2. 鑷姩璁板繂鑷煡 Checkbox 鐨勬墦鍗＄姸鎬?  const checkboxes = document.querySelectorAll('.task-checkbox');
+  // 2. 自动记忆自查 Checkbox 的打卡状态
+  const checkboxes = document.querySelectorAll('.task-checkbox');
   checkboxes.forEach((cb, index) => {
     const savedState = localStorage.getItem(`task_cb_${index}`);
     if (savedState === 'true') cb.checked = true;
