@@ -72,8 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mountLearningTools);
   else mountLearningTools();
   addScript("auth-config.js");
-  addScript("auth.js?v=20260809-unified-auth");
+  addScript("account.js?v=20260809-unified-auth");
   addScript("notebook.js");
   addScript("english-ai.js");
 })();
-
