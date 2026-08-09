@@ -4,13 +4,11 @@
   const initialize = () => {
     const search=document.getElementById("english-search");
     if(search){search.addEventListener("input",()=>{const query=search.value.trim().toLowerCase();const cards=[...document.querySelectorAll(".course-card")];cards.forEach(card=>card.hidden=Boolean(query&&!card.dataset.search.includes(query)));const empty=document.querySelector(".empty-search");if(empty)empty.hidden=cards.some(card=>!card.hidden);});search.closest("form").addEventListener("submit",event=>event.preventDefault());}
-    const aiButton=document.querySelector(".ai-tool"),panel=document.getElementById("english-ai-panel");
-    if(aiButton&&panel){aiButton.addEventListener("click",()=>{const open=!panel.classList.contains("is-open");panel.classList.toggle("is-open",open);panel.setAttribute("aria-hidden",String(!open));aiButton.setAttribute("aria-expanded",String(open));});}
   };
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initialize);else initialize();
   addScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2");
   addScript("auth-config.js");
   addScript("account.js?v=20260809-unified-auth");
   addScript("notebook.js");
-  addScript("english-ai.js");
+  addScript("atlas-ai.js");
 })();

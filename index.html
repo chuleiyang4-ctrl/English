@@ -14,7 +14,7 @@
     *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 80% 0,rgba(87,217,238,.1),transparent 28rem),var(--bg);color:var(--text);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.english-main{width:min(1120px,calc(100% - 32px));margin:auto;padding:54px 0 90px}.eyebrow{margin:0 0 8px;color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.18em}.english-main h1{margin:0;font-size:clamp(34px,5vw,56px);letter-spacing:-.045em}.lead{margin:8px 0 28px;color:var(--muted);font-size:16px}.curriculum{display:grid;gap:12px}.course-card{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(14,23,41,.8);color:inherit;text-decoration:none}.course-card:hover{border-color:#3f7891}.course-number{display:grid;place-items:center;width:42px;height:42px;border:1px solid #36758b;border-radius:12px;color:var(--cyan);font-weight:800}.course-card strong{display:block;font-size:17px}.course-card small{color:var(--muted)}.status{color:var(--cyan);font-size:12px}.empty-search{color:var(--muted);padding:24px;text-align:center}.ai-panel{top:68px}.site-footer{width:min(1120px,calc(100% - 32px));margin:auto;padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}@media(max-width:600px){.english-main{padding-top:34px}.course-card{grid-template-columns:48px 1fr}.status{grid-column:2}}
   </style>
 </head>
-<body>
+<body data-subject="english">
   <header class="atlas-topbar"><div class="atlas-topbar-inner">
     <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
     <form class="atlas-search" role="search"><input id="english-search" type="search" placeholder="Search courses" aria-label="Search English courses" autocomplete="off"></form>
@@ -22,7 +22,7 @@
     <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
     <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
   </div></header>
-  <aside id="english-ai-panel" class="ai-panel" aria-hidden="true"></aside>
+  <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about the current page, request examples, or practise English step by step." aria-hidden="true"></aside>
   <main class="english-main">
     <p class="eyebrow">ENGLISH</p><h1>English Courses</h1><p class="lead">A clear path through sound, vocabulary, grammar, meaning, and communication.</p>
     <section class="curriculum" aria-label="English curriculum">
