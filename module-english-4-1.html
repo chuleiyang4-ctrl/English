@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bypass the mental-translation middleman. Build a direct reflex arc from your ears to your speech muscles with a 3-pass shadowing pipeline.">
+  <title>Real-Time Listening &amp; Shadowing — Lumina Atlas</title>
+  <link rel="stylesheet" href="atlas-shell.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="notebook.css">
+  <link rel="stylesheet" href="math-ai.css">
+  <style>
+    :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.lesson-main{width:min(860px,calc(100% - 32px));margin:auto;padding:56px 0 90px}.lesson-kicker{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.16em}.lesson-main h1{font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.04em;margin:10px 0 16px}.lesson-summary{color:var(--muted);font-size:18px}.lesson-section{margin-top:48px}.lesson-section h2{font-size:26px}.example,.exercise{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}details.answer{margin-top:12px}details.answer summary{color:var(--cyan);cursor:pointer}.lesson-nav{display:flex;justify-content:space-between;gap:12px;margin-top:64px}.lesson-nav a{color:var(--cyan)}
+
+    /* ---- #shadowLab: lesson-specific styling, scoped to this page only ---- */
+    #shadowLab{display:grid;gap:36px}
+    #shadowLab .scope-tag{display:inline-flex;gap:8px;align-items:center;margin-top:10px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;font-weight:650}
+    #shadowLab .scope-tag b{color:var(--cyan);font-weight:800}
+    #shadowLab p.lead{color:var(--muted);font-size:16px;margin:0 0 8px}
+    #shadowLab .diagram-wrap{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px}
+    #shadowLab .diagram-wrap svg{display:block;width:100%;height:auto}
+    #shadowLab .diagram-caption{margin-top:12px;color:var(--muted);font-size:13px}
+    #shadowLab .step-card{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+    #shadowLab .step-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px}
+    #shadowLab .step-title{font-weight:800;color:var(--cyan);font-size:15px}
+    #shadowLab .diff-stars{color:#e8b95f;font-size:11px;letter-spacing:.08em;flex:none;white-space:nowrap}
+    #shadowLab .step-card p{margin:4px 0 0;color:var(--muted);font-size:13.5px;line-height:1.6}
+  </style>
+</head>
+<body data-subject="english" data-lesson-id="4.1">
+  <header class="atlas-topbar"><div class="atlas-topbar-inner">
+    <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
+    <form class="atlas-search" role="search" action="/"><input type="search" name="q" placeholder="Search courses" aria-label="Search courses"></form>
+    <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
+    <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
+    <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
+  </div></header>
+  <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about this lesson, request examples, or practise English step by step." aria-hidden="true"></aside>
+  <main class="lesson-main">
+    <p class="lesson-kicker">ENGLISH · LESSON 4.1</p>
+    <h1>Real-Time Listening &amp; Shadowing</h1>
+    <p class="lesson-summary">Bypass the mental-translation middleman. The goal is a direct reflex arc — audio goes in one ear and comes straight back out through your speech muscles, with no detour through your native language.</p>
+    <span class="scope-tag"><b>Practice method</b> · trains both Track A and Track B from Lesson 3.2</span>
+
+    <section class="lesson-section" id="shadowLab">
+
+      <div>
+        <h2 style="margin-bottom:4px">I. Two Pathways From Ear to Mouth</h2>
+        <p class="lead">Most learners default to the slow pathway without realizing it. Shadowing trains the fast one on purpose.</p>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 680 240" role="img" aria-label="Diagram contrasting a slow translation relay pathway with a fast 0.5 second direct shadowing pathway">
+            <g font-family="Inter,ui-sans-serif,sans-serif" font-size="12">
+              <text x="20" y="35" fill="#98a6bf" font-weight="700">✕ Avoid — the translation relay</text>
+              <rect x="20" y="48" width="110" height="34" rx="8" fill="#171f30" stroke="#3a4a68"></rect><text x="75" y="69" text-anchor="middle" fill="#98a6bf">English audio</text>
+              <line x1="130" y1="65" x2="158" y2="65" stroke="#3a4a68" stroke-width="2"></line>
+              <rect x="160" y="48" width="130" height="34" rx="8" fill="#171f30" stroke="#3a4a68"></rect><text x="225" y="69" text-anchor="middle" fill="#98a6bf">Translate to L1</text>
+              <line x1="290" y1="65" x2="318" y2="65" stroke="#3a4a68" stroke-width="2"></line>
+              <rect x="320" y="48" width="130" height="34" rx="8" fill="#171f30" stroke="#3a4a68"></rect><text x="385" y="69" text-anchor="middle" fill="#98a6bf">Compose in L1</text>
+              <line x1="450" y1="65" x2="478" y2="65" stroke="#3a4a68" stroke-width="2"></line>
+              <rect x="480" y="48" width="90" height="34" rx="8" fill="#171f30" stroke="#3a4a68"></rect><text x="525" y="69" text-anchor="middle" fill="#98a6bf">Speak</text>
+              <line x1="30" y1="45" x2="560" y2="85" stroke="#e05f5f" stroke-width="1.5" opacity=".55"></line>
+              <line x1="30" y1="85" x2="560" y2="45" stroke="#e05f5f" stroke-width="1.5" opacity=".55"></line>
+
+              <text x="20" y="140" fill="#7ee0a8" font-weight="700">✓ Target — the direct reflex</text>
+              <rect x="20" y="153" width="110" height="34" rx="8" fill="#0e2a33" stroke="#57d9ee" stroke-width="2"></rect><text x="75" y="174" text-anchor="middle" fill="#edf3ff">English audio</text>
+              <line x1="130" y1="170" x2="188" y2="170" stroke="#e8b95f" stroke-width="2.5" marker-end="url(#arrY)"></line>
+              <rect x="190" y="153" width="130" height="34" rx="8" fill="#2a2413" stroke="#e8b95f" stroke-width="2"></rect><text x="255" y="174" text-anchor="middle" fill="#e8b95f">0.5s buffer</text>
+              <line x1="320" y1="170" x2="378" y2="170" stroke="#7ee0a8" stroke-width="2.5" marker-end="url(#arrG)"></line>
+              <rect x="380" y="153" width="150" height="34" rx="8" fill="#122a1e" stroke="#7ee0a8" stroke-width="2"></rect><text x="455" y="174" text-anchor="middle" fill="#7ee0a8">Speech muscles</text>
+
+              <defs>
+                <marker id="arrY" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#e8b95f"></path></marker>
+                <marker id="arrG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7ee0a8"></path></marker>
+              </defs>
+            </g>
+          </svg>
+          <p class="diagram-caption">The relay path forces every sentence through a full round-trip of translation before you can respond — slow, and it strips out the rhythm you built in Phase 1. Shadowing trains the short path: hear it, hold it half a second, say it — no detour through your native language.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">II. The 3-Pass Immersion Pipeline</h2>
+        <p class="lead">Run these three passes over the same short audio clip, in order.</p>
+        <div style="display:grid;gap:12px">
+          <div class="step-card">
+            <div class="step-head"><span class="step-title">Pass 1 — Pure Acoustic Input</span><span class="diff-stars">●</span></div>
+            <p>No text. Listen only for stress, falling tone, weak forms, and where words link together. Mark where the audio feels like it "blurs."</p>
+          </div>
+          <div class="step-card">
+            <div class="step-head"><span class="step-title">Pass 2 — 0.5-Second Delay Shadowing</span><span class="diff-stars">●●●</span></div>
+            <p>Play the audio again. Wait roughly half a second, then speak along, copying the rhythm and intonation exactly. Don't stop to think about meaning — protect the continuity of your speech muscles above all else.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-head"><span class="step-title">Pass 3 — Real-Time AI Roleplay</span><span class="diff-stars">●●</span></div>
+            <p>Switch to a live AI voice mode, set a concrete scenario (a code review, an interview), and practise low-latency back-and-forth conversation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Practice</h2>
+      <div class="exercise">
+        <p>During Pass 2, you catch yourself pausing mid-sentence to work out what a phrase means before continuing to shadow it. What does that pause actually indicate, and what should you do about it in the moment?</p>
+        <details class="answer">
+          <summary>Show answer</summary>
+          <p>That pause means you slipped back onto the translation-relay pathway — meaning-hunting interrupted the direct reflex. In the moment, don't stop to solve it: keep shadowing the rhythm even if a word or two comes out approximate. Meaning can be recovered afterward on a second pass; muscle continuity is the entire point of Pass 2, and stopping breaks exactly the reflex you're trying to build.</p>
+        </details>
+      </div>
+    </section>
+
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a href="module-english-3-2.html">← Previous: Context, Register &amp; the Two-Track Strategy</a>
+      <a href="index.html">Back to course map</a>
+    </nav>
+  </main>
+  <script src="global.js?v=20260810-unified-ai"></script>
+</body>
+</html>

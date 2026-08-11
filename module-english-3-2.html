@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="You don't need to master 100% of English. Split your effort into two tracks by scenario, and see how the same word carries completely different meanings across domains.">
+  <title>Context, Register &amp; the Two-Track Strategy — Lumina Atlas</title>
+  <link rel="stylesheet" href="atlas-shell.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="notebook.css">
+  <link rel="stylesheet" href="math-ai.css">
+  <style>
+    :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.lesson-main{width:min(860px,calc(100% - 32px));margin:auto;padding:56px 0 90px}.lesson-kicker{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.16em}.lesson-main h1{font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.04em;margin:10px 0 16px}.lesson-summary{color:var(--muted);font-size:18px}.lesson-section{margin-top:48px}.lesson-section h2{font-size:26px}.example,.exercise{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}details.answer{margin-top:12px}details.answer summary{color:var(--cyan);cursor:pointer}.lesson-nav{display:flex;justify-content:space-between;gap:12px;margin-top:64px}.lesson-nav a{color:var(--cyan)}
+
+    /* ---- #contextMap: lesson-specific styling, scoped to this page only ---- */
+    #contextMap{display:grid;gap:36px}
+    #contextMap .scope-tag{display:inline-flex;gap:8px;align-items:center;margin-top:10px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;font-weight:650}
+    #contextMap .scope-tag b{color:var(--cyan);font-weight:800}
+    #contextMap p.lead{color:var(--muted);font-size:16px;margin:0 0 8px}
+    #contextMap .track-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:16px}
+    #contextMap .track-box{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+    #contextMap .track-a{border-top:4px solid #7ee0a8}
+    #contextMap .track-b{border-top:4px solid #57d9ee}
+    #contextMap .track-title{font-size:16px;font-weight:800;margin-bottom:8px}
+    #contextMap .track-box p{margin:0 0 10px;color:var(--muted);font-size:13.5px}
+    #contextMap .track-box ul{margin:0;padding-left:18px;font-size:13px;color:var(--text);line-height:1.65}
+    #contextMap .track-box ul b{color:var(--cyan)}
+    #contextMap .diagram-wrap{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px}
+    #contextMap .diagram-wrap svg{display:block;width:100%;height:auto}
+    #contextMap .diagram-caption{margin-top:12px;color:var(--muted);font-size:13px}
+    #contextMap table.domain{width:100%;border-collapse:collapse;margin-top:18px;font-size:13.5px}
+    #contextMap table.domain th,#contextMap table.domain td{border:1px solid var(--line);padding:11px;text-align:left;vertical-align:top}
+    #contextMap table.domain th{background:#101c33;color:var(--muted);font-size:12px}
+    #contextMap .word-key{font-family:ui-monospace,monospace;font-weight:800;color:var(--cyan);background:#0e2a33;padding:2px 8px;border-radius:5px}
+    #contextMap .scenario-box{padding:16px 18px;border-left:3px solid var(--cyan);border-radius:0 12px 12px 0;background:var(--surface);border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+    #contextMap .scenario-box b{display:block;margin-bottom:4px;font-size:14.5px}
+    #contextMap .scenario-box p{margin:0;color:var(--muted);font-size:13.5px}
+    #contextMap .code{font-family:ui-monospace,monospace;background:#101c33;color:var(--text);padding:1px 7px;border-radius:5px;font-size:13px}
+    @media(max-width:640px){#contextMap table.domain{font-size:12px}}
+  </style>
+</head>
+<body data-subject="english" data-lesson-id="3.2">
+  <header class="atlas-topbar"><div class="atlas-topbar-inner">
+    <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
+    <form class="atlas-search" role="search" action="/"><input type="search" name="q" placeholder="Search courses" aria-label="Search courses"></form>
+    <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
+    <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
+    <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
+  </div></header>
+  <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about this lesson, request examples, or practise English step by step." aria-hidden="true"></aside>
+  <main class="lesson-main">
+    <p class="lesson-kicker">ENGLISH · LESSON 3.2</p>
+    <h1>Context, Register &amp; the Two-Track Strategy</h1>
+    <p class="lesson-summary">You don't need 100% mastery of English — you need to know which 20% matters for your actual scenario. Split your effort into two tracks, and learn to read the same word differently depending on which domain it lands in.</p>
+    <span class="scope-tag"><b>Foundational</b> · used across Daily, Workplace &amp; Academic English alike</span>
+
+    <section class="lesson-section" id="contextMap">
+
+      <div>
+        <h2 style="margin-bottom:4px">I. The Two-Track Strategy — Your Personal Language Plan</h2>
+        <p class="lead">Split your effort by scenario, and drop the anxiety that you need to memorize everything.</p>
+
+        <div class="track-grid">
+          <div class="track-box track-a">
+            <div class="track-title" style="color:#7ee0a8">⚡ Track A — Tech, Product &amp; AI Collaboration</div>
+            <p><b>Where it applies:</b> reading technical docs, writing effective prompts, working in GitHub/Vercel, product analysis.</p>
+            <ul>
+              <li><b>Goal:</b> precision and structured expression.</li>
+              <li><b>What you need (80%):</b> the main()-verb method, root-based vocabulary derivation, writing constrained prompts.</li>
+              <li><b>Hand off to AI:</b> deep grammar correction, advanced polishing, filling in long drafts.</li>
+            </ul>
+          </div>
+          <div class="track-box track-b">
+            <div class="track-title" style="color:#57d9ee">📖 Track B — Long-Form Reading &amp; Immersion</div>
+            <p><b>Where it applies:</b> reading classic literature, long-form journalism, in-depth interviews and podcasts.</p>
+            <ul>
+              <li><b>Goal:</b> seamless immersion and intuitive comprehension.</li>
+              <li><b>What you need (20%):</b> shadowing reflexes, catching meaning directly without mentally translating.</li>
+              <li><b>Hand off to AI:</b> look up rare or literary vocabulary on the spot — never memorize it by rote.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">II. The Same Word, Different Domains</h2>
+        <p class="lead">High-frequency words don't carry one fixed meaning — they get "overloaded" depending on which domain you're in.</p>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 620 260" role="img" aria-label="Diagram showing the word deploy branching into three different meanings across daily, tech, and business domains">
+            <g stroke="#3a4a68" stroke-width="1.5">
+              <line x1="310" y1="130" x2="120" y2="60"></line>
+              <line x1="310" y1="130" x2="310" y2="230"></line>
+              <line x1="310" y1="130" x2="500" y2="60"></line>
+            </g>
+            <g font-family="Inter,ui-sans-serif,sans-serif">
+              <circle cx="310" cy="130" r="10" fill="#0e1729" stroke="#57d9ee" stroke-width="2.5"></circle>
+              <text x="310" y="112" text-anchor="middle" fill="#edf3ff" font-weight="800" font-size="18" font-family="ui-monospace,monospace">deploy</text>
+
+              <circle cx="120" cy="60" r="6" fill="#7ee0a8"></circle>
+              <text x="120" y="42" text-anchor="middle" fill="#7ee0a8" font-weight="700" font-size="12.5">Daily</text>
+              <text x="120" y="80" text-anchor="middle" fill="#98a6bf" font-size="11.5">deploy troops</text>
+
+              <circle cx="500" cy="60" r="6" fill="#57d9ee"></circle>
+              <text x="500" y="42" text-anchor="middle" fill="#57d9ee" font-weight="700" font-size="12.5">Tech</text>
+              <text x="500" y="80" text-anchor="middle" fill="#98a6bf" font-size="11.5">push code live</text>
+
+              <circle cx="310" cy="230" r="6" fill="#8b7ee0"></circle>
+              <text x="310" y="212" text-anchor="middle" fill="#8b7ee0" font-weight="700" font-size="12.5" transform="translate(0,36)">Business</text>
+              <text x="310" y="252" text-anchor="middle" fill="#98a6bf" font-size="11.5">allocate capital</text>
+            </g>
+          </svg>
+          <p class="diagram-caption">Same five letters, three unrelated-sounding meanings — but all share one root idea: "to put something into active position." Once you see that thread, the domain jump stops feeling arbitrary.</p>
+        </div>
+
+        <table class="domain">
+          <thead><tr><th>Key word</th><th>Everyday / Daily</th><th>Tech / Programming</th><th>Business / Finance</th></tr></thead>
+          <tbody>
+            <tr><td><span class="word-key">execute</span></td><td>to carry out, to perform</td><td>to run a program or code block</td><td>to sign and make a contract legally binding</td></tr>
+            <tr><td><span class="word-key">terminal</span></td><td>an airport terminal / an endpoint</td><td>a command-line console</td><td>terminal value — a business's projected worth beyond the forecast period</td></tr>
+            <tr><td><span class="word-key">pool</span></td><td>a swimming pool</td><td>a thread pool / resource pool</td><td>a funding pool / pooled investment</td></tr>
+            <tr><td><span class="word-key">deploy</span></td><td>to deploy troops</td><td>to release or ship code to production</td><td>to allocate capital or resources</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">III. Making Context Stick</h2>
+        <div style="display:grid;gap:12px">
+          <div class="scenario-box">
+            <b>1. Read the original — skip the secondhand translation (core to Track B)</b>
+            <p>Translation almost always loses the original's exact tone and precision. Read technical docs and original-language literature directly to build a seamless intuition for meaning.</p>
+          </div>
+          <div class="scenario-box">
+            <b>2. Learn in chunks, not single words</b>
+            <p>Don't memorize isolated vocabulary — memorize high-frequency collocations instead: <span class="code">deploy an app</span>, <span class="code">fetch data</span>, <span class="code">resolve conflict</span>.</p>
+          </div>
+          <div class="scenario-box">
+            <b>3. Treat AI conversation as a live practice ground (core to Track A)</b>
+            <p>Use an AI assistant as an always-available English conversation partner — produce real English output while actually solving product, code, or design problems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Practice</h2>
+      <div class="exercise">
+        <p>You read this sentence in a startup's engineering blog: <b>"We deploy every Friday, and the pool handles retries automatically."</b> Which domain are both <i>deploy</i> and <i>pool</i> operating in here, and what do they mean?</p>
+        <details class="answer">
+          <summary>Show answer</summary>
+          <p>Both words are in the <b>Tech / Programming</b> domain. <i>deploy</i> means shipping new code to production, and <i>pool</i> means a resource pool — a managed group of workers or connections that automatically retries failed tasks. Read in the Daily domain instead, the sentence would sound like nonsense ("we send troops every Friday, and the swimming pool retries automatically").</p>
+        </details>
+      </div>
+    </section>
+
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a href="module-english-3-1.html">← Previous: Word Roots &amp; Word Families</a>
+      <a href="index.html">Back to course map</a>
+    </nav>
+  </main>
+  <script src="global.js?v=20260810-unified-ai"></script>
+</body>
+</html>

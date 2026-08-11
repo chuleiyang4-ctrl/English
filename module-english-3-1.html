@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stop memorizing words one at a time. See vocabulary as a network: one root plus different prefixes and suffixes generates an entire word family.">
+  <title>Word Roots &amp; Word Families — Lumina Atlas</title>
+  <link rel="stylesheet" href="atlas-shell.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="notebook.css">
+  <link rel="stylesheet" href="math-ai.css">
+  <style>
+    :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.lesson-main{width:min(860px,calc(100% - 32px));margin:auto;padding:56px 0 90px}.lesson-kicker{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.16em}.lesson-main h1{font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.04em;margin:10px 0 16px}.lesson-summary{color:var(--muted);font-size:18px}.lesson-section{margin-top:48px}.lesson-section h2{font-size:26px}.example,.exercise{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}details.answer{margin-top:12px}details.answer summary{color:var(--cyan);cursor:pointer}.lesson-nav{display:flex;justify-content:space-between;gap:12px;margin-top:64px}.lesson-nav a{color:var(--cyan)}
+
+    /* ---- #wordNet: lesson-specific styling, scoped to this page only ---- */
+    #wordNet{display:grid;gap:36px}
+    #wordNet .scope-tag{display:inline-flex;gap:8px;align-items:center;margin-top:10px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;font-weight:650}
+    #wordNet .scope-tag b{color:var(--cyan);font-weight:800}
+    #wordNet p.lead{color:var(--muted);font-size:16px;margin:0 0 8px}
+    #wordNet .algo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
+    #wordNet .algo-box{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+    #wordNet .algo-title{font-weight:800;color:var(--cyan);font-size:15px;margin-bottom:4px}
+    #wordNet .algo-box .role{color:var(--text);font-size:12.5px;font-weight:700;margin-bottom:6px}
+    #wordNet .algo-box p{margin:0 0 8px;color:var(--muted);font-size:13.5px}
+    #wordNet .algo-box ul{margin:0;padding-left:18px;font-size:13px;color:var(--muted)}
+    #wordNet .algo-box code{color:var(--cyan);font-family:ui-monospace,monospace;background:#101c33;padding:1px 5px;border-radius:4px}
+    #wordNet .diagram-wrap{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px}
+    #wordNet .diagram-wrap svg{display:block;width:100%;height:auto}
+    #wordNet .diagram-caption{margin-top:12px;color:var(--muted);font-size:13px}
+    #wordNet .legend-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:12.5px;color:var(--muted)}
+    #wordNet .legend-row span{display:inline-flex;align-items:center;gap:6px}
+    #wordNet .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+    #wordNet table.family{width:100%;border-collapse:collapse;margin-top:18px;font-size:13.5px}
+    #wordNet table.family th,#wordNet table.family td{border:1px solid var(--line);padding:10px;text-align:left}
+    #wordNet table.family th{background:#101c33;color:var(--muted);font-size:12px}
+    #wordNet table.family .use-tag{padding:2px 8px;border:1px solid var(--line);border-radius:999px;font-size:10.5px;font-weight:700;margin-right:4px;white-space:nowrap;display:inline-block;margin-bottom:2px}
+    #wordNet .use-daily{color:#7ee0a8;border-color:rgba(126,224,168,.4)}
+    #wordNet .use-work{color:#57d9ee;border-color:rgba(87,217,238,.4)}
+    #wordNet .use-academic{color:#e8b95f;border-color:rgba(232,185,95,.4)}
+    #wordNet .diff-stars{color:#e8b95f;font-size:11px;letter-spacing:.08em;white-space:nowrap}
+    @media(max-width:640px){#wordNet table.family{font-size:12px}}
+  </style>
+</head>
+<body data-subject="english" data-lesson-id="3.1">
+  <header class="atlas-topbar"><div class="atlas-topbar-inner">
+    <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
+    <form class="atlas-search" role="search" action="/"><input type="search" name="q" placeholder="Search courses" aria-label="Search courses"></form>
+    <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
+    <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
+    <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
+  </div></header>
+  <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about this lesson, request examples, or practise English step by step." aria-hidden="true"></aside>
+  <main class="lesson-main">
+    <p class="lesson-kicker">ENGLISH · LESSON 3.1</p>
+    <h1>Word Roots &amp; Word Families</h1>
+    <p class="lesson-summary">Stop memorizing words in isolation. Vocabulary is a network: one core root plus a handful of prefixes and suffixes generates an entire family of related words.</p>
+    <span class="scope-tag"><b>Foundational</b> · used across Daily, Workplace &amp; Academic English alike</span>
+
+    <section class="lesson-section" id="wordNet">
+
+      <div>
+        <h2 style="margin-bottom:4px">I. How a Word Is Assembled</h2>
+        <p class="lead">Most English words compile from up to three parts, each with a distinct job.</p>
+        <div class="algo-grid">
+          <div class="algo-box">
+            <div class="algo-title">1. Prefix</div>
+            <div class="role">Sets direction or state</div>
+            <p>Controls where the action points or what condition it's in.</p>
+            <ul>
+              <li><code>con- / com-</code> — together, jointly</li>
+              <li><code>de-</code> — down, away, undo</li>
+              <li><code>in- / im-</code> — into, inward</li>
+              <li><code>ex-</code> — out, outward</li>
+            </ul>
+          </div>
+          <div class="algo-box">
+            <div class="algo-title">2. Root</div>
+            <div class="role">Carries the core meaning</div>
+            <p>The base concept every word in the family shares.</p>
+            <ul>
+              <li><code>struct</code> — to build</li>
+              <li><code>port</code> — to carry</li>
+              <li><code>vis / vid</code> — to see</li>
+              <li><code>spect</code> — to look at</li>
+            </ul>
+          </div>
+          <div class="algo-box">
+            <div class="algo-title">3. Suffix</div>
+            <div class="role">Casts the grammatical type</div>
+            <p>Doesn't touch the core meaning — just changes what part of speech the word becomes.</p>
+            <ul>
+              <li><code>-tion / -sion</code> → noun</li>
+              <li><code>-ive / -ic</code> → adjective</li>
+              <li><code>-ize / -fy</code> → verb</li>
+              <li><code>-ly</code> → adverb</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">II. One Root, a Whole Network — <span style="color:var(--cyan)">struct</span> ("to build")</h2>
+        <p class="lead">Watch how a single root branches into a full family once different prefixes and suffixes attach.</p>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 700 460" role="img" aria-label="Radial network diagram of the root struct branching into construct, destruction, infrastructure, and instruct, with further derived words">
+            <g stroke="#3a4a68" stroke-width="1.5" fill="none">
+              <line x1="350" y1="230" x2="160" y2="120"></line>
+              <line x1="350" y1="230" x2="560" y2="120"></line>
+              <line x1="350" y1="230" x2="160" y2="360"></line>
+              <line x1="350" y1="230" x2="560" y2="360"></line>
+              <line x1="160" y1="120" x2="70" y2="65"></line>
+              <line x1="160" y1="120" x2="250" y2="55"></line>
+              <line x1="560" y1="120" x2="645" y2="65"></line>
+              <line x1="560" y1="360" x2="645" y2="415"></line>
+            </g>
+            <g font-family="Inter,ui-sans-serif,sans-serif">
+              <circle cx="350" cy="230" r="9" fill="#57d9ee"></circle>
+              <text x="350" y="212" text-anchor="middle" fill="#57d9ee" font-weight="800" font-size="17" font-family="ui-monospace,monospace">struct</text>
+              <text x="350" y="256" text-anchor="middle" fill="#98a6bf" font-size="11" font-style="italic">"to build"</text>
+
+              <circle cx="160" cy="120" r="7" fill="#57d9ee"></circle>
+              <text x="160" y="104" text-anchor="middle" fill="#edf3ff" font-weight="700" font-size="13">construct</text>
+              <text x="255" y="178" text-anchor="middle" fill="#98a6bf" font-size="10">con- (together)</text>
+
+              <circle cx="560" cy="120" r="7" fill="#7ee0a8"></circle>
+              <text x="560" y="104" text-anchor="middle" fill="#edf3ff" font-weight="700" font-size="13">destruction</text>
+              <text x="470" y="178" text-anchor="middle" fill="#98a6bf" font-size="10">de- (down/apart)</text>
+
+              <circle cx="160" cy="360" r="7" fill="#7ee0a8"></circle>
+              <text x="160" y="378" text-anchor="middle" fill="#edf3ff" font-weight="700" font-size="13">infrastructure</text>
+              <text x="255" y="300" text-anchor="middle" fill="#98a6bf" font-size="10">infra- (below)</text>
+
+              <circle cx="560" cy="360" r="7" fill="#57d9ee"></circle>
+              <text x="560" y="378" text-anchor="middle" fill="#edf3ff" font-weight="700" font-size="13">instruct</text>
+              <text x="470" y="300" text-anchor="middle" fill="#98a6bf" font-size="10">in- (into)</text>
+
+              <circle cx="70" cy="65" r="5.5" fill="#e8b95f"></circle>
+              <text x="70" y="50" text-anchor="middle" fill="#e8b95f" font-size="12">construction</text>
+
+              <circle cx="250" cy="55" r="5.5" fill="#e8b95f"></circle>
+              <text x="250" y="40" text-anchor="middle" fill="#e8b95f" font-size="12">constructive</text>
+
+              <circle cx="645" cy="65" r="5.5" fill="#e8b95f"></circle>
+              <text x="637" y="50" text-anchor="middle" fill="#e8b95f" font-size="12">destructive</text>
+
+              <circle cx="645" cy="415" r="5.5" fill="#e8b95f"></circle>
+              <text x="637" y="435" text-anchor="middle" fill="#e8b95f" font-size="12">instructor</text>
+            </g>
+          </svg>
+          <div class="legend-row">
+            <span><span class="dot" style="background:#57d9ee"></span>verb</span>
+            <span><span class="dot" style="background:#7ee0a8"></span>noun</span>
+            <span><span class="dot" style="background:#e8b95f"></span>adjective / agent noun (suffixed form)</span>
+          </div>
+          <p class="diagram-caption">Same root, four different prefixes, eight resulting words. Once you recognize <code style="color:var(--cyan)">struct</code> = "to build," every branch becomes a small, predictable step rather than a new word to memorize from zero.</p>
+        </div>
+
+        <table class="family">
+          <thead><tr><th>Word</th><th>Part of speech</th><th>Meaning</th><th>Usage</th><th>Difficulty</th></tr></thead>
+          <tbody>
+            <tr><td><b>construct</b></td><td>verb</td><td>to build</td><td><span class="use-tag use-daily">Daily</span><span class="use-tag use-work">Workplace</span></td><td class="diff-stars">●</td></tr>
+            <tr><td><b>construction</b></td><td>noun</td><td>a building project</td><td><span class="use-tag use-daily">Daily</span><span class="use-tag use-work">Workplace</span></td><td class="diff-stars">●</td></tr>
+            <tr><td><b>constructive</b></td><td>adjective</td><td>helpful, building up rather than tearing down</td><td><span class="use-tag use-daily">Daily</span><span class="use-tag use-work">Workplace</span><span class="use-tag use-academic">Academic</span></td><td class="diff-stars">●●</td></tr>
+            <tr><td><b>destruction</b></td><td>noun</td><td>the act of destroying</td><td><span class="use-tag use-daily">Daily</span><span class="use-tag use-academic">Academic</span></td><td class="diff-stars">●</td></tr>
+            <tr><td><b>destructive</b></td><td>adjective</td><td>causing damage</td><td><span class="use-tag use-daily">Daily</span><span class="use-tag use-academic">Academic</span></td><td class="diff-stars">●</td></tr>
+            <tr><td><b>infrastructure</b></td><td>noun</td><td>underlying systems that support everything else</td><td><span class="use-tag use-work">Workplace</span><span class="use-tag use-academic">Academic</span></td><td class="diff-stars">●●</td></tr>
+            <tr><td><b>instruct</b></td><td>verb</td><td>to teach or direct — literally, to build knowledge inside someone</td><td><span class="use-tag use-work">Workplace</span><span class="use-tag use-academic">Academic</span></td><td class="diff-stars">●●</td></tr>
+            <tr><td><b>instructor</b></td><td>noun</td><td>a teacher or coach</td><td><span class="use-tag use-daily">Daily</span><span class="use-tag use-work">Workplace</span><span class="use-tag use-academic">Academic</span></td><td class="diff-stars">●</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Practice</h2>
+      <div class="exercise">
+        <p>Using the root <b>port</b> ("to carry") and the prefix table above, what would <b>transport</b>, <b>import</b>, and <b>export</b> literally mean, piece by piece?</p>
+        <details class="answer">
+          <summary>Show answer</summary>
+          <p><b>transport</b> — <i>trans-</i> (across) + <i>port</i> (carry) = to carry across. <b>import</b> — <i>im-</i> (into) + <i>port</i> = to carry in. <b>export</b> — <i>ex-</i> (out) + <i>port</i> = to carry out. Same root, three directions, three related meanings — the same pattern as <i>struct</i>.</p>
+        </details>
+      </div>
+    </section>
+
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a href="module-english-2-3.html">← Previous: Clauses &amp; Complex Sentences</a>
+      <a href="index.html">Back to course map</a>
+    </nav>
+  </main>
+  <script src="global.js?v=20260810-unified-ai"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Read a complex sentence the way you'd read code: a main() function calling subordinate clauses, and a 3-step method to strip any long sentence back to its core.">
+  <title>Clauses &amp; Complex Sentences — Lumina Atlas</title>
+  <link rel="stylesheet" href="atlas-shell.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="notebook.css">
+  <link rel="stylesheet" href="math-ai.css">
+  <style>
+    :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.lesson-main{width:min(820px,calc(100% - 32px));margin:auto;padding:56px 0 90px}.lesson-kicker{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.16em}.lesson-main h1{font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.04em;margin:10px 0 16px}.lesson-summary{color:var(--muted);font-size:18px}.lesson-section{margin-top:48px}.lesson-section h2{font-size:26px}.example,.exercise{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}details.answer{margin-top:12px}details.answer summary{color:var(--cyan);cursor:pointer}.lesson-nav{display:flex;justify-content:space-between;gap:12px;margin-top:64px}.lesson-nav a{color:var(--cyan)}
+
+    /* ---- #clauseOps: lesson-specific styling, scoped to this page only ---- */
+    #clauseOps{display:grid;gap:36px}
+    #clauseOps .scope-tag{display:inline-flex;gap:8px;align-items:center;margin-top:10px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;font-weight:650}
+    #clauseOps .scope-tag b{color:var(--cyan);font-weight:800}
+    #clauseOps p.lead{color:var(--muted);font-size:16px;margin:0 0 8px}
+    #clauseOps .clause-card{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+    #clauseOps .clause-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px}
+    #clauseOps .clause-head h3{margin:0;font-size:16.5px}
+    #clauseOps .tags{display:flex;gap:6px;flex:none}
+    #clauseOps .use-tag{padding:2px 9px;border:1px solid var(--line);border-radius:999px;font-size:10.5px;font-weight:700;white-space:nowrap}
+    #clauseOps .use-daily{color:#7ee0a8;border-color:rgba(126,224,168,.4)}
+    #clauseOps .use-work{color:#57d9ee;border-color:rgba(87,217,238,.4)}
+    #clauseOps .use-academic{color:#e8b95f;border-color:rgba(232,185,95,.4)}
+    #clauseOps .diff-stars{color:#e8b95f;font-size:11px;letter-spacing:.08em}
+    #clauseOps .clause-card p{margin:6px 0;color:var(--muted);font-size:14.5px;line-height:1.6}
+    #clauseOps .code-block{background:#0a1120;color:#edf3ff;padding:14px 18px;border-radius:10px;font-family:ui-monospace,monospace;font-size:13.5px;line-height:1.7;margin:10px 0;overflow-x:auto;border:1px solid var(--line)}
+    #clauseOps .code-comment{color:#7c8aa5;font-style:italic}
+    #clauseOps .code-main{color:#7ee0a8}
+    #clauseOps .code-keyword{color:#57d9ee;font-weight:700}
+    #clauseOps .code-sub{color:#e8b95f}
+    #clauseOps .diagram-wrap{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px}
+    #clauseOps .diagram-wrap svg{display:block;width:100%;height:auto}
+    #clauseOps .diagram-caption{margin-top:10px;color:var(--muted);font-size:13px}
+    #clauseOps .pipeline-step{display:flex;gap:14px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+    #clauseOps .step-num{flex:none;width:28px;height:28px;border-radius:50%;background:#101c33;border:1px solid #36758b;color:var(--cyan);display:grid;place-items:center;font-weight:800;font-size:13px}
+    #clauseOps .pipeline-step b{display:block;font-size:14.5px}
+    #clauseOps .pipeline-step p{margin:4px 0 0;color:var(--muted);font-size:13.5px}
+    #clauseOps .bracketed .b1{color:#e8b95f}
+  </style>
+</head>
+<body data-subject="english" data-lesson-id="2.3">
+  <header class="atlas-topbar"><div class="atlas-topbar-inner">
+    <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
+    <form class="atlas-search" role="search" action="/"><input type="search" name="q" placeholder="Search courses" aria-label="Search courses"></form>
+    <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
+    <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
+    <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
+  </div></header>
+  <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about this lesson, request examples, or practise English step by step." aria-hidden="true"></aside>
+  <main class="lesson-main">
+    <p class="lesson-kicker">ENGLISH · LESSON 2.3</p>
+    <h1>Clauses &amp; Complex Sentences</h1>
+    <p class="lesson-summary">Read a long sentence the way you'd read code: a main() function calling out to subroutines. Once you can spot the calls, no sentence is actually long — it's just several simple ones nested together.</p>
+    <span class="scope-tag"><b>Foundational</b> · used across Daily, Workplace &amp; Academic English alike</span>
+
+    <section class="lesson-section" id="clauseOps">
+
+      <div>
+        <h2 style="margin-bottom:4px">I. Three Clause Types, Three Jobs</h2>
+        <p class="lead">Every subordinate clause is doing one of exactly three jobs for the main sentence.</p>
+
+        <div class="clause-card">
+          <div class="clause-head"><h3>1. Noun Clause — passes a data packet</h3><div class="tags"><span class="use-tag use-work">Workplace</span><span class="use-tag use-academic">Academic</span><span class="diff-stars">●●</span></div></div>
+          <p>An entire clause stands in as the subject or object of the main verb — a whole idea, packaged as one argument.</p>
+          <div class="code-block">
+            <span class="code-comment">// I know [data packet]</span><br>
+            <span class="code-main">I know</span> <span class="code-keyword">that</span> <span class="code-sub">AI will change how people learn languages</span>.<br>
+            <span class="code-comment">// the whole clause is the object of "know"</span>
+          </div>
+        </div>
+
+        <div class="clause-card">
+          <div class="clause-head"><h3>2. Relative Clause — attaches a decorator</h3><div class="tags"><span class="use-tag use-daily">Daily</span><span class="use-tag use-academic">Academic</span><span class="diff-stars">●●</span></div></div>
+          <p>Sits right after a noun and extends it with extra detail — like a decorator wrapping a function with more behavior.</p>
+          <div class="code-block">
+            <span class="code-comment">// The platform [extra detail] is live.</span><br>
+            <span class="code-main">The platform</span> <span class="code-keyword">which</span> <span class="code-sub">we built yesterday</span> <span class="code-main">is live</span>.<br>
+            <span class="code-comment">// "which we built yesterday" decorates "platform"</span>
+          </div>
+        </div>
+
+        <div class="clause-card">
+          <div class="clause-head"><h3>3. Adverbial Clause — sets a condition</h3><div class="tags"><span class="use-tag use-daily">Daily</span><span class="use-tag use-work">Workplace</span><span class="diff-stars">●</span></div></div>
+          <p>Controls when, why, or under what condition the main action happens — the same job an <span class="code-keyword" style="color:var(--cyan)">if</span> statement does in code.</p>
+          <div class="code-block">
+            <span class="code-comment">// if (condition) { run main clause }</span><br>
+            <span class="code-keyword">If</span> <span class="code-sub">you master the atomic rules</span>, <span class="code-main">you can read any sentence</span>.<br>
+            <span class="code-comment">// "If ..." sets the condition that triggers the result</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">II. Visualizing the Call Stack</h2>
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 640 220" role="img" aria-label="Diagram of a main function containing a placeholder that calls a nested relative clause function">
+            <rect x="30" y="30" width="580" height="60" rx="12" fill="#0e2a33" stroke="#57d9ee" stroke-width="2"></rect>
+            <text x="46" y="55" fill="#57d9ee" font-family="ui-monospace,monospace" font-weight="700" font-size="13">main()</text>
+            <text x="46" y="76" fill="#edf3ff" font-family="ui-monospace,monospace" font-size="14">The platform <tspan fill="#e8b95f">___</tspan> is live.</text>
+
+            <line x1="130" y1="90" x2="130" y2="130" stroke="#e8b95f" stroke-width="2" stroke-dasharray="4 4"></line>
+            <polygon points="124,128 136,128 130,138" fill="#e8b95f"></polygon>
+
+            <rect x="60" y="140" width="340" height="56" rx="12" fill="#2a2413" stroke="#e8b95f" stroke-width="2"></rect>
+            <text x="76" y="163" fill="#e8b95f" font-family="ui-monospace,monospace" font-weight="700" font-size="13">which() → relative clause</text>
+            <text x="76" y="183" fill="#edf3ff" font-family="ui-monospace,monospace" font-size="14">we built yesterday</text>
+          </svg>
+          <p class="diagram-caption">The main clause holds a placeholder ("the platform ___ is live"). The relative clause is a nested call that fills in extra detail about "platform" — the main sentence stays complete and correct with or without it.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">III. The 3-Step Dissection Method</h2>
+        <p class="lead">For any sentence that feels too long to parse, run this exact sequence:</p>
+
+        <div style="display:grid;gap:12px">
+          <div class="pipeline-step"><span class="step-num">1</span><div><b>Find the main() verb</b><p>Ignore everything introduced by <span style="color:var(--cyan)">that / which / who / when / because</span> for a moment, and locate the one verb that carries the sentence's core action.</p></div></div>
+          <div class="pipeline-step"><span class="step-num">2</span><div><b>Bracket the subroutine boundaries</b><p>Find each clause connector and mark where its clause starts and ends — usually right up to the next main-clause verb or punctuation mark.</p></div></div>
+          <div class="pipeline-step"><span class="step-num">3</span><div><b>Reduce to one of the 5 core patterns</b><p>Replace every bracketed clause with a placeholder. What's left is always one of the 5 sentence patterns from Lesson 2.1 — usually just S + V + O.</p></div></div>
+        </div>
+
+        <div class="clause-card bracketed" style="margin-top:16px">
+          <p style="color:var(--text);font-size:14.5px">Example: <span class="b1">If</span> <span class="b1">[you master the atomic rules]</span>, you can read any sentence.</p>
+          <p>Strip the bracketed clause and the main sentence is just: <b style="color:var(--text)">you can read any sentence</b> — a plain S + V + O.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Practice</h2>
+      <div class="exercise">
+        <p>Dissect this sentence using the 3-step method: <b>"Engineers who understand the fundamentals build systems that scale."</b></p>
+        <details class="answer">
+          <summary>Show answer</summary>
+          <p><b>Step 1 — main() verb:</b> "build." <b>Step 2 — bracket the clauses:</b> "Engineers [who understand the fundamentals] build systems [that scale]" — two relative clauses, one decorating "Engineers," one decorating "systems." <b>Step 3 — reduce:</b> strip both brackets and you're left with a plain S + V + O: "Engineers build systems."</p>
+        </details>
+      </div>
+    </section>
+
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a href="module-english-2-2.html">← Previous: Tense &amp; Voice</a>
+      <a href="index.html">Back to course map</a>
+    </nav>
+  </main>
+  <script src="global.js?v=20260810-unified-ai"></script>
+</body>
+</html>

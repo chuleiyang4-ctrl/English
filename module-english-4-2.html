@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A clear division of labor for AI-assisted writing: you architect the intent and logic, AI compiles it into polished, idiomatic English.">
+  <title>Writing &amp; AI-Assisted Editing — Lumina Atlas</title>
+  <link rel="stylesheet" href="atlas-shell.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="notebook.css">
+  <link rel="stylesheet" href="math-ai.css">
+  <style>
+    :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.lesson-main{width:min(860px,calc(100% - 32px));margin:auto;padding:56px 0 90px}.lesson-kicker{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.16em}.lesson-main h1{font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.04em;margin:10px 0 16px}.lesson-summary{color:var(--muted);font-size:18px}.lesson-section{margin-top:48px}.lesson-section h2{font-size:26px}.example,.exercise{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}details.answer{margin-top:12px}details.answer summary{color:var(--cyan);cursor:pointer}.lesson-nav{display:flex;justify-content:space-between;gap:12px;margin-top:64px}.lesson-nav a{color:var(--cyan)}
+
+    /* ---- #writeLoop: lesson-specific styling, scoped to this page only ---- */
+    #writeLoop{display:grid;gap:36px}
+    #writeLoop .scope-tag{display:inline-flex;gap:8px;align-items:center;margin-top:10px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;font-weight:650}
+    #writeLoop .scope-tag b{color:var(--cyan);font-weight:800}
+    #writeLoop p.lead{color:var(--muted);font-size:16px;margin:0 0 8px}
+    #writeLoop .role-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px}
+    #writeLoop .role-box{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+    #writeLoop .role-box .role-title{font-weight:800;font-size:15px;margin-bottom:8px}
+    #writeLoop .role-box ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--muted);line-height:1.7}
+    #writeLoop .code-block{background:#0a1120;color:#edf3ff;padding:16px 18px;border-radius:10px;font-family:ui-monospace,monospace;font-size:13px;line-height:1.7;margin:12px 0;overflow-x:auto;border:1px solid var(--line)}
+    #writeLoop .code-comment{color:#7c8aa5;font-style:italic}
+    #writeLoop .code-keyword{color:#57d9ee;font-weight:700}
+    #writeLoop .code-string{color:#7ee0a8}
+    #writeLoop .diagram-wrap{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px}
+    #writeLoop .diagram-wrap svg{display:block;width:100%;height:auto;max-width:480px;margin:0 auto}
+    #writeLoop .diagram-caption{margin-top:12px;color:var(--muted);font-size:13px;text-align:center}
+    #writeLoop .pipeline-step{display:flex;gap:14px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+    #writeLoop .step-num{flex:none;width:28px;height:28px;border-radius:50%;background:#101c33;border:1px solid #36758b;color:var(--cyan);display:grid;place-items:center;font-weight:800;font-size:13px}
+    #writeLoop .pipeline-step .head{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+    #writeLoop .pipeline-step b{font-size:14.5px}
+    #writeLoop .diff-stars{color:#e8b95f;font-size:11px;letter-spacing:.08em;white-space:nowrap}
+    #writeLoop .pipeline-step p{margin:4px 0 0;color:var(--muted);font-size:13.5px}
+    #writeLoop .use-tag{padding:2px 9px;border:1px solid var(--line);border-radius:999px;font-size:10.5px;font-weight:700}
+    #writeLoop .use-work{color:#57d9ee;border-color:rgba(87,217,238,.4)}
+    #writeLoop .use-academic{color:#e8b95f;border-color:rgba(232,185,95,.4)}
+    #writeLoop .finale{padding:24px;border:1px solid rgba(126,224,168,.4);border-radius:16px;background:rgba(126,224,168,.06);text-align:center}
+    #writeLoop .finale h3{margin:0 0 8px;color:#7ee0a8;font-size:19px}
+    #writeLoop .finale p{margin:0;color:var(--muted);font-size:14px;max-width:520px;margin:0 auto}
+  </style>
+</head>
+<body data-subject="english" data-lesson-id="4.2">
+  <header class="atlas-topbar"><div class="atlas-topbar-inner">
+    <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
+    <form class="atlas-search" role="search" action="/"><input type="search" name="q" placeholder="Search courses" aria-label="Search courses"></form>
+    <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
+    <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
+    <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
+  </div></header>
+  <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about this lesson, request examples, or practise English step by step." aria-hidden="true"></aside>
+  <main class="lesson-main">
+    <p class="lesson-kicker">ENGLISH · LESSON 4.2</p>
+    <h1>Writing &amp; AI-Assisted Editing</h1>
+    <p class="lesson-summary">Effective AI collaboration isn't hitting "generate" and hoping — it's a clear division of labor. You architect the intent and logic; AI compiles it into polished, idiomatic English.</p>
+    <span class="scope-tag"><b>Practice method</b> · <span class="use-tag use-work" style="margin-left:4px">Workplace</span> <span class="use-tag use-academic" style="margin-left:4px">Academic</span></span>
+
+    <section class="lesson-section" id="writeLoop">
+
+      <div>
+        <h2 style="margin-bottom:4px">I. Human-in-the-Loop: Who Does What</h2>
+        <p class="lead">Think of it as an architect briefing a compiler — not a vague request to a black box.</p>
+        <div class="role-grid">
+          <div class="role-box">
+            <div class="role-title" style="color:#7ee0a8">🧠 You — the Architect</div>
+            <ul>
+              <li>Supply a dense draft of your core intent</li>
+              <li>Set the context and tone</li>
+              <li>Do the final fact-check and quality control</li>
+            </ul>
+          </div>
+          <div class="role-box">
+            <div class="role-title" style="color:var(--cyan)">🤖 AI — the Compiler</div>
+            <ul>
+              <li>Grammar checking and idiom correction</li>
+              <li>Elegant sentence restructuring</li>
+              <li>Adapting length and tone across formats</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">II. A Reusable Polishing Prompt</h2>
+        <p class="lead">A constrained prompt template gets far more consistent, idiomatic output than an open-ended "make this better."</p>
+        <div class="code-block">
+<span class="code-comment"># Role &amp; Task</span><br>
+Act as an expert native English editor. Polish the following draft for a <span class="code-keyword">[tech doc / pitch email / GitHub PR]</span>.<br><br>
+<span class="code-comment"># Constraints</span><br>
+1. Keep the tone <span class="code-keyword">[professional yet concise]</span>.<br>
+2. Preserve the original core logic.<br>
+3. Highlight the key changes and briefly explain why.<br><br>
+<span class="code-comment"># Draft input</span><br>
+<span class="code-string">"[paste your raw draft — rough notes or mixed-language logic are fine]"</span>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">III. The 3-Step Writing Loop</h2>
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 500 360" role="img" aria-label="Circular diagram showing bullet draft leading to AI compilation, then diff review, and back to the next draft">
+            <g font-family="Inter,ui-sans-serif,sans-serif" font-size="12.5" font-weight="700">
+              <path d="M 280 90 Q 380 170 355 260" fill="none" stroke="#57d9ee" stroke-width="2" marker-end="url(#a1)"></path>
+              <path d="M 300 285 Q 200 340 130 265" fill="none" stroke="#7ee0a8" stroke-width="2" marker-end="url(#a2)"></path>
+              <path d="M 115 235 Q 90 140 195 85" fill="none" stroke="#e8b95f" stroke-width="2" marker-end="url(#a3)"></path>
+
+              <circle cx="250" cy="70" r="46" fill="#101c33" stroke="#57d9ee" stroke-width="2"></circle>
+              <text x="250" y="66" text-anchor="middle" fill="#edf3ff">Bullet-point</text>
+              <text x="250" y="82" text-anchor="middle" fill="#edf3ff">draft</text>
+
+              <circle cx="390" cy="285" r="46" fill="#0e2a33" stroke="#7ee0a8" stroke-width="2"></circle>
+              <text x="390" y="281" text-anchor="middle" fill="#edf3ff">AI</text>
+              <text x="390" y="297" text-anchor="middle" fill="#edf3ff">compile</text>
+
+              <circle cx="110" cy="285" r="46" fill="#2a2413" stroke="#e8b95f" stroke-width="2"></circle>
+              <text x="110" y="281" text-anchor="middle" fill="#edf3ff">Diff</text>
+              <text x="110" y="297" text-anchor="middle" fill="#edf3ff">review</text>
+
+              <defs>
+                <marker id="a1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#57d9ee"></path></marker>
+                <marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7ee0a8"></path></marker>
+                <marker id="a3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#e8b95f"></path></marker>
+              </defs>
+            </g>
+          </svg>
+          <p class="diagram-caption">A loop, not a one-shot request — each round feeds directly into the next draft.</p>
+        </div>
+
+        <div style="display:grid;gap:12px;margin-top:16px">
+          <div class="pipeline-step"><span class="step-num">1</span><div><div class="head"><b>Write a bullet-point draft</b><span class="diff-stars">●</span></div><p>Don't worry about grammar or spelling — just list the core logic quickly, in plain words or fragments.</p></div></div>
+          <div class="pipeline-step"><span class="step-num">2</span><div><div class="head"><b>AI restructuring &amp; tone pass</b><span class="diff-stars">●</span></div><p>Feed in the prompt template above and ask for 2–3 tonal variants — formal, casual, concise.</p></div></div>
+          <div class="pipeline-step"><span class="step-num">3</span><div><div class="head"><b>Diff review and absorb</b><span class="diff-stars">●●</span></div><p>Compare your draft against the AI's version. Notice which collocations it swapped in — that's the part worth feeding back into your own vocabulary.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Practice</h2>
+      <div class="exercise">
+        <p>Your bullet draft reads: <b>"tell client delay, not our fault, vendor issue, new date next fri."</b> Using the Architect/Compiler split, what should <i>you</i> decide before handing this to AI, versus what should the AI decide?</p>
+        <details class="answer">
+          <summary>Show answer</summary>
+          <p><b>You (Architect) decide:</b> the tone (apologetic but firm, not defensive), which facts must stay (vendor caused it, new date is next Friday), and who the audience is (a client, so keep it professional). <b>AI (Compiler) decides:</b> the exact sentence structure, connecting words, and phrasing that sounds natural and polished in English — the surface form, not the substance.</p>
+        </details>
+      </div>
+    </section>
+
+    <div class="finale">
+      <h3>🎉 You've walked the full map</h3>
+      <p>Sound → Grammar Architecture → Vocabulary Networks → Context → real-time Listening, Speaking, and Writing. You now have a structural picture of English as one connected system — the rest is practice.</p>
+    </div>
+
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a href="module-english-4-1.html">← Previous: Real-Time Listening &amp; Shadowing</a>
+      <a href="index.html">Back to course map</a>
+    </nav>
+  </main>
+  <script src="global.js?v=20260810-unified-ai"></script>
+</body>
+</html>

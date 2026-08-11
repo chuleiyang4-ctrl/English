@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stop treating tense as 12 memorized formulas. See it as a coordinate system: time on one axis, viewpoint on the other — plus how active and passive voice switch the direction of focus.">
+  <title>Tense &amp; Voice — Lumina Atlas</title>
+  <link rel="stylesheet" href="atlas-shell.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="notebook.css">
+  <link rel="stylesheet" href="math-ai.css">
+  <style>
+    :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.lesson-main{width:min(860px,calc(100% - 32px));margin:auto;padding:56px 0 90px}.lesson-kicker{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.16em}.lesson-main h1{font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.04em;margin:10px 0 16px}.lesson-summary{color:var(--muted);font-size:18px}.lesson-section{margin-top:48px}.lesson-section h2{font-size:26px}.example,.exercise{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}details.answer{margin-top:12px}details.answer summary{color:var(--cyan);cursor:pointer}.lesson-nav{display:flex;justify-content:space-between;gap:12px;margin-top:64px}.lesson-nav a{color:var(--cyan)}
+
+    /* ---- #tenseGrid: lesson-specific styling, scoped to this page only ---- */
+    #tenseGrid{display:grid;gap:36px}
+    #tenseGrid .scope-tag{display:inline-flex;gap:8px;align-items:center;margin-top:10px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;font-weight:650}
+    #tenseGrid .scope-tag b{color:var(--cyan);font-weight:800}
+    #tenseGrid p.lead{color:var(--muted);font-size:16px;margin:0 0 8px}
+    #tenseGrid .diagram-wrap{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px}
+    #tenseGrid .diagram-wrap svg{display:block;width:100%;height:auto;max-width:460px;margin:0 auto}
+    #tenseGrid .diagram-caption{margin-top:10px;color:var(--muted);font-size:13px;text-align:center}
+    #tenseGrid table.matrix{width:100%;border-collapse:collapse;margin-top:18px;font-size:13.5px}
+    #tenseGrid table.matrix th,#tenseGrid table.matrix td{border:1px solid var(--line);padding:12px;text-align:left;vertical-align:top}
+    #tenseGrid table.matrix th{background:#101c33;color:var(--muted);font-size:12.5px}
+    #tenseGrid table.matrix td.axis{background:#101528;font-weight:700;color:var(--cyan);width:120px}
+    #tenseGrid table.matrix td.axis small{display:block;font-weight:400;color:var(--muted);font-size:11px;margin-top:2px}
+    #tenseGrid .cell-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+    #tenseGrid .cell-title{font-weight:700;color:var(--text)}
+    #tenseGrid .diff-stars{color:#e8b95f;font-size:11px;letter-spacing:.08em;flex:none}
+    #tenseGrid .cell-formula{font-family:ui-monospace,monospace;font-size:12px;color:var(--cyan);background:#0e2a33;padding:2px 7px;border-radius:5px;display:inline-block;margin:4px 0}
+    #tenseGrid .cell-example{color:var(--muted);font-size:12.5px;line-height:1.5}
+    #tenseGrid .voice-card{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+    #tenseGrid .voice-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    #tenseGrid .voice-head h3{margin:0 0 4px;font-size:16.5px}
+    #tenseGrid .voice-card p{margin:6px 0 0;color:var(--muted);font-size:14px}
+    #tenseGrid .voice-card .ex{color:var(--text);font-family:ui-monospace,monospace;font-size:13.5px}
+    @media(max-width:640px){#tenseGrid table.matrix{font-size:12px}#tenseGrid table.matrix td.axis{width:80px}}
+  </style>
+</head>
+<body data-subject="english" data-lesson-id="2.2">
+  <header class="atlas-topbar"><div class="atlas-topbar-inner">
+    <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
+    <form class="atlas-search" role="search" action="/"><input type="search" name="q" placeholder="Search courses" aria-label="Search courses"></form>
+    <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
+    <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
+    <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
+  </div></header>
+  <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about this lesson, request examples, or practise English step by step." aria-hidden="true"></aside>
+  <main class="lesson-main">
+    <p class="lesson-kicker">ENGLISH · LESSON 2.2</p>
+    <h1>Tense &amp; Voice</h1>
+    <p class="lesson-summary">Tense isn't 12 formulas to memorize — it's a position in a 2D space: time on one axis, viewpoint on the other. Voice is a separate switch entirely: which side of the action gets the spotlight.</p>
+    <span class="scope-tag"><b>Foundational</b> · used across Daily, Workplace &amp; Academic English alike</span>
+
+    <section class="lesson-section" id="tenseGrid">
+
+      <div>
+        <h2 style="margin-bottom:4px">I. Tense as a Coordinate System</h2>
+        <p class="lead">Put time on the X-axis (past / present / future) and viewpoint on the Y-axis (simple / progressive / perfect). Every tense is just one coordinate on this grid.</p>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 460 320" role="img" aria-label="2D grid with time on the horizontal axis and viewpoint on the vertical axis, showing 9 tense coordinates">
+            <line x1="130" y1="40" x2="130" y2="270" stroke="#22304a" stroke-width="1.5"></line>
+            <line x1="60" y1="270" x2="430" y2="270" stroke="#22304a" stroke-width="1.5"></line>
+            <text x="130" y="24" text-anchor="middle" fill="#98a6bf" font-size="11" font-family="Inter" font-weight="700">TIME →</text>
+            <text x="30" y="150" fill="#98a6bf" font-size="11" font-family="Inter" font-weight="700" transform="rotate(-90 30 150)">VIEWPOINT →</text>
+
+            <text x="180" y="290" text-anchor="middle" fill="#98a6bf" font-size="12" font-family="Inter">Past</text>
+            <text x="290" y="290" text-anchor="middle" fill="#98a6bf" font-size="12" font-family="Inter">Present</text>
+            <text x="400" y="290" text-anchor="middle" fill="#98a6bf" font-size="12" font-family="Inter">Future</text>
+
+            <text x="118" y="88" text-anchor="end" fill="#98a6bf" font-size="12" font-family="Inter">Simple</text>
+            <text x="118" y="158" text-anchor="end" fill="#98a6bf" font-size="12" font-family="Inter">Progressive</text>
+            <text x="118" y="228" text-anchor="end" fill="#98a6bf" font-size="12" font-family="Inter">Perfect</text>
+
+            <g fill="#57d9ee">
+              <circle cx="180" cy="80" r="6"></circle>
+              <circle cx="290" cy="80" r="6"></circle>
+              <circle cx="400" cy="80" r="6"></circle>
+              <circle cx="180" cy="150" r="6"></circle>
+              <circle cx="290" cy="150" r="6"></circle>
+              <circle cx="400" cy="150" r="6"></circle>
+              <circle cx="180" cy="220" r="6"></circle>
+              <circle cx="400" cy="220" r="6"></circle>
+            </g>
+            <circle cx="290" cy="220" r="9" fill="none" stroke="#e8b95f" stroke-width="2.5"></circle>
+            <circle cx="290" cy="220" r="6" fill="#e8b95f"></circle>
+            <text x="290" y="245" text-anchor="middle" fill="#e8b95f" font-size="11" font-family="Inter" font-weight="700">hardest for most learners</text>
+          </svg>
+          <p class="diagram-caption">Present + Perfect (highlighted) is the one coordinate most learners struggle with — it links a past action to a present result, a concept many languages don't grammaticalize the same way.</p>
+        </div>
+
+        <div style="overflow-x:auto">
+        <table class="matrix">
+          <thead><tr><th>Viewpoint \ Time</th><th>Past</th><th>Present</th><th>Future</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="axis">Simple<small>a point, or a standing rule</small></td>
+              <td><div class="cell-head"><span class="cell-title">Simple Past</span><span class="diff-stars">●</span></div><div class="cell-formula">V-ed</div><div class="cell-example">I built an app. — a completed fact.</div></td>
+              <td><div class="cell-head"><span class="cell-title">Simple Present</span><span class="diff-stars">●</span></div><div class="cell-formula">V / V-s</div><div class="cell-example">I build apps. — a habit or standing rule.</div></td>
+              <td><div class="cell-head"><span class="cell-title">Simple Future</span><span class="diff-stars">●</span></div><div class="cell-formula">will + V</div><div class="cell-example">I will build an app. — a prediction.</div></td>
+            </tr>
+            <tr>
+              <td class="axis">Progressive<small>a frame mid-motion</small></td>
+              <td><div class="cell-head"><span class="cell-title">Past Progressive</span><span class="diff-stars">●</span></div><div class="cell-formula">was/were + V-ing</div><div class="cell-example">I was coding when you called. — a moment caught in motion.</div></td>
+              <td><div class="cell-head"><span class="cell-title">Present Progressive</span><span class="diff-stars">●</span></div><div class="cell-formula">am/is/are + V-ing</div><div class="cell-example">I am coding now. — happening as we speak.</div></td>
+              <td><div class="cell-head"><span class="cell-title">Future Progressive</span><span class="diff-stars">●●</span></div><div class="cell-formula">will be + V-ing</div><div class="cell-example">I will be coding tomorrow. — mid-action at a future point.</div></td>
+            </tr>
+            <tr>
+              <td class="axis">Perfect<small>a bridge across time</small></td>
+              <td><div class="cell-head"><span class="cell-title">Past Perfect</span><span class="diff-stars">●●</span></div><div class="cell-formula">had + V-pp</div><div class="cell-example">I had launched it before 2025. — done before another past point.</div></td>
+              <td><div class="cell-head"><span class="cell-title">Present Perfect</span><span class="diff-stars">●●●</span></div><div class="cell-formula">have/has + V-pp</div><div class="cell-example">I have built three sites. — a past action, felt in the present.</div></td>
+              <td><div class="cell-head"><span class="cell-title">Future Perfect</span><span class="diff-stars">●●</span></div><div class="cell-formula">will have + V-pp</div><div class="cell-example">I will have finished by June. — will already be done by then.</div></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">II. Voice — Which Side Gets the Spotlight</h2>
+        <p class="lead">Active and passive voice describe the exact same event. The only thing that changes is which side of the action — the doer or the receiver — is in focus.</p>
+
+        <div class="voice-card">
+          <div class="voice-head"><h3>Active — spotlight on the source</h3><span class="diff-stars">●</span></div>
+          <p class="ex">The server processed the request.</p>
+          <p>The energy source (the server) leads the sentence and acts outward onto the request.</p>
+        </div>
+        <div class="voice-card" style="margin-top:14px">
+          <div class="voice-head"><h3>Passive — spotlight on the receiver</h3><span class="diff-stars">●●</span></div>
+          <div class="cell-formula">be + V-pp</div>
+          <p class="ex">The request was processed by the server.</p>
+          <p>The receiver (the request) leads instead, and the source is pushed to the background — or dropped entirely: <span class="ex">The request was processed.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Practice</h2>
+      <div class="exercise">
+        <p>Plot this sentence on the grid: <b>"By next year, she will have shipped four products."</b> Which coordinate is it, and why?</p>
+        <details class="answer">
+          <summary>Show answer</summary>
+          <p><b>Future + Perfect.</b> "By next year" sets a future reference point, and "will have shipped" describes an action that will already be complete by that point — the defining move of the Perfect row: a bridge connecting two moments in time, not just a single point.</p>
+        </details>
+      </div>
+    </section>
+
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a href="module-english-2-1.html">← Previous: Sentence Patterns &amp; the Roles Words Play</a>
+      <a href="index.html">Back to course map</a>
+    </nav>
+  </main>
+  <script src="global.js?v=20260810-unified-ai"></script>
+</body>
+</html>
