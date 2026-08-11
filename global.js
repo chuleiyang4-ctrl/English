@@ -8,7 +8,7 @@
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initialize);else initialize();
   addScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2");
   addScript("auth-config.js");
-  addScript("account.js?v=20260809-unified-auth");
+  addScript("account.js?v=20260812-password-auth");
   addScript("notebook.js");
-  addScript("atlas-ai.js");
+  addScript("atlas-ai.js?v=20260812-panel-header");
 })();
