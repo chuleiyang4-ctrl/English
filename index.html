@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="English courses on Lumina Atlas.">
+  <meta name="description" content="English courses on Lumina Atlas: pronunciation, grammar, vocabulary, listening, and writing.">
   <title>English Courses — Lumina Atlas</title>
   <link rel="stylesheet" href="atlas-shell.css">
   <link rel="stylesheet" href="auth.css">
@@ -11,27 +11,39 @@
   <link rel="stylesheet" href="math-ai.css">
   <style>
     :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 80% 0,rgba(87,217,238,.1),transparent 28rem),var(--bg);color:var(--text);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.english-main{width:min(1120px,calc(100% - 32px));margin:auto;padding:54px 0 90px}.eyebrow{margin:0 0 8px;color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.18em}.english-main h1{margin:0;font-size:clamp(34px,5vw,56px);letter-spacing:-.045em}.lead{margin:8px 0 28px;color:var(--muted);font-size:16px}.curriculum{display:grid;gap:12px}.course-card{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(14,23,41,.8);color:inherit;text-decoration:none}.course-card:hover{border-color:#3f7891}.course-number{display:grid;place-items:center;width:42px;height:42px;border:1px solid #36758b;border-radius:12px;color:var(--cyan);font-weight:800}.course-card strong{display:block;font-size:17px}.course-card small{color:var(--muted)}.status{color:var(--cyan);font-size:12px}.empty-search{color:var(--muted);padding:24px;text-align:center}.ai-panel{top:68px}.site-footer{width:min(1120px,calc(100% - 32px));margin:auto;padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}@media(max-width:600px){.english-main{padding-top:34px}.course-card{grid-template-columns:48px 1fr}.status{grid-column:2}}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 80% 0,rgba(87,217,238,.1),transparent 28rem),var(--bg);color:var(--text);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.english-main{width:min(1120px,calc(100% - 32px));margin:auto;padding:48px 0 80px}.hero{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}.eyebrow{margin:0 0 6px;color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.18em}.english-main h1{margin:0;font-size:clamp(34px,5vw,52px);letter-spacing:-.045em}.lead{margin:7px 0 0;color:var(--muted);font-size:16px}.stats{display:flex;gap:10px}.stat{min-width:92px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(14,23,41,.72)}.stat b{font-size:18px}.stat span{margin-left:5px;color:var(--muted);font-size:11px}.catalog-search{width:100%;margin-bottom:14px;padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:#0b1324;color:var(--text);font:inherit;outline:none}.catalog-search:focus{border-color:#36758b}.modules{display:grid;gap:10px}.module{border:1px solid var(--line);border-radius:16px;background:rgba(14,23,41,.78);overflow:hidden}.module summary{display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:center;padding:19px 20px;cursor:pointer;list-style:none}.module summary::-webkit-details-marker{display:none}.module-code{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.12em}.module-title{font-size:17px;font-weight:750}.module-count{color:var(--muted);font-size:12px}.lesson-list{display:grid;gap:1px;padding:0 10px 10px}.lesson{display:grid;grid-template-columns:58px 1fr auto;gap:14px;align-items:center;padding:14px 12px;border-top:1px solid var(--line);border-radius:9px;color:var(--text);text-decoration:none}.lesson:hover{background:#101c33}.lesson-id{color:var(--cyan);font:700 12px ui-monospace,monospace}.lesson-status{color:#7ee0a8;font-size:11px}.empty{padding:28px;text-align:center;color:var(--muted)}.site-footer{width:min(1120px,calc(100% - 32px));margin:auto;padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}@media(max-width:700px){.english-main{padding-top:34px}.hero{align-items:start;flex-direction:column}.stats{width:100%}.stat{flex:1;min-width:0}.module summary{grid-template-columns:80px 1fr}.module-count{grid-column:2}.lesson{grid-template-columns:46px 1fr}.lesson-status{grid-column:2}}
   </style>
 </head>
 <body data-subject="english">
   <header class="atlas-topbar"><div class="atlas-topbar-inner">
     <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
-    <form class="atlas-search" role="search"><input id="english-search" type="search" placeholder="Search courses" aria-label="Search English courses" autocomplete="off"></form>
+    <form class="atlas-search" role="search"><input id="top-search" type="search" placeholder="Search courses" aria-label="Search English courses" autocomplete="off"></form>
     <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
     <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
     <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
   </div></header>
   <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about the current page, request examples, or practise English step by step." aria-hidden="true"></aside>
   <main class="english-main">
-    <p class="eyebrow">ENGLISH</p><h1>English Courses</h1><p class="lead">A clear path through sound, vocabulary, grammar, meaning, and communication.</p>
-    <section class="curriculum" aria-label="English curriculum">
-      <a class="course-card" data-search="english foundations overview system" href="#"><span class="course-number">01</span><span><strong>English Foundations</strong><small>The curriculum is being rebuilt in English.</small></span><span class="status">In development</span></a>
-    </section>
-    <p class="empty-search" hidden>No matching course was found.</p>
+    <section class="hero"><div><p class="eyebrow">ENGLISH</p><h1>English Courses</h1><p class="lead">Pronunciation, structure, vocabulary, listening, and writing.</p></div><div class="stats" id="stats" aria-label="Course statistics"></div></section>
+    <input class="catalog-search" id="catalog-search" type="search" placeholder="Search lessons" aria-label="Search lessons" autocomplete="off">
+    <section class="modules" id="modules" aria-live="polite"><p class="empty">Loading courses…</p></section>
   </main>
   <footer class="site-footer">© <span id="year"></span> Lumina Atlas</footer>
-  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
-  <script src="global.js?v=20260810-unified-ai"></script>
+  <script>
+    const modulesRoot=document.getElementById('modules');
+    const stats=document.getElementById('stats');
+    const searches=[document.getElementById('top-search'),document.getElementById('catalog-search')];
+    let courseData={modules:[]};
+    function render(query=''){
+      const q=query.trim().toLowerCase();
+      const groups=courseData.modules.map(module=>({...module,lessons:module.lessons.filter(lesson=>`${lesson.id} ${lesson.title} ${module.title}`.toLowerCase().includes(q))})).filter(module=>module.lessons.length);
+      modulesRoot.innerHTML=groups.length?groups.map(module=>`<details class="module" ${q?'open':''}><summary><span class="module-code">MODULE ${module.id}</span><span class="module-title">${module.title}</span><span class="module-count">${module.lessons.length} published</span></summary><div class="lesson-list">${module.lessons.map(lesson=>`<a class="lesson" href="${encodeURI(lesson.file)}"><span class="lesson-id">${lesson.id}</span><strong>${lesson.title}</strong><span class="lesson-status">Published →</span></a>`).join('')}</div></details>`).join(''):'<p class="empty">No matching lesson was found.</p>';
+    }
+    fetch('course-data.json',{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('Course data unavailable');return response.json()}).then(data=>{courseData=data;const lessons=data.modules.reduce((sum,module)=>sum+module.lessons.length,0);stats.innerHTML=`<div class="stat"><b>${data.modules.length}</b><span>Modules</span></div><div class="stat"><b>${lessons}</b><span>Lessons</span></div>`;render()}).catch(()=>{modulesRoot.innerHTML='<p class="empty">The course directory could not be loaded. Please refresh the page.</p>'});
+    searches.forEach(input=>input.addEventListener('input',event=>{searches.forEach(other=>{if(other!==event.target)other.value=event.target.value});render(event.target.value)}));
+    document.querySelector('.atlas-search').addEventListener('submit',event=>event.preventDefault());
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+  <script src="global.js?v=20260812-english-catalog"></script>
 </body>
 </html>

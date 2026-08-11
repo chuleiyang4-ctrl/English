@@ -1,0 +1,38 @@
+{
+  "subject": "English",
+  "modules": [
+    {
+      "id": "1",
+      "title": "Sound and Pronunciation",
+      "lessons": [
+        {"id": "1.1", "title": "The Sound Map — 44 Building Blocks of American English", "file": "module-english-1-1.html"},
+        {"id": "1.2", "title": "Spelling Patterns & Connected Speech", "file": "module-english-1-2.html"}
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Sentence Structure and Grammar",
+      "lessons": [
+        {"id": "2.1", "title": "Sentence Patterns & the Roles Words Play", "file": "module-english-2-1.html"},
+        {"id": "2.2", "title": "Tense & Voice", "file": "module-english-2-2.html"},
+        {"id": "2.3", "title": "Clauses & Complex Sentences", "file": "module-english-2-3.html"}
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Vocabulary and Context",
+      "lessons": [
+        {"id": "3.1", "title": "Word Roots & Word Families", "file": "module-english-3-1.html"},
+        {"id": "3.2", "title": "Context, Register & the Two-Track Strategy", "file": "module-english-3-2.html"}
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Communication and Production",
+      "lessons": [
+        {"id": "4.1", "title": "Real-Time Listening & Shadowing", "file": "module-english-4-1.html"},
+        {"id": "4.2", "title": "Writing & AI-Assisted Editing", "file": "module-english-4-2.html"}
+      ]
+    }
+  ]
+}
