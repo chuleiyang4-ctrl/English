@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stop memorizing grammar rules in isolation: see a sentence as a structure, parts of speech as materials, and the 5 patterns every sentence is built from.">
+  <title>Sentence Patterns &amp; the Roles Words Play — Lumina Atlas</title>
+  <link rel="stylesheet" href="atlas-shell.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="notebook.css">
+  <link rel="stylesheet" href="math-ai.css">
+  <style>
+    :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.lesson-main{width:min(820px,calc(100% - 32px));margin:auto;padding:56px 0 90px}.lesson-kicker{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.16em}.lesson-main h1{font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.04em;margin:10px 0 16px}.lesson-summary{color:var(--muted);font-size:18px}.lesson-section{margin-top:48px}.lesson-section h2{font-size:26px}.example,.exercise{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}details.answer{margin-top:12px}details.answer summary{color:var(--cyan);cursor:pointer}.lesson-nav{display:flex;justify-content:space-between;gap:12px;margin-top:64px}.lesson-nav a{color:var(--cyan)}
+
+    /* ---- #sentenceArch: lesson-specific styling, scoped to this page only ---- */
+    #sentenceArch{display:grid;gap:36px}
+    #sentenceArch .scope-tag{display:inline-flex;gap:8px;align-items:center;margin-top:10px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;font-weight:650}
+    #sentenceArch .scope-tag b{color:var(--cyan);font-weight:800}
+    #sentenceArch p.lead{color:var(--muted);font-size:16px;margin:0 0 8px}
+    #sentenceArch .role-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-top:16px}
+    #sentenceArch .role-card{padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+    #sentenceArch .role-title{font-weight:800;color:var(--cyan);font-size:16px}
+    #sentenceArch .role-tag{margin:4px 0 8px;font-size:12px;color:var(--muted)}
+    #sentenceArch .role-card p{margin:0;color:var(--text);font-size:13.5px;line-height:1.55}
+    #sentenceArch .diagram-wrap{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px}
+    #sentenceArch .diagram-wrap svg{display:block;width:100%;height:auto}
+    #sentenceArch .diagram-caption{margin-top:10px;color:var(--muted);font-size:13px}
+    #sentenceArch .pattern-card{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+    #sentenceArch .pattern-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px}
+    #sentenceArch .pattern-head h3{margin:0;font-size:16.5px}
+    #sentenceArch .diff-stars{color:#e8b95f;font-size:12px;letter-spacing:.1em;flex:none;white-space:nowrap}
+    #sentenceArch .formula{font-family:ui-monospace,monospace;font-weight:800;color:var(--cyan);background:#101c33;display:inline-block;padding:6px 12px;border-radius:8px;font-size:14px;margin-bottom:8px}
+    #sentenceArch .pattern-card p{margin:6px 0 0;color:var(--muted);font-size:14px;line-height:1.6}
+    #sentenceArch .pattern-card .ex{color:var(--text);font-style:italic}
+  </style>
+</head>
+<body data-subject="english" data-lesson-id="2.1">
+  <header class="atlas-topbar"><div class="atlas-topbar-inner">
+    <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
+    <form class="atlas-search" role="search" action="/"><input type="search" name="q" placeholder="Search courses" aria-label="Search courses"></form>
+    <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
+    <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
+    <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
+  </div></header>
+  <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about this lesson, request examples, or practise English step by step." aria-hidden="true"></aside>
+  <main class="lesson-main">
+    <p class="lesson-kicker">ENGLISH · LESSON 2.1</p>
+    <h1>Sentence Patterns &amp; the Roles Words Play</h1>
+    <p class="lesson-summary">Stop memorizing grammar rules one at a time. Picture a sentence as a small structure under load: parts of speech are the materials, and every sentence — no matter how long — reduces to one of 5 load-bearing patterns.</p>
+    <span class="scope-tag"><b>Foundational</b> · used across Daily, Workplace &amp; Academic English alike</span>
+
+    <section class="lesson-section" id="sentenceArch">
+
+      <div>
+        <h2 style="margin-bottom:4px">I. What Each Part of Speech Actually Does</h2>
+        <p class="lead">The 8 parts of speech aren't an arbitrary list to memorize — each one plays a specific structural role in a sentence.</p>
+        <div class="role-grid">
+          <div class="role-card"><div class="role-title">Noun</div><div class="role-tag">🏗️ the material</div><p>The load-bearing piece — subject or object. <i>apple, idea, system.</i></p></div>
+          <div class="role-card"><div class="role-title">Verb</div><div class="role-tag">⚡ the engine</div><p>Drives the whole sentence forward. No verb, no motion. <i>run, create, is.</i></p></div>
+          <div class="role-card"><div class="role-title">Adjective</div><div class="role-tag">🎨 the surface</div><p>Attaches to a noun and changes how it appears. <i>blue, quantum, fast.</i></p></div>
+          <div class="role-card"><div class="role-title">Preposition</div><div class="role-tag">🔗 the joint</div><p>Connects space, time, and logic between pieces. <i>in, on, under, through.</i></p></div>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">II. The 5 Load-Bearing Sentence Patterns</h2>
+        <p class="lead">However long or twisted a sentence gets, strip away the decoration and one of these 5 skeletons is always underneath.</p>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 700 320" role="img" aria-label="Diagram of the 5 sentence patterns as energy flowing from subject through verb to object and complement">
+            <g font-family="ui-monospace,monospace" font-size="13" font-weight="700">
+              <!-- Row 1: S + V -->
+              <rect x="20" y="14" width="60" height="30" rx="6" fill="#101c33" stroke="#3a4a68"></rect><text x="50" y="34" text-anchor="middle" fill="#edf3ff">S</text>
+              <line x1="80" y1="29" x2="118" y2="29" stroke="#57d9ee" stroke-width="2" marker-end="url(#arrow)"></line>
+              <rect x="120" y="14" width="60" height="30" rx="6" fill="#0e2a33" stroke="#57d9ee"></rect><text x="150" y="34" text-anchor="middle" fill="#57d9ee">V</text>
+              <text x="200" y="34" font-family="Inter" font-weight="600" font-size="12" fill="#98a6bf">S + V — energy spends itself, nothing to release outward</text>
+
+              <!-- Row 2: S + V + O -->
+              <rect x="20" y="70" width="60" height="30" rx="6" fill="#101c33" stroke="#3a4a68"></rect><text x="50" y="90" text-anchor="middle" fill="#edf3ff">S</text>
+              <line x1="80" y1="85" x2="118" y2="85" stroke="#57d9ee" stroke-width="2" marker-end="url(#arrow)"></line>
+              <rect x="120" y="70" width="60" height="30" rx="6" fill="#0e2a33" stroke="#57d9ee"></rect><text x="150" y="90" text-anchor="middle" fill="#57d9ee">V</text>
+              <line x1="180" y1="85" x2="218" y2="85" stroke="#7ee0a8" stroke-width="2" marker-end="url(#arrow-g)"></line>
+              <rect x="220" y="70" width="60" height="30" rx="6" fill="#122a1e" stroke="#7ee0a8"></rect><text x="250" y="90" text-anchor="middle" fill="#7ee0a8">O</text>
+              <text x="300" y="90" font-family="Inter" font-weight="600" font-size="12" fill="#98a6bf">S + V + O — energy transfers straight into an object</text>
+
+              <!-- Row 3: S + V + C (linking, not transfer) -->
+              <rect x="20" y="126" width="60" height="30" rx="6" fill="#101c33" stroke="#3a4a68"></rect><text x="50" y="146" text-anchor="middle" fill="#edf3ff">S</text>
+              <line x1="80" y1="141" x2="118" y2="141" stroke="#e8b95f" stroke-width="2" stroke-dasharray="4 4"></line>
+              <rect x="120" y="126" width="60" height="30" rx="6" fill="#2a2413" stroke="#e8b95f"></rect><text x="150" y="146" text-anchor="middle" fill="#e8b95f">V</text>
+              <line x1="180" y1="141" x2="218" y2="141" stroke="#e8b95f" stroke-width="2" stroke-dasharray="4 4"></line>
+              <rect x="220" y="126" width="60" height="30" rx="6" fill="#2a2413" stroke="#e8b95f"></rect><text x="250" y="146" text-anchor="middle" fill="#e8b95f">C</text>
+              <text x="300" y="146" font-family="Inter" font-weight="600" font-size="12" fill="#98a6bf">S + V + C — no transfer, just an equals sign: S = C</text>
+
+              <!-- Row 4: S + V + IO + DO -->
+              <rect x="20" y="182" width="60" height="30" rx="6" fill="#101c33" stroke="#3a4a68"></rect><text x="50" y="202" text-anchor="middle" fill="#edf3ff">S</text>
+              <line x1="80" y1="197" x2="118" y2="197" stroke="#57d9ee" stroke-width="2" marker-end="url(#arrow)"></line>
+              <rect x="120" y="182" width="60" height="30" rx="6" fill="#0e2a33" stroke="#57d9ee"></rect><text x="150" y="202" text-anchor="middle" fill="#57d9ee">V</text>
+              <line x1="180" y1="197" x2="218" y2="197" stroke="#7ee0a8" stroke-width="2" marker-end="url(#arrow-g)"></line>
+              <rect x="220" y="182" width="60" height="30" rx="6" fill="#122a1e" stroke="#7ee0a8"></rect><text x="250" y="202" text-anchor="middle" fill="#7ee0a8">IO</text>
+              <line x1="280" y1="197" x2="318" y2="197" stroke="#7ee0a8" stroke-width="2" marker-end="url(#arrow-g)"></line>
+              <rect x="320" y="182" width="60" height="30" rx="6" fill="#122a1e" stroke="#7ee0a8"></rect><text x="350" y="202" text-anchor="middle" fill="#7ee0a8">DO</text>
+              <text x="400" y="202" font-family="Inter" font-weight="600" font-size="12" fill="#98a6bf">a receiver, then the thing handed over</text>
+
+              <!-- Row 5: S + V + O + OC -->
+              <rect x="20" y="238" width="60" height="30" rx="6" fill="#101c33" stroke="#3a4a68"></rect><text x="50" y="258" text-anchor="middle" fill="#edf3ff">S</text>
+              <line x1="80" y1="253" x2="118" y2="253" stroke="#57d9ee" stroke-width="2" marker-end="url(#arrow)"></line>
+              <rect x="120" y="238" width="60" height="30" rx="6" fill="#0e2a33" stroke="#57d9ee"></rect><text x="150" y="258" text-anchor="middle" fill="#57d9ee">V</text>
+              <line x1="180" y1="253" x2="218" y2="253" stroke="#7ee0a8" stroke-width="2" marker-end="url(#arrow-g)"></line>
+              <rect x="220" y="238" width="60" height="30" rx="6" fill="#122a1e" stroke="#7ee0a8"></rect><text x="250" y="258" text-anchor="middle" fill="#7ee0a8">O</text>
+              <line x1="280" y1="253" x2="318" y2="253" stroke="#e8b95f" stroke-width="2" stroke-dasharray="4 4"></line>
+              <rect x="320" y="238" width="60" height="30" rx="6" fill="#2a2413" stroke="#e8b95f"></rect><text x="350" y="258" text-anchor="middle" fill="#e8b95f">OC</text>
+              <text x="400" y="258" font-family="Inter" font-weight="600" font-size="12" fill="#98a6bf">object receives energy, then gets described</text>
+
+              <defs>
+                <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#57d9ee"></path></marker>
+                <marker id="arrow-g" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7ee0a8"></path></marker>
+              </defs>
+            </g>
+          </svg>
+          <p class="diagram-caption">Solid arrows = energy transfer. Dashed lines = an "equals sign," not a transfer — the linking verb (V) or the object complement (OC) just describes, it doesn't hand anything over.</p>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-head"><h3>1. Subject + Verb — a self-contained engine</h3><span class="diff-stars">●</span></div>
+          <div class="formula">S + V</div>
+          <p>All the energy is spent inside the subject — nothing is released outward onto anything else.</p>
+          <p class="ex">The sun shines.</p>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-head"><h3>2. Subject + Verb + Object — energy transfers one-way</h3><span class="diff-stars">●</span></div>
+          <div class="formula">S + V + O</div>
+          <p>The verb carries energy directly from the subject onto a receiving object.</p>
+          <p class="ex">Developers build platforms.</p>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-head"><h3>3. Subject + Linking Verb + Complement — a state equation</h3><span class="diff-stars">●●</span></div>
+          <div class="formula">S + V + C</div>
+          <p>A linking verb doesn't transfer energy at all — it acts as an "equals sign" between the subject and its state.</p>
+          <p class="ex">Knowledge is power.</p>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-head"><h3>4. Subject + Verb + Indirect Object + Direct Object — a double handoff</h3><span class="diff-stars">●●</span></div>
+          <div class="formula">S + V + IO + DO</div>
+          <p>The action carries both a receiver and a thing being transferred to that receiver.</p>
+          <p class="ex">AI gives us clarity.</p>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-head"><h3>5. Subject + Verb + Object + Object Complement — description added after</h3><span class="diff-stars">●●●</span></div>
+          <div class="formula">S + V + O + OC</div>
+          <p>The object alone doesn't finish the thought — a complement must be added describing its resulting state.</p>
+          <p class="ex">Code makes systems efficient.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Practice</h2>
+      <div class="exercise">
+        <p>Identify the sentence pattern: <b>"The team elected her captain."</b></p>
+        <details class="answer">
+          <summary>Show answer</summary>
+          <p>S + V + O + OC. "The team" (S) "elected" (V) "her" (O) "captain" (OC) — "her" received the action, and "captain" describes what she became as a result. Without "captain," the sentence would feel incomplete: you'd naturally ask "elected her <i>what</i>?"</p>
+        </details>
+      </div>
+    </section>
+
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a href="module-english-1-2.html">← Previous: Spelling Patterns &amp; Connected Speech</a>
+      <a href="index.html">Back to course map</a>
+    </nav>
+  </main>
+  <script src="global.js?v=20260810-unified-ai"></script>
+</body>
+</html>

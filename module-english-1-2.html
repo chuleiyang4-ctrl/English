@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn the letter-to-sound formulas behind English spelling and the four physical laws that make native speech flow together.">
+  <title>Spelling Patterns &amp; Connected Speech — Lumina Atlas</title>
+  <link rel="stylesheet" href="atlas-shell.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="notebook.css">
+  <link rel="stylesheet" href="math-ai.css">
+  <style>
+    :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.lesson-main{width:min(820px,calc(100% - 32px));margin:auto;padding:56px 0 90px}.lesson-kicker{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.16em}.lesson-main h1{font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.04em;margin:10px 0 16px}.lesson-summary{color:var(--muted);font-size:18px}.lesson-section{margin-top:48px}.lesson-section h2{font-size:26px}.example,.exercise{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}details.answer{margin-top:12px}details.answer summary{color:var(--cyan);cursor:pointer}.lesson-nav{display:flex;justify-content:space-between;gap:12px;margin-top:64px}.lesson-nav a{color:var(--cyan)}
+
+    /* ---- #speechRules: lesson-specific styling, scoped to this page only ---- */
+    #speechRules{display:grid;gap:36px}
+    #speechRules .scope-tag{display:inline-flex;gap:8px;align-items:center;margin-top:10px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;font-weight:650}
+    #speechRules .scope-tag b{color:var(--cyan);font-weight:800}
+    #speechRules p.lead{color:var(--muted);font-size:16px;margin:0 0 8px}
+    #speechRules .rule-card{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+    #speechRules .rule-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px}
+    #speechRules .rule-head h3{margin:0;font-size:17px}
+    #speechRules .tags{display:flex;gap:6px;flex-wrap:wrap;flex:none}
+    #speechRules .use-tag{padding:2px 9px;border:1px solid var(--line);border-radius:999px;font-size:10.5px;font-weight:700;white-space:nowrap}
+    #speechRules .use-daily{color:#7ee0a8;border-color:rgba(126,224,168,.4)}
+    #speechRules .use-work{color:#57d9ee;border-color:rgba(87,217,238,.4)}
+    #speechRules .use-academic{color:#e8b95f;border-color:rgba(232,185,95,.4)}
+    #speechRules .diff-stars{color:#e8b95f;font-size:12px;letter-spacing:.1em}
+    #speechRules .rule-card p{margin:6px 0;color:var(--muted);font-size:14.5px;line-height:1.6}
+    #speechRules .code{font-family:ui-monospace,monospace;background:#101c33;color:var(--text);padding:1px 7px;border-radius:5px;font-size:13.5px}
+    #speechRules .arrow{color:var(--cyan);font-weight:700;margin:0 4px}
+    #speechRules details.aside{margin-top:8px}
+    #speechRules details.aside summary{font-size:12px;color:var(--muted);cursor:pointer}
+    #speechRules details.aside summary:hover{color:var(--cyan)}
+    #speechRules details.aside p{margin:6px 0 0;color:var(--muted);font-size:12.5px}
+    #speechRules .diagram-wrap{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:24px 20px}
+    #speechRules .diagram-wrap svg{display:block;width:100%;height:auto}
+    #speechRules .diagram-caption{margin-top:12px;color:var(--muted);font-size:13px}
+    @media(max-width:640px){#speechRules .rule-head{flex-direction:column}}
+  </style>
+</head>
+<body data-subject="english" data-lesson-id="1.2">
+  <header class="atlas-topbar"><div class="atlas-topbar-inner">
+    <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
+    <form class="atlas-search" role="search" action="/"><input type="search" name="q" placeholder="Search courses" aria-label="Search courses"></form>
+    <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
+    <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
+    <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
+  </div></header>
+  <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about this lesson, request examples, or practise English step by step." aria-hidden="true"></aside>
+  <main class="lesson-main">
+    <p class="lesson-kicker">ENGLISH · LESSON 1.2</p>
+    <h1>Spelling Patterns &amp; Connected Speech</h1>
+    <p class="lesson-summary">Words aren't spelled out loud — sound flows continuously. Learn the formulas that predict pronunciation from spelling, and the four habits that make native speech glide together.</p>
+    <span class="scope-tag"><b>Foundational</b> · read this once, then let your ear absorb it through listening</span>
+
+    <section class="lesson-section" id="speechRules">
+
+      <div>
+        <h2 style="margin-bottom:4px">I. From Letters to Sounds</h2>
+        <p class="lead">English has only 26 letters for 44 sounds. The gap is closed by two things: syllable shape, and fixed two-or-three-letter "codes."</p>
+
+        <div class="rule-card">
+          <div class="rule-head"><h3>1. Vowel letters change with syllable shape</h3><div class="tags"><span class="use-tag use-daily">Daily</span><span class="use-tag use-academic">Academic</span><span class="diff-stars">●●</span></div></div>
+          <p>Closed syllable (ends in a consonant) <span class="arrow">→</span> short vowel sound: <span class="code">cat /kæt/</span></p>
+          <p>Open syllable (ends with a silent <i>e</i>) <span class="arrow">→</span> the vowel says its own name: <span class="code">make /meɪk/</span></p>
+          <details class="aside">
+            <summary>Why is the e silent?</summary>
+            <p>The final <i>e</i> doesn't disappear — it lends its energy to the vowel before it, stretching a short vowel into a long one, then goes quiet itself. That's why <i>mad</i> (closed, short /æ/) becomes <i>made</i> (open, long /eɪ/) with one letter added at the end.</p>
+          </details>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-head"><h3>2. Fixed consonant "codes"</h3><div class="tags"><span class="use-tag use-daily">Daily</span><span class="use-tag use-academic">Academic</span><span class="diff-stars">●</span></div></div>
+          <p><span class="code">sh</span> <span class="arrow">→</span> <span class="code">/ʃ/</span> — fish, ship</p>
+          <p><span class="code">ch</span> <span class="arrow">→</span> <span class="code">/tʃ/</span> — check, rich</p>
+          <p><span class="code">th</span> <span class="arrow">→</span> <span class="code">/θ/</span> or <span class="code">/ð/</span> — think, this</p>
+          <p><span class="code">tion</span> <span class="arrow">→</span> <span class="code">/ʃən/</span> — action, station</p>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">II. Four Laws of Connected Speech</h2>
+        <p class="lead">Fluent speech isn't slower, careful pronunciation sped up — it's a different set of physical habits your mouth uses to save effort. This is usually why native speech is hard to follow even when every individual word is familiar.</p>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 700 150" role="img" aria-label="Diagram showing the phrase Check it out linking into one continuous sound">
+            <text x="30" y="55" font-family="ui-monospace,monospace" font-size="26" fill="#edf3ff" font-weight="700">Check it out</text>
+            <path d="M 165 68 Q 195 100 225 68" fill="none" stroke="#57d9ee" stroke-width="2.5"></path>
+            <path d="M 240 68 Q 275 100 310 68" fill="none" stroke="#e8b95f" stroke-width="2.5"></path>
+            <text x="195" y="118" text-anchor="middle" fill="#57d9ee" font-size="12" font-family="Inter" font-weight="700">consonant → vowel</text>
+            <text x="275" y="118" text-anchor="middle" fill="#e8b95f" font-size="12" font-family="Inter" font-weight="700">flap T</text>
+            <text x="30" y="140" font-family="ui-monospace,monospace" font-size="18" fill="#98a6bf">"check-i-dout" /tʃekɪɾaʊt/</text>
+          </svg>
+          <p class="diagram-caption">Written as three separate words, spoken as one continuous sound. The consonant at the end of "Check" slides straight into the vowel of "it," and the /t/ in "it" softens into a quick tap before "out."</p>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-head"><h3>1. Consonant + vowel glide together</h3><div class="tags"><span class="use-tag use-daily">Daily</span><span class="diff-stars">●●</span></div></div>
+          <p>When one word ends in a consonant and the next starts with a vowel, they merge into a single beat.</p>
+          <p><span class="code">Check it out</span> <span class="arrow">→</span> <span class="code">Check-i-tout /tʃekɪtaʊt/</span></p>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-head"><h3>2. Flap T — American speech's signature move</h3><div class="tags"><span class="use-tag use-daily">Daily</span><span class="diff-stars">●●●</span></div></div>
+          <p>When /t/ or /d/ sits between two vowels and isn't stressed, the tongue taps the gum ridge quickly — the result sounds close to a light /d/.</p>
+          <p><span class="code">water</span> <span class="arrow">→</span> <span class="code">"wah-der" /wɑːtər/</span></p>
+          <p><span class="code">get it</span> <span class="arrow">→</span> <span class="code">"ged-it"</span></p>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-head"><h3>3. H-dropping on pronouns</h3><div class="tags"><span class="use-tag use-daily">Daily</span><span class="diff-stars">●●</span></div></div>
+          <p>The /h/ in unstressed pronouns (<i>he, him, her, his</i>) often disappears in fast speech, and the previous word links straight to what's left.</p>
+          <p><span class="code">Tell him</span> <span class="arrow">→</span> <span class="code">Tell-im /telɪm/</span></p>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-head"><h3>4. Function words collapse to schwa</h3><div class="tags"><span class="use-tag use-daily">Daily</span><span class="diff-stars">●●</span></div></div>
+          <p>Grammar words (<i>for, to, and, at, of</i>) lose their full vowel sound when unstressed and flatten to the neutral <span class="code">/ə/</span>.</p>
+          <p><span class="code">cup of tea</span> <span class="arrow">→</span> <span class="code">cup-a-tea /kʌp ə ti/</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Practice</h2>
+      <div class="exercise">
+        <p>Say this sentence at a natural, fast pace: "Get out of it." Which two connected-speech laws from this lesson would a native speaker apply, and where?</p>
+        <details class="answer">
+          <summary>Show answer</summary>
+          <p><b>Flap T:</b> the /t/ in "Get" sits between two vowel sounds once linked to "out," so it flaps toward a light /d/ — "Ge-dout." <b>Consonant + vowel linking:</b> "out" ends in a consonant and "of" starts with a vowel, so they glide together — "ou-tof." Put together, a native speaker says something close to <span class="code">"Ge-dou-tofit"</span>, not four separate words.</p>
+        </details>
+      </div>
+    </section>
+
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a href="module-english-1-1.html">← Previous: The Sound Map</a>
+      <a href="index.html">Back to course map</a>
+    </nav>
+  </main>
+  <script src="global.js?v=20260810-unified-ai"></script>
+</body>
+</html>

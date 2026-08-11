@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn the 44 sounds of American English by understanding how airflow is shaped in the mouth, with a vowel chart and consonant matrix you can click to hear.">
+  <title>The Sound Map — 44 Building Blocks of American English — Lumina Atlas</title>
+  <link rel="stylesheet" href="atlas-shell.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="notebook.css">
+  <link rel="stylesheet" href="math-ai.css">
+  <style>
+    :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.lesson-main{width:min(820px,calc(100% - 32px));margin:auto;padding:56px 0 90px}.lesson-kicker{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.16em}.lesson-main h1{font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.04em;margin:10px 0 16px}.lesson-summary{color:var(--muted);font-size:18px}.lesson-section{margin-top:48px}.lesson-section h2{font-size:26px}.example,.exercise{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}details.answer{margin-top:12px}details.answer summary{color:var(--cyan);cursor:pointer}.lesson-nav{display:flex;justify-content:space-between;gap:12px;margin-top:64px}.lesson-nav a{color:var(--cyan)}
+
+    /* ---- #soundMap: lesson-specific styling, scoped to this page only ---- */
+    #soundMap{display:grid;gap:32px}
+    #soundMap .scope-tag{display:inline-flex;gap:8px;align-items:center;margin-top:10px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;font-weight:650}
+    #soundMap .scope-tag b{color:var(--cyan);font-weight:800}
+    #soundMap p.lead{color:var(--muted);font-size:16px;margin:0 0 8px}
+    #soundMap .subhead{margin:0 0 4px;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+    #soundMap .chart-wrap{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px;margin-top:14px}
+    #soundMap .chart-wrap svg{display:block;width:100%;height:auto}
+    #soundMap .chart-caption{margin-top:10px;color:var(--muted);font-size:13px}
+    #soundMap .sound-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:16px}
+    #soundMap .sound-card{position:relative;padding:14px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);cursor:pointer;user-select:none;transition:border-color .15s,transform .15s}
+    #soundMap .sound-card:hover{border-color:var(--cyan);transform:translateY(-2px)}
+    #soundMap .sound-card .play{position:absolute;top:10px;right:10px;font-size:12px;opacity:.55;color:var(--cyan)}
+    #soundMap .sound-card:hover .play{opacity:1}
+    #soundMap .symbol{font-size:20px;font-weight:800;color:var(--cyan);font-family:ui-monospace,monospace}
+    #soundMap .word{margin-top:4px;font-size:14px;font-weight:650}
+    #soundMap .word b{color:var(--cyan)}
+    #soundMap .mouth{margin-top:6px;color:var(--muted);font-size:12px;line-height:1.5}
+    #soundMap .stars{margin-top:8px;font-size:11px;letter-spacing:.14em;color:#e8b95f}
+    #soundMap details.aside{margin-top:8px}
+    #soundMap details.aside summary{font-size:11px;color:var(--muted);cursor:pointer}
+    #soundMap details.aside summary:hover{color:var(--cyan)}
+    #soundMap details.aside p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
+    #soundMap .pair-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+    #soundMap .consonant-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13px}
+    #soundMap .consonant-table th,#soundMap .consonant-table td{border:1px solid var(--line);padding:8px;text-align:center;vertical-align:middle}
+    #soundMap .consonant-table th{background:#101c33;color:var(--muted);font-weight:700;font-size:12px}
+    #soundMap .consonant-table td{color:var(--text)}
+    #soundMap .consonant-table td.empty{color:#3a4a68}
+    #soundMap .consonant-table .pair-cell{display:flex;flex-direction:column;gap:2px}
+    #soundMap .consonant-table .pair-cell span{cursor:pointer}
+    #soundMap .consonant-table .pair-cell span:hover{color:var(--cyan)}
+    #soundMap .consonant-table caption{caption-side:bottom;text-align:left;margin-top:10px;color:var(--muted);font-size:12px}
+    @media (max-width:640px){#soundMap .pair-row{grid-template-columns:1fr}#soundMap .consonant-table{font-size:11px}}
+  </style>
+</head>
+<body data-subject="english" data-lesson-id="1.1">
+  <header class="atlas-topbar"><div class="atlas-topbar-inner">
+    <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
+    <form class="atlas-search" role="search" action="/"><input type="search" name="q" placeholder="Search courses" aria-label="Search courses"></form>
+    <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
+    <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
+    <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
+  </div></header>
+  <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about this lesson, request examples, or practise English step by step." aria-hidden="true"></aside>
+  <main class="lesson-main">
+    <p class="lesson-kicker">ENGLISH · LESSON 1.1</p>
+    <h1>The Sound Map — 44 Building Blocks of American English</h1>
+    <p class="lesson-summary">Every English word is built from just 44 distinct sounds. Learn to hear and shape each one by understanding how airflow moves through your mouth — click any card to hear it spoken.</p>
+    <span class="scope-tag" id="soundMapScope"><b>Foundational</b> · used across Daily, Workplace &amp; Academic English alike</span>
+
+    <section class="lesson-section" id="soundMap">
+      <div>
+        <h2>Intuition</h2>
+        <p class="lead">Every sound a human voice makes comes down to one physical question: <b>how much does the airflow get blocked on its way out?</b></p>
+        <p class="lead">Vowels are sounds where air flows out freely — only the shape of your lips and tongue changes the sound. Consonants are sounds where the airflow is blocked or squeezed somewhere in the mouth or throat. That single idea explains all 44 sounds below.</p>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">I. Vowels — 20 sounds, free airflow</h2>
+        <p class="subhead">1. Monophthongs — 12 single vowel sounds</p>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 380 300" role="img" aria-label="Simplified vowel chart showing tongue position for the 12 monophthongs">
+            <polygon points="70,40 330,40 300,260 140,260" fill="none" stroke="#22304a" stroke-width="1.5"></polygon>
+            <line x1="70" y1="40" x2="140" y2="260" stroke="#1a2740" stroke-width="1" stroke-dasharray="3 4"></line>
+            <line x1="330" y1="40" x2="300" y2="260" stroke="#1a2740" stroke-width="1" stroke-dasharray="3 4"></line>
+            <text x="8" y="45" fill="#98a6bf" font-size="11" font-family="Inter">Close</text>
+            <text x="8" y="255" fill="#98a6bf" font-size="11" font-family="Inter">Open</text>
+            <text x="55" y="285" fill="#98a6bf" font-size="11" font-family="Inter">Front</text>
+            <text x="290" y="285" fill="#98a6bf" font-size="11" font-family="Inter">Back</text>
+
+            <g font-family="ui-monospace,monospace" font-size="13" font-weight="700" fill="#57d9ee">
+              <circle cx="88" cy="56" r="3.5" fill="#57d9ee"></circle><text x="94" y="60">iː</text>
+              <circle cx="103" cy="92" r="3.5" fill="#57d9ee"></circle><text x="109" y="96">ɪ</text>
+              <circle cx="122" cy="140" r="3.5" fill="#57d9ee"></circle><text x="128" y="144">e</text>
+              <circle cx="138" cy="200" r="3.5" fill="#57d9ee"></circle><text x="144" y="204">æ</text>
+              <circle cx="228" cy="246" r="3.5" fill="#57d9ee"></circle><text x="234" y="250">ɑː</text>
+              <circle cx="270" cy="188" r="3.5" fill="#57d9ee"></circle><text x="276" y="192">ɔː</text>
+              <circle cx="288" cy="96" r="3.5" fill="#57d9ee"></circle><text x="294" y="100">ʊ</text>
+              <circle cx="308" cy="56" r="3.5" fill="#57d9ee"></circle><text x="291" y="46">uː</text>
+              <circle cx="205" cy="152" r="3.5" fill="#e8b95f"></circle><text x="211" y="156" fill="#e8b95f">ʌ</text>
+              <circle cx="195" cy="128" r="3.5" fill="#e8b95f"></circle><text x="176" y="122" fill="#e8b95f">ɜːr</text>
+              <circle cx="205" cy="170" r="3.5" fill="#7ee0a8"></circle><text x="211" y="174" fill="#7ee0a8">ə</text>
+            </g>
+          </svg>
+          <p class="chart-caption">Positions are simplified for learning, not to exact acoustic scale. Cyan = clear front/back vowels. Amber/green = the central vowels, which is where most non-native speakers lose precision.</p>
+        </div>
+
+        <div class="sound-grid">
+          <div class="sound-card" onclick="speak('see')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/iː/</div><div class="word">s<b>ee</b></div><div class="mouth">Lips pulled wide, almost a smile. Tongue tip behind the lower teeth.</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('sit')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ɪ/</div><div class="word">s<b>i</b>t</div><div class="mouth">Same shape as /iː/ but relaxed and short — sits between "ee" and "eh".</div><div class="stars">●●</div></div>
+          <div class="sound-card" onclick="speak('bed')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/e/</div><div class="word">b<b>e</b>d</div><div class="mouth">Jaw opens about one finger-width. Tongue tip stays low, near the teeth.</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('cat')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/æ/</div><div class="word">c<b>a</b>t</div><div class="mouth">Jaw drops wide (about two finger-widths), lips pulled sideways.<details class="aside"><summary>GA vs RP</summary><p>American English keeps this sound flatter and louder; British RP shifts it toward /ɑː/ in some words, such as <i>dance</i>.</p></details></div><div class="stars">●●</div></div>
+          <div class="sound-card" onclick="speak('father')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ɑː/</div><div class="word">f<b>a</b>ther</div><div class="mouth">Mouth wide open, tongue flat and low — the sound a doctor asks for when checking your throat.</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('door')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ɔː/</div><div class="word">d<b>oo</b>r</div><div class="mouth">Lips rounded and pushed slightly forward, held for a long, rich sound.</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('book')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ʊ/</div><div class="word">b<b>oo</b>k</div><div class="mouth">Lips lightly rounded, no strong push forward, short and relaxed.</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('too')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/uː/</div><div class="word">t<b>oo</b></div><div class="mouth">Lips rounded into a tight circle and pushed forward, held for a long sound.</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('cup')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ʌ/</div><div class="word">c<b>u</b>p</div><div class="mouth">Mouth half-open, tongue flat and relaxed — a quick "uh" from the throat.</div><div class="stars">●●</div></div>
+          <div class="sound-card" onclick="speak('bird')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ɜːr/</div><div class="word">b<b>ir</b>d</div><div class="mouth">Middle of the tongue raised, tip curled slightly back (American R-coloring).<details class="aside"><summary>GA vs RP</summary><p>British RP does not curl the tongue here and says /ɜː/ instead; American speech adds a strong r-color.</p></details></div><div class="stars">●●●</div></div>
+          <div class="sound-card" onclick="speak('about')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ə/</div><div class="word"><b>a</b>bout</div><div class="mouth">The most common vowel in English — muscles completely relaxed, mouth barely moves.</div><div class="stars">●●●</div></div>
+          <div class="sound-card" onclick="speak('water')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ər/</div><div class="word">wat<b>er</b></div><div class="mouth">The unstressed, r-colored ending on words like <i>teacher</i> and <i>water</i>.</div><div class="stars">●●</div></div>
+        </div>
+
+        <p class="subhead" style="margin-top:24px">2. Diphthongs — 8 gliding vowel sounds</p>
+        <div class="sound-grid">
+          <div class="sound-card" onclick="speak('day')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/eɪ/</div><div class="word">d<b>ay</b></div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('my')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/aɪ/</div><div class="word">m<b>y</b></div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('boy')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ɔɪ/</div><div class="word">b<b>oy</b></div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('go')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/oʊ/</div><div class="word">g<b>o</b></div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('now')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/aʊ/</div><div class="word">n<b>ow</b></div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('near')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ɪr/</div><div class="word">n<b>ear</b></div><div class="stars">●●</div></div>
+          <div class="sound-card" onclick="speak('hair')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/er/</div><div class="word">h<b>air</b></div><div class="stars">●●</div></div>
+          <div class="sound-card" onclick="speak('poor')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ʊr/</div><div class="word">p<b>oor</b></div><div class="stars">●●</div></div>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:4px">II. Consonants — 24 sounds, blocked airflow</h2>
+        <p class="subhead">1. Voiceless / voiced pairs — 8 pairs, same mouth shape</p>
+        <p class="lead" style="margin-bottom:0">Each pair uses an identical mouth position. The only difference is whether your vocal cords vibrate (voiced) or stay silent (voiceless).</p>
+
+        <div class="pair-row">
+          <div class="sound-card" onclick="speak('pen')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/p/</div><div class="word"><b>p</b>en</div><div class="mouth">Lips seal shut, then burst open — only a puff of air, no voice.</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('bag')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/b/</div><div class="word"><b>b</b>ag</div><div class="mouth">Same shape as /p/, but the vocal cords buzz at the same time.</div><div class="stars">●</div></div>
+        </div>
+        <div class="pair-row">
+          <div class="sound-card" onclick="speak('tea')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/t/</div><div class="word"><b>t</b>ea</div><div class="mouth">Tongue tip touches the gum ridge, then releases sharply.</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('dog')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/d/</div><div class="word"><b>d</b>og</div><div class="mouth">Same shape as /t/, with the vocal cords vibrating.</div><div class="stars">●</div></div>
+        </div>
+        <div class="pair-row">
+          <div class="sound-card" onclick="speak('key')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/k/</div><div class="word"><b>k</b>ey</div><div class="mouth">Back of the tongue rises to touch the soft palate, then releases.</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('get')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ɡ/</div><div class="word"><b>g</b>et</div><div class="mouth">Same shape as /k/, with the vocal cords vibrating.</div><div class="stars">●</div></div>
+        </div>
+        <div class="pair-row">
+          <div class="sound-card" onclick="speak('think')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/θ/</div><div class="word"><b>th</b>ink</div><div class="mouth">Tongue tip pokes gently between the teeth, air hisses out.</div><div class="stars">●●●</div></div>
+          <div class="sound-card" onclick="speak('this')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ð/</div><div class="word"><b>th</b>is</div><div class="mouth">Same shape as /θ/, with the vocal cords vibrating.</div><div class="stars">●●●</div></div>
+        </div>
+        <div class="pair-row">
+          <div class="sound-card" onclick="speak('fish')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/f/</div><div class="word"><b>f</b>ish</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('van')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/v/</div><div class="word"><b>v</b>an</div><div class="stars">●</div></div>
+        </div>
+        <div class="pair-row">
+          <div class="sound-card" onclick="speak('sun')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/s/</div><div class="word"><b>s</b>un</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('zoo')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/z/</div><div class="word"><b>z</b>oo</div><div class="stars">●</div></div>
+        </div>
+        <div class="pair-row">
+          <div class="sound-card" onclick="speak('ship')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ʃ/</div><div class="word"><b>sh</b>ip</div><div class="stars">●●</div></div>
+          <div class="sound-card" onclick="speak('vision')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ʒ/</div><div class="word">vi<b>si</b>on</div><div class="stars">●●●</div></div>
+        </div>
+        <div class="pair-row">
+          <div class="sound-card" onclick="speak('chip')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/tʃ/</div><div class="word"><b>ch</b>ip</div><div class="stars">●●</div></div>
+          <div class="sound-card" onclick="speak('job')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/dʒ/</div><div class="word"><b>j</b>ob</div><div class="stars">●●</div></div>
+        </div>
+
+        <p class="subhead" style="margin-top:24px">2. Standalone consonants — 8 sounds</p>
+        <div class="sound-grid">
+          <div class="sound-card" onclick="speak('man')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/m/</div><div class="word"><b>m</b>an</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('no')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/n/</div><div class="word"><b>n</b>o</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('sing')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/ŋ/</div><div class="word">si<b>ng</b></div><div class="stars">●●</div></div>
+          <div class="sound-card" onclick="speak('leg')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/l/</div><div class="word"><b>l</b>eg</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('red')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/r/</div><div class="word"><b>r</b>ed</div><div class="stars">●●●</div></div>
+          <div class="sound-card" onclick="speak('wet')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/w/</div><div class="word"><b>w</b>et</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('yes')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/j/</div><div class="word"><b>y</b>es</div><div class="stars">●</div></div>
+          <div class="sound-card" onclick="speak('hat')" role="button" tabindex="0"><span class="play">🔊</span><div class="symbol">/h/</div><div class="word"><b>h</b>at</div><div class="stars">●</div></div>
+        </div>
+
+        <p class="subhead" style="margin-top:24px">Place &amp; manner of articulation</p>
+        <table class="consonant-table">
+          <caption>Rows: how the airflow is shaped. Columns: where in the mouth it happens. Click a symbol to hear it.</caption>
+          <thead>
+            <tr><th></th><th>Bilabial</th><th>Labiodental</th><th>Dental</th><th>Alveolar</th><th>Post-alveolar</th><th>Palatal</th><th>Velar</th><th>Glottal</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Plosive</th>
+              <td class="pair-cell"><span onclick="speak('pen')">p</span><span onclick="speak('bag')">b</span></td>
+              <td class="empty">—</td><td class="empty">—</td>
+              <td class="pair-cell"><span onclick="speak('tea')">t</span><span onclick="speak('dog')">d</span></td>
+              <td class="empty">—</td><td class="empty">—</td>
+              <td class="pair-cell"><span onclick="speak('key')">k</span><span onclick="speak('get')">g</span></td>
+              <td class="empty">—</td>
+            </tr>
+            <tr>
+              <th>Fricative</th>
+              <td class="empty">—</td>
+              <td class="pair-cell"><span onclick="speak('fish')">f</span><span onclick="speak('van')">v</span></td>
+              <td class="pair-cell"><span onclick="speak('think')">θ</span><span onclick="speak('this')">ð</span></td>
+              <td class="pair-cell"><span onclick="speak('sun')">s</span><span onclick="speak('zoo')">z</span></td>
+              <td class="pair-cell"><span onclick="speak('ship')">ʃ</span><span onclick="speak('vision')">ʒ</span></td>
+              <td class="empty">—</td><td class="empty">—</td>
+              <td onclick="speak('hat')" style="cursor:pointer">h</td>
+            </tr>
+            <tr>
+              <th>Affricate</th>
+              <td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td>
+              <td class="pair-cell"><span onclick="speak('chip')">tʃ</span><span onclick="speak('job')">dʒ</span></td>
+              <td class="empty">—</td><td class="empty">—</td><td class="empty">—</td>
+            </tr>
+            <tr>
+              <th>Nasal</th>
+              <td onclick="speak('man')" style="cursor:pointer">m</td>
+              <td class="empty">—</td><td class="empty">—</td>
+              <td onclick="speak('no')" style="cursor:pointer">n</td>
+              <td class="empty">—</td><td class="empty">—</td>
+              <td onclick="speak('sing')" style="cursor:pointer">ŋ</td>
+              <td class="empty">—</td>
+            </tr>
+            <tr>
+              <th>Approximant</th>
+              <td onclick="speak('wet')" style="cursor:pointer">w</td>
+              <td class="empty">—</td><td class="empty">—</td>
+              <td class="pair-cell"><span onclick="speak('leg')">l</span><span onclick="speak('red')">r</span></td>
+              <td class="empty">—</td>
+              <td onclick="speak('yes')" style="cursor:pointer">j</td>
+              <td class="empty">—</td><td class="empty">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lesson-section">
+      <h2>Practice</h2>
+      <div class="exercise">
+        <p><b>ship</b> and <b>chip</b> differ by exactly one sound. Which consonant sound changes, and what is the key difference in how it's produced?</p>
+        <details class="answer">
+          <summary>Show answer</summary>
+          <p><i>ship</i> uses /ʃ/, a fricative — air is squeezed through a narrow gap with continuous friction. <i>chip</i> uses /tʃ/, an affricate — the airflow is fully stopped first, then released with friction. Say them back to back and feel the difference: /ʃ/ can be held ("shhh"), while /tʃ/ can't.</p>
+        </details>
+      </div>
+    </section>
+
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <span></span>
+      <a href="module-english-1-2.html">Next: Spelling Patterns &amp; Connected Speech →</a>
+    </nav>
+  </main>
+  <script>
+    function speak(word) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.85;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+    document.querySelectorAll('.sound-card[role="button"]').forEach(function (card) {
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+      });
+    });
+  </script>
+  <script src="global.js?v=20260810-unified-ai"></script>
+</body>
+</html>
