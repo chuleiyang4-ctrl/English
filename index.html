@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="English courses on Lumina Atlas: pronunciation, grammar, vocabulary, listening, and writing.">
+  <meta name="description" content="English as one connected system: where it came from, how it runs, what it's built from, and a course map from sound to discourse.">
   <title>English Courses — Lumina Atlas</title>
   <link rel="stylesheet" href="atlas-shell.css">
   <link rel="stylesheet" href="auth.css">
@@ -11,39 +11,210 @@
   <link rel="stylesheet" href="math-ai.css">
   <style>
     :root{--bg:#070d1a;--surface:#0e1729;--line:#22304a;--text:#edf3ff;--muted:#98a6bf;--cyan:#57d9ee}
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 80% 0,rgba(87,217,238,.1),transparent 28rem),var(--bg);color:var(--text);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.english-main{width:min(1120px,calc(100% - 32px));margin:auto;padding:48px 0 80px}.hero{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}.eyebrow{margin:0 0 6px;color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.18em}.english-main h1{margin:0;font-size:clamp(34px,5vw,52px);letter-spacing:-.045em}.lead{margin:7px 0 0;color:var(--muted);font-size:16px}.stats{display:flex;gap:10px}.stat{min-width:92px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(14,23,41,.72)}.stat b{font-size:18px}.stat span{margin-left:5px;color:var(--muted);font-size:11px}.catalog-search{width:100%;margin-bottom:14px;padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:#0b1324;color:var(--text);font:inherit;outline:none}.catalog-search:focus{border-color:#36758b}.modules{display:grid;gap:10px}.module{border:1px solid var(--line);border-radius:16px;background:rgba(14,23,41,.78);overflow:hidden}.module summary{display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:center;padding:19px 20px;cursor:pointer;list-style:none}.module summary::-webkit-details-marker{display:none}.module-code{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.12em}.module-title{font-size:17px;font-weight:750}.module-count{color:var(--muted);font-size:12px}.lesson-list{display:grid;gap:1px;padding:0 10px 10px}.lesson{display:grid;grid-template-columns:58px 1fr auto;gap:14px;align-items:center;padding:14px 12px;border-top:1px solid var(--line);border-radius:9px;color:var(--text);text-decoration:none}.lesson:hover{background:#101c33}.lesson-id{color:var(--cyan);font:700 12px ui-monospace,monospace}.lesson-status{color:#7ee0a8;font-size:11px}.empty{padding:28px;text-align:center;color:var(--muted)}.site-footer{width:min(1120px,calc(100% - 32px));margin:auto;padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}@media(max-width:700px){.english-main{padding-top:34px}.hero{align-items:start;flex-direction:column}.stats{width:100%}.stat{flex:1;min-width:0}.module summary{grid-template-columns:80px 1fr}.module-count{grid-column:2}.lesson{grid-template-columns:46px 1fr}.lesson-status{grid-column:2}}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 80% 0,rgba(87,217,238,.1),transparent 28rem),var(--bg);color:var(--text);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.english-main{width:min(1120px,calc(100% - 32px));margin:auto;padding:54px 0 90px}.eyebrow{margin:0 0 8px;color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.18em}.english-main h1{margin:0;font-size:clamp(34px,5vw,56px);letter-spacing:-.045em}.lead{margin:8px 0 28px;color:var(--muted);font-size:16px;max-width:640px}.curriculum{display:grid;gap:12px}.course-card{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(14,23,41,.8);color:inherit;text-decoration:none}.course-card:hover{border-color:#3f7891}.course-card.is-disabled{opacity:.5;pointer-events:none}.course-number{display:grid;place-items:center;width:42px;height:42px;border:1px solid #36758b;border-radius:12px;color:var(--cyan);font-weight:800;font-size:13px}.course-card strong{display:block;font-size:17px}.course-card small{color:var(--muted)}.status{color:var(--cyan);font-size:12px;white-space:nowrap}.status.pending{color:var(--muted)}.empty-search{color:var(--muted);padding:24px;text-align:center}.ai-panel{top:68px}.site-footer{width:min(1120px,calc(100% - 32px));margin:auto;padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}@media(max-width:600px){.english-main{padding-top:34px}.course-card{grid-template-columns:48px 1fr}.status{grid-column:2}}
+
+    /* ---- #overview: page-specific styling, scoped to this page only ---- */
+    #overview{margin-top:16px}
+    #overview .block{margin-top:56px}
+    #overview h2{font-size:24px;letter-spacing:-.02em;margin:0 0 6px}
+    #overview .block-lead{color:var(--muted);font-size:15px;max-width:680px;margin:0 0 18px}
+    #overview .insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    #overview .insight{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+    #overview .insight b{display:block;color:var(--cyan);font-size:13px;margin-bottom:6px}
+    #overview .insight span{color:var(--muted);font-size:13.5px;line-height:1.55}
+    #overview .model-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    #overview .model{display:flex;gap:12px;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+    #overview .model .num{flex:none;width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:#101c33;color:var(--cyan);font-size:12px;font-weight:800}
+    #overview .model p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55}
+    #overview .model p b{color:var(--text)}
+    #overview .graph-wrap{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:24px}
+    #overview .graph-wrap svg{display:block;width:100%;height:auto}
+    #overview .graph-caption{margin-top:12px;color:var(--muted);font-size:13px}
+    #overview .skills-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    #overview .skill-chip{padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-size:12.5px;color:var(--muted)}
+    #overview .skill-chip b{color:var(--text)}
+    #overview .phase-group{margin-top:18px}
+    #overview .phase-label{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin:0 0 10px}
+    #overview .legend-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    #overview .legend-card{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+    #overview .legend-card h3{margin:0 0 10px;font-size:14px}
+    #overview .tag-demo{display:flex;gap:8px;align-items:center;margin:6px 0;font-size:13px;color:var(--muted)}
+    #overview .use-tag{padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:11px;font-weight:700}
+    #overview .use-daily{color:#7ee0a8;border-color:rgba(126,224,168,.4)}
+    #overview .use-work{color:#57d9ee;border-color:rgba(87,217,238,.4)}
+    #overview .use-academic{color:#e8b95f;border-color:rgba(232,185,95,.4)}
+    #overview .diff-stars{color:#e8b95f;letter-spacing:.14em;font-size:12px}
+    #overview .disclaimer{margin-top:56px;padding:16px 18px;border:1px solid var(--line);border-radius:12px;color:var(--muted);font-size:12.5px;line-height:1.6}
+    @media(max-width:760px){#overview .insight-grid,#overview .model-list,#overview .legend-row{grid-template-columns:1fr}}
   </style>
 </head>
 <body data-subject="english">
   <header class="atlas-topbar"><div class="atlas-topbar-inner">
     <a class="atlas-brand" href="https://luminaatlas.com/" aria-label="Lumina Atlas home"><span class="atlas-brand-mark">Σ</span><span class="atlas-brand-name">Lumina Atlas</span></a>
-    <form class="atlas-search" role="search"><input id="top-search" type="search" placeholder="Search courses" aria-label="Search English courses" autocomplete="off"></form>
+    <form class="atlas-search" role="search"><input id="english-search" type="search" placeholder="Search courses" aria-label="Search English courses" autocomplete="off"></form>
     <button class="atlas-tool" type="button" data-notebook-open><span class="atlas-tool-icon">▤</span><span class="atlas-tool-label">Notebook</span></button>
     <button class="atlas-tool atlas-ai ai-tool" type="button" aria-controls="english-ai-panel" aria-expanded="false"><span class="atlas-tool-icon">✦</span><span class="atlas-tool-label">AI</span></button>
     <button class="atlas-tool atlas-profile profile-tool" type="button" data-auth-open><span class="atlas-tool-icon">●</span><span class="atlas-tool-label">Profile</span></button>
   </div></header>
-  <aside id="english-ai-panel" class="atlas-ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about the current page, request examples, or practise English step by step." aria-hidden="true"></aside>
+  <aside id="english-ai-panel" class="atlas-ai-panel ai-panel" data-ai-name="English AI" data-ai-endpoint="/api/english-ai" data-ai-intro="Ask about the current page, request examples, or practise English step by step." aria-hidden="true"></aside>
+
   <main class="english-main">
-    <section class="hero"><div><p class="eyebrow">ENGLISH</p><h1>English Courses</h1><p class="lead">Pronunciation, structure, vocabulary, listening, and writing.</p></div><div class="stats" id="stats" aria-label="Course statistics"></div></section>
-    <input class="catalog-search" id="catalog-search" type="search" placeholder="Search lessons" aria-label="Search lessons" autocomplete="off">
-    <section class="modules" id="modules" aria-live="polite"><p class="empty">Loading courses…</p></section>
+    <p class="eyebrow">ENGLISH</p>
+    <h1>English Is a System You Can See, Understand, and Use</h1>
+    <p class="lead">Not a pile of disconnected lessons — a small set of physical and structural rules that generate the whole language. This page is the map. Every course below fills in one region of it.</p>
+
+    <section id="overview">
+
+      <div class="block">
+        <h2>Where English Came From</h2>
+        <p class="block-lead">English is a West Germanic language that absorbed huge amounts of French and Latin vocabulary through history. That single fact explains most of what feels "irregular" today.</p>
+        <div class="insight-grid">
+          <div class="insight"><b>One idea, layered words</b><span><i>ask</i> (everyday) → <i>question</i> (formal) → <i>interrogate</i> (technical/legal). Same meaning, different register — a direct fossil of which conquering language a word arrived with.</span></div>
+          <div class="insight"><b>Spelling froze, pronunciation moved on</b><span>In <i>knight</i>, the <i>k</i> was pronounced in medieval English. Speech dropped it centuries ago; the printing press locked the spelling in place before it could catch up.</span></div>
+          <div class="insight"><b>Irregular verbs are historical leftovers</b><span><i>go → went</i> isn't a logic failure — <i>went</i> was borrowed from a completely different old verb. Irregularity is usually history, not chaos.</span></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>How English Runs</h2>
+        <p class="block-lead">Underneath the vocabulary, four operating rules generate almost every sentence you'll ever hear.</p>
+        <div class="model-list">
+          <div class="model"><span class="num">1</span><p><b>Sound is a finite set of contrasts.</b> American English (GA) is the primary reference here; British English (RP) appears only as a labeled comparison where it differs.</p></div>
+          <div class="model"><span class="num">2</span><p><b>Verbs drive the sentence.</b> Every independent clause needs one core verb carrying the action, time, and mood.</p></div>
+          <div class="model"><span class="num">3</span><p><b>Position reveals role.</b> The same word means something different depending on where it sits — structure gives the clue, context gives the meaning.</p></div>
+          <div class="model"><span class="num">4</span><p><b>Core first, details after.</b> Always find "who did what" before layering on modifiers and detail.</p></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>What English Is Made Of</h2>
+        <p class="block-lead">Six layers, each built on the one before it. Every course on this site sits on exactly one node of this graph.</p>
+        <div class="graph-wrap">
+          <svg viewBox="0 0 760 160" role="img" aria-label="Knowledge graph: Sound leads to Vocabulary, then Syntax, Semantics, Context, and Discourse">
+            <g font-family="Inter,ui-sans-serif,sans-serif">
+              <line x1="90" y1="80" x2="670" y2="80" stroke="#22304a" stroke-width="2"></line>
+              <g id="ovNodes"></g>
+            </g>
+          </svg>
+          <p class="graph-caption">Sound gives you the raw material for words. Vocabulary supplies meaning-bearing units. Syntax arranges them into sentences. Semantics is the meaning that arrangement produces. Context bends that meaning by situation. Discourse is meaning sustained across a whole text or conversation.</p>
+        </div>
+        <div class="skills-row">
+          <span class="skill-chip"><b>Listening</b></span>
+          <span class="skill-chip"><b>Speaking</b></span>
+          <span class="skill-chip"><b>Reading</b></span>
+          <span class="skill-chip"><b>Writing</b></span>
+          <span class="skill-chip"><b>Interaction</b></span>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Course Map</h2>
+        <p class="block-lead">Your account and notebook travel with you between courses. Search box above filters by keyword.</p>
+
+        <div class="phase-group">
+          <p class="phase-label">Phase 1 — Sound System</p>
+          <div class="curriculum">
+            <a class="course-card" data-search="phonetics sounds vowels consonants pronunciation" href="module-english-1-1.html"><span class="course-number">1.1</span><span><strong>The Sound Map</strong><small>44 vowels and consonants, and how airflow shapes each one.</small></span><span class="status">Published</span></a>
+            <a class="course-card" data-search="spelling connected speech flap t linking" href="module-english-1-2.html"><span class="course-number">1.2</span><span><strong>Spelling Patterns &amp; Connected Speech</strong><small>Letter-to-sound rules and the four laws of natural linking.</small></span><span class="status">Published</span></a>
+          </div>
+        </div>
+
+        <div class="phase-group">
+          <p class="phase-label">Phase 2 — Grammar Architecture</p>
+          <div class="curriculum">
+            <a class="course-card" data-search="sentence patterns parts of speech structure" href="module-english-2-1.html"><span class="course-number">2.1</span><span><strong>Sentence Patterns &amp; the Roles Words Play</strong><small>The 5 core structures every English sentence is built from.</small></span><span class="status">Published</span></a>
+            <a class="course-card" data-search="tense voice active passive time" href="module-english-2-2.html"><span class="course-number">2.2</span><span><strong>Tense &amp; Voice</strong><small>A two-axis map of time and viewpoint, plus active/passive.</small></span><span class="status">Published</span></a>
+            <a class="course-card" data-search="clauses subordinate complex sentences" href="module-english-2-3.html"><span class="course-number">2.3</span><span><strong>Clauses &amp; Complex Sentences</strong><small>Breaking long sentences into noun, relative, and adverbial clauses.</small></span><span class="status">Published</span></a>
+          </div>
+        </div>
+
+        <div class="phase-group">
+          <p class="phase-label">Phase 3 — Vocabulary &amp; Context</p>
+          <div class="curriculum">
+            <a class="course-card" data-search="vocabulary roots prefixes suffixes word families" href="module-english-3-1.html"><span class="course-number">3.1</span><span><strong>Word Roots &amp; Word Families</strong><small>Build vocabulary from a small set of roots, prefixes, and suffixes.</small></span><span class="status">Published</span></a>
+            <a class="course-card" data-search="context register domain meaning tracks" href="module-english-3-2.html"><span class="course-number">3.2</span><span><strong>Context, Register &amp; the Two-Track Strategy</strong><small>How the same word shifts meaning by domain, and where to focus effort.</small></span><span class="status">Published</span></a>
+          </div>
+        </div>
+
+        <div class="phase-group">
+          <p class="phase-label">Phase 4 — Output &amp; Practice</p>
+          <div class="curriculum">
+            <a class="course-card" data-search="speaking shadowing listening practice" href="module-english-4-1.html"><span class="course-number">4.1</span><span><strong>Real-Time Listening &amp; Shadowing</strong><small>Train the ear-to-mouth reflex without translating in your head.</small></span><span class="status">Published</span></a>
+            <a class="course-card" data-search="writing editing ai collaboration" href="module-english-4-2.html"><span class="course-number">4.2</span><span><strong>Writing &amp; AI-Assisted Editing</strong><small>A clear division of labor between your intent and an AI editor.</small></span><span class="status">Published</span></a>
+          </div>
+        </div>
+
+        <p class="empty-search" hidden>No matching course was found.</p>
+      </div>
+
+      <div class="block">
+        <h2>How Content Is Tagged</h2>
+        <p class="block-lead">Every point in a lesson carries two independent tags, so you can tell at a glance what to prioritize.</p>
+        <div class="legend-row">
+          <div class="legend-card">
+            <h3>Usage domain</h3>
+            <div class="tag-demo"><span class="use-tag use-daily">Daily</span> Everyday conversation and casual writing.</div>
+            <div class="tag-demo"><span class="use-tag use-work">Workplace</span> Tech docs, product work, professional email.</div>
+            <div class="tag-demo"><span class="use-tag use-academic">Academic</span> Papers, formal argument, precise register.</div>
+          </div>
+          <div class="legend-card">
+            <h3>Difficulty</h3>
+            <div class="tag-demo"><span class="diff-stars">●</span> Learn once, rarely trips native listeners up.</div>
+            <div class="tag-demo"><span class="diff-stars">●●</span> Needs a little deliberate practice.</div>
+            <div class="tag-demo"><span class="diff-stars">●●●</span> The classic sticking point for most learners.</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="disclaimer">This site provides a structural map and logical breakdown of English — not a guaranteed teaching outcome. What you internalize depends on your own practice.</p>
+    </section>
   </main>
+
   <footer class="site-footer">© <span id="year"></span> Lumina Atlas</footer>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
   <script>
-    const modulesRoot=document.getElementById('modules');
-    const stats=document.getElementById('stats');
-    const searches=[document.getElementById('top-search'),document.getElementById('catalog-search')];
-    let courseData={modules:[]};
-    function render(query=''){
-      const q=query.trim().toLowerCase();
-      const groups=courseData.modules.map(module=>({...module,lessons:module.lessons.filter(lesson=>`${lesson.id} ${lesson.title} ${module.title}`.toLowerCase().includes(q))})).filter(module=>module.lessons.length);
-      modulesRoot.innerHTML=groups.length?groups.map(module=>`<details class="module" ${q?'open':''}><summary><span class="module-code">MODULE ${module.id}</span><span class="module-title">${module.title}</span><span class="module-count">${module.lessons.length} published</span></summary><div class="lesson-list">${module.lessons.map(lesson=>`<a class="lesson" href="${encodeURI(lesson.file)}"><span class="lesson-id">${lesson.id}</span><strong>${lesson.title}</strong><span class="lesson-status">Published →</span></a>`).join('')}</div></details>`).join(''):'<p class="empty">No matching lesson was found.</p>';
-    }
-    fetch('course-data.json',{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('Course data unavailable');return response.json()}).then(data=>{courseData=data;const lessons=data.modules.reduce((sum,module)=>sum+module.lessons.length,0);stats.innerHTML=`<div class="stat"><b>${data.modules.length}</b><span>Modules</span></div><div class="stat"><b>${lessons}</b><span>Lessons</span></div>`;render()}).catch(()=>{modulesRoot.innerHTML='<p class="empty">The course directory could not be loaded. Please refresh the page.</p>'});
-    searches.forEach(input=>input.addEventListener('input',event=>{searches.forEach(other=>{if(other!==event.target)other.value=event.target.value});render(event.target.value)}));
-    document.querySelector('.atlas-search').addEventListener('submit',event=>event.preventDefault());
-    document.getElementById('year').textContent=new Date().getFullYear();
+    (function () {
+      var nodes = [
+        { x: 90,  label: "Sound" },
+        { x: 206, label: "Vocabulary" },
+        { x: 322, label: "Syntax" },
+        { x: 438, label: "Semantics" },
+        { x: 554, label: "Context" },
+        { x: 670, label: "Discourse" }
+      ];
+      var g = document.getElementById('ovNodes');
+      var svgNS = 'http://www.w3.org/2000/svg';
+      nodes.forEach(function (n, i) {
+        var circle = document.createElementNS(svgNS, 'circle');
+        circle.setAttribute('cx', n.x);
+        circle.setAttribute('cy', 80);
+        circle.setAttribute('r', 8);
+        circle.setAttribute('fill', i === 0 ? '#57d9ee' : '#0e1729');
+        circle.setAttribute('stroke', '#57d9ee');
+        circle.setAttribute('stroke-width', '2');
+        g.appendChild(circle);
+
+        var text = document.createElementNS(svgNS, 'text');
+        text.setAttribute('x', n.x);
+        text.setAttribute('y', i % 2 === 0 ? 60 : 112);
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('fill', '#edf3ff');
+        text.setAttribute('font-size', '13');
+        text.setAttribute('font-weight', '700');
+        text.textContent = n.label;
+        g.appendChild(text);
+
+        if (i < nodes.length - 1) {
+          var arrow = document.createElementNS(svgNS, 'polygon');
+          var mx = (n.x + nodes[i + 1].x) / 2;
+          arrow.setAttribute('points', (mx - 5) + ',75 ' + (mx + 5) + ',80 ' + (mx - 5) + ',85');
+          arrow.setAttribute('fill', '#57d9ee');
+          g.appendChild(arrow);
+        }
+      });
+    })();
   </script>
-  <script src="global.js?v=20260812-english-catalog"></script>
+  <script src="global.js?v=20260812-restored-design"></script>
 </body>
 </html>
+
