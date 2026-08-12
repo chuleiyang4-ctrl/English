@@ -10,6 +10,8 @@
   };
 
   const ensureUnifiedPricingLink = () => {
+    const shellStylesheet = document.querySelector('link[href^="atlas-shell.css"]');
+    if (shellStylesheet) shellStylesheet.href = "atlas-shell.css?v=20260813-unified-nav";
     const topbar = document.querySelector(".atlas-topbar-inner");
     if (!topbar || topbar.querySelector(".atlas-pricing-link")) return;
     const search = topbar.querySelector(".atlas-search");
